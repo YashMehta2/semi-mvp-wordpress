@@ -120,5 +120,63 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 </script>
+
+<!-- Coming Soon Modal -->
+<div id="coming-soon-modal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-200">
+  <div class="absolute inset-0 bg-root/70 backdrop-blur-sm modal-backdrop"></div>
+  <div class="relative bg-surface border border-border-strong p-6 sm:p-8 max-w-sm w-full mx-4 shadow-2xl rounded-2xl transform scale-95 transition-transform duration-200 modal-content">
+    <button class="modal-close absolute top-4 right-4 text-content-secondary hover:text-content-primary transition-colors">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div class="text-accent-primary mb-5">
+      <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+    </div>
+    <h3 class="text-xl font-bold text-content-primary mb-2">Coming Soon</h3>
+    <p class="text-sm text-content-secondary leading-relaxed mb-6">
+      This feature or page is not yet implemented in the current MVP phase. Please check back later.
+    </p>
+    <button class="modal-close w-full bg-accent-primary hover:bg-accent-primary-hover text-root rounded-lg py-3 text-sm font-bold transition-colors active:scale-95 duration-200">
+      Okay, got it
+    </button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('coming-soon-modal');
+  if (!modal) return;
+  const content = modal.querySelector('.modal-content');
+  const closeBtns = modal.querySelectorAll('.modal-close');
+  const backdrop = modal.querySelector('.modal-backdrop');
+
+  const openModal = (e) => {
+    const isDropdownToggle = e.currentTarget.id === 'nav-dropdown-btn';
+    if (isDropdownToggle) return; // ignore the mobile nav dropdown
+
+    e.preventDefault();
+    modal.classList.remove('opacity-0', 'invisible');
+    modal.classList.add('opacity-100', 'visible');
+    content.classList.remove('scale-95');
+    content.classList.add('scale-100');
+  };
+
+  const closeModal = () => {
+    modal.classList.add('opacity-0', 'invisible');
+    modal.classList.remove('opacity-100', 'visible');
+    content.classList.add('scale-95');
+    content.classList.remove('scale-100');
+  };
+
+  document.querySelectorAll('a[href="#"], span.cursor-pointer, .cursor-pointer').forEach(el => {
+    // Only attach if it's not the dropdown button
+    if (el.id !== 'nav-dropdown-btn' && !el.closest('#nav-dropdown-btn')) {
+        el.addEventListener('click', openModal);
+    }
+  });
+
+  closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+  backdrop.addEventListener('click', closeModal);
+});
+</script>
 </body>
 </html>
