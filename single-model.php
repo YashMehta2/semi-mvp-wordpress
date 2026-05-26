@@ -218,15 +218,14 @@ get_header();
                                   </div>
                                   <?php endforeach; ?>
                               </div>
-                              <div class="relative h-48 md:h-full min-h-[250px] rounded-xl border border-border-strong overflow-hidden bg-surface sa-card sa-reveal">
-                                  <div class="absolute inset-0 bg-surface/60 z-10"></div>
-                                  <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/supply-chain.png" alt="Methodology Structure" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-screen contrast-125" />
-                                  <div class="absolute bottom-4 left-4 z-20">
-                                      <span class="text-[10px] font-bold uppercase tracking-widest text-content-primary px-2 py-1 rounded bg-surface border border-border-subtle shadow-lg">
-                                          Data Architecture
-                                      </span>
-                                  </div>
-                              </div>
+                                <div class="relative h-48 md:h-full min-h-[250px] rounded-xl border border-border-strong overflow-hidden bg-surface sa-card sa-reveal">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/supply-chain.png" alt="Methodology Structure" class="absolute inset-0 w-full h-full object-cover opacity-80" />
+                                    <div class="absolute bottom-4 left-4 z-20">
+                                        <span class="text-[10px] font-bold uppercase tracking-widest text-content-primary px-2 py-1 rounded bg-surface border border-border-strong shadow-md">
+                                            Data Architecture
+                                        </span>
+                                    </div>
+                                </div>
                           </div>
                       </div>
                       
