@@ -178,7 +178,7 @@ get_header();
                 <div class="absolute inset-0 z-0 pointer-events-none">
                   <div class="absolute inset-0 bg-surface/90 z-10"></div>
                   <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/wafer.png" alt="" class="w-full h-full object-cover opacity-20 mix-blend-luminosity grayscale" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/wafer.png" alt="" class="w-full h-full object-cover opacity-[0.5] mix-blend-plus-lighter grayscale" />
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
                     <div>
