@@ -18,7 +18,7 @@
                 <article class="flex flex-col h-full sa-card overflow-hidden sa-card-hover">
                     <div class="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Article 1" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/editorial_server_rack.png" alt="Article 1" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out grayscale contrast-125" />
                         <div class="absolute bottom-3 left-4 z-20">
                             <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors">Markets</span>
                         </div>
@@ -44,7 +44,7 @@
                 <article class="flex flex-col h-full sa-card overflow-hidden sa-card-hover">
                     <div class="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Article 2" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/abstract_data_dashboard.png" alt="Article 2" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out grayscale contrast-125" />
                         <div class="absolute bottom-3 left-4 z-20">
                             <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors">Semiconductors</span>
                         </div>
@@ -70,7 +70,7 @@
                 <article class="flex flex-col h-full sa-card overflow-hidden sa-card-hover">
                     <div class="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" alt="Article 3" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/silicon_macro_editorial.png" alt="Article 3" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out grayscale contrast-125" />
                         <div class="absolute bottom-3 left-4 z-20">
                             <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors">Data Centers</span>
                         </div>

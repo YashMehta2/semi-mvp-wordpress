@@ -158,10 +158,16 @@ get_header();
                                 </div>
                             </div>
                         <?php else: ?>
-                            <div class="my-10 p-6 rounded-xl border border-border-subtle bg-surface/50 sa-card select-none flex items-center justify-center h-32">
-                                <div class="flex items-center gap-3 text-content-secondary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.48 12H2"/></svg>
-                                    <span class="text-sm font-bold tracking-widest uppercase">Ecosystem Map Preview</span>
+                            <div class="my-10 relative rounded-xl border border-border-strong overflow-hidden bg-surface sa-card sa-reveal">
+                                <div class="aspect-[21/9] sm:aspect-[2.39/1] relative">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10"></div>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/abstract_data_dashboard.png" alt="Ecosystem Map Preview" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 hover:scale-105 transition-transform duration-700 ease-out" />
+                                    <div class="absolute bottom-4 left-5 z-20 flex items-center gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-accent-secondary animate-pulse"></div>
+                                        <span class="text-[10px] font-bold uppercase tracking-widest text-content-primary px-2 py-1 rounded bg-surface border border-border-strong shadow-md">
+                                            Interactive Data Dashboard
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         <?php endif; ?>
