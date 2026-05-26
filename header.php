@@ -50,7 +50,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site flex-1 flex flex-col">
     <header id="site-header" class="sticky top-0 z-50 w-full transition-all duration-500 ease-out bg-root/80 backdrop-blur-xl border-b border-border-subtle shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
-        <div class="container mx-auto px-5 max-w-[1280px] flex h-16 items-center justify-between gap-4">
+        <div class="container flex h-16 items-center justify-between gap-4">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center flex-shrink-0">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="SemiAnalysis" width="180" height="74" class="h-8 sm:h-9 md:h-10 w-auto object-contain brightness-110" />
             </a>
@@ -104,7 +104,7 @@
     <div id="mobile-drawer" class="fixed inset-0 z-40 md:hidden transition-all duration-300 opacity-0 pointer-events-none">
         <div class="absolute inset-0 bg-root/90 backdrop-blur-xl" onclick="document.getElementById('mobile-drawer').classList.add('opacity-0', 'pointer-events-none'); document.getElementById('mobile-drawer-inner').classList.remove('translate-y-0'); document.getElementById('mobile-drawer-inner').classList.add('-translate-y-4'); document.body.classList.remove('overflow-hidden');"></div>
         <div id="mobile-drawer-inner" class="absolute top-16 left-0 right-0 bg-root border-b border-border-subtle transition-transform duration-300 max-h-[calc(100vh-64px)] overflow-y-auto -translate-y-4">
-            <nav class="container mx-auto px-5 py-6 flex flex-col gap-2">
+            <nav class="container py-6 flex flex-col gap-2">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary px-3 pt-2 pb-1">Industry Models</p>
                 <a href="/models/ai-compute-supply-model" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Accelerator &amp; HBM Model</a>
                 <a href="/models/gpu-scaling-bottleneck-model" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">AI Cloud TCO Model</a>

@@ -1,5 +1,5 @@
 <section id="featured" class="py-10 sm:py-12 bg-root">
-    <div class="container mx-auto px-5 max-w-[1100px]">
+    <div class="container max-w-[1100px]">
         <div class="flex items-center justify-between mb-8 sm:mb-10 sa-reveal">
             <div>
                 <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-1.5">
@@ -20,7 +20,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Article 1" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out" />
                         <div class="absolute bottom-3 left-4 z-20">
-                            <span class="inline-flex items-center text-[10px] font-bold text-content-primary bg-surface border border-border-strong px-2 py-1 rounded-md uppercase tracking-widest shadow-sm">Markets</span>
+                            <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors">Markets</span>
                         </div>
                     </div>
                     <div class="flex flex-col flex-1 p-5 space-y-2">
@@ -46,7 +46,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Article 2" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out" />
                         <div class="absolute bottom-3 left-4 z-20">
-                            <span class="inline-flex items-center text-[10px] font-bold text-content-primary bg-surface border border-border-strong px-2 py-1 rounded-md uppercase tracking-widest shadow-sm">Semiconductors</span>
+                            <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors">Semiconductors</span>
                         </div>
                     </div>
                     <div class="flex flex-col flex-1 p-5 space-y-2">
@@ -72,7 +72,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
                         <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" alt="Article 3" class="h-full w-full object-cover scale-[1.03] group-hover:scale-100 transition-transform duration-600 ease-out" />
                         <div class="absolute bottom-3 left-4 z-20">
-                            <span class="inline-flex items-center text-[10px] font-bold text-content-primary bg-surface border border-border-strong px-2 py-1 rounded-md uppercase tracking-widest shadow-sm">Data Centers</span>
+                            <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors">Data Centers</span>
                         </div>
                     </div>
                     <div class="flex flex-col flex-1 p-5 space-y-2">

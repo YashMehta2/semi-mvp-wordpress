@@ -12,7 +12,7 @@ get_header();
     <section class="relative border-b border-border-subtle bg-root pt-12 pb-14 sm:pt-16 sm:pb-18 md:pt-20 md:pb-20">
         <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 26px 26px;"></div>
         <div class="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-accent-secondary/5 blur-[100px]"></div>
-        <div class="container mx-auto px-5 max-w-[1280px] relative z-10">
+        <div class="container relative z-10">
             <nav class="flex items-center gap-2 text-xs text-content-tertiary mb-6 sm:mb-8 font-bold tracking-widest uppercase" aria-label="Breadcrumb">
                 <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
                 <span>/</span>
@@ -42,7 +42,7 @@ get_header();
         </div>
     </section>
     <section class="py-12 sm:py-16 md:py-20">
-        <div class="container mx-auto px-5 max-w-[1280px]">
+        <div class="container">
             <div class="flex flex-wrap items-center gap-2 mb-10 sm:mb-12">
                 <span class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mr-2">Filter:</span>
                 <button class="text-xs font-bold px-4 py-1.5 rounded-full border border-border-subtle text-content-secondary hover:border-accent-secondary/30 hover:text-accent-secondary transition-all duration-200 bg-accent-secondary/10 border-accent-secondary/30 text-accent-secondary">All</button>
@@ -66,7 +66,7 @@ get_header();
                                         <div class="w-10 h-10 rounded-lg bg-surface-hover border border-border-strong flex items-center justify-center text-content-secondary group-hover:text-accent-secondary group-hover:border-accent-secondary/50 transition-colors flex-shrink-0">
                                             <?php echo $model['icon']; ?>
                                         </div>
-                                        <span class="inline-flex items-center rounded-md border border-border-strong bg-surface-hover px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-content-primary shadow-sm"><?php echo esc_html($model['category']); ?></span>
+                                        <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors"><?php echo esc_html($model['category']); ?></span>
                                     </div>
                                     <h3 class="text-[18px] sm:text-[20px] font-extrabold text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-tight tracking-tight mb-3">
                                         <?php echo esc_html($model['title']); ?>
@@ -124,7 +124,7 @@ get_header();
                                         <div class="w-10 h-10 rounded-lg bg-surface-hover border border-border-strong flex items-center justify-center text-content-secondary group-hover:text-accent-secondary group-hover:border-accent-secondary/50 transition-colors flex-shrink-0">
                                             <?php echo $model['icon']; ?>
                                         </div>
-                                        <span class="inline-flex items-center rounded-md border border-border-strong bg-surface-hover px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-content-primary shadow-sm"><?php echo esc_html($model['category']); ?></span>
+                                        <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors"><?php echo esc_html($model['category']); ?></span>
                                     </div>
                                     <h3 class="text-[18px] sm:text-[20px] font-extrabold text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-tight tracking-tight mb-3">
                                         <?php echo esc_html($model['title']); ?>
@@ -139,9 +139,10 @@ get_header();
                                     <div>
                                         <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Access Level</p>
                                         <div class="flex items-center gap-1.5">
-                                            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#e59a35]/10 border border-[#e59a35]/30 text-[10px] font-bold uppercase tracking-widest text-[#e59a35] shadow-sm mt-1">
-                                                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Pro
-                                            </span>
+                                            <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-0.5 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary mt-1">
+    <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" /><path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
+    Member
+</span>
                                         </div>
                                     </div>
                                     <div>

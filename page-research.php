@@ -14,7 +14,7 @@ $articles = [
 <main class="min-h-screen bg-root">
     <section class="relative border-b border-border-subtle bg-root pt-12 pb-12 sm:pt-16 md:pt-20 md:pb-16">
         <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, var(--color-content-secondary) 1px, transparent 1px); background-size: 26px 26px;"></div>
-        <div class="container mx-auto px-5 max-w-[1280px] relative z-10">
+        <div class="container relative z-10">
             <nav class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-content-tertiary mb-6" aria-label="Breadcrumb">
                 <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
                 <span>/</span>
@@ -30,7 +30,7 @@ $articles = [
             </div>
         </div>
     </section>
-    <div class="container mx-auto px-5 max-w-[1280px] py-10 sm:py-14 md:py-16">
+    <div class="container py-10 sm:py-14 md:py-16">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
             <aside class="lg:col-span-1 lg:sticky lg:top-20 lg:self-start space-y-8">
                 <div>
@@ -82,9 +82,10 @@ $articles = [
                                 <div class="flex items-center flex-wrap gap-2">
                                     <span class="inline-flex items-center rounded-md border border-border-strong bg-surface px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-content-primary shadow-sm"><?php echo esc_html($article['category']); ?></span>
                                     <?php if ($article['memberOnly']): ?>
-                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#e59a35]/10 border border-[#e59a35]/30 text-[10px] font-bold uppercase tracking-widest text-[#e59a35] shadow-sm">
-                                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Pro
-                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-0.5 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
+    <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" /><path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
+    Member
+</span>
                                     <?php endif; ?>
                                 </div>
                                 <h2 class="text-[15px] sm:text-[17px] font-bold text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-snug line-clamp-2 tracking-tight">

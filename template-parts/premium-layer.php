@@ -1,5 +1,5 @@
 <section class="py-10 sm:py-14 bg-root border-y border-border-subtle">
-    <div class="container mx-auto px-5 max-w-[1280px]">
+    <div class="container">
         <div class="text-center max-w-xl mx-auto mb-10 sm:mb-12 md:mb-14 sa-reveal">
             <p class="text-[11px] font-bold uppercase tracking-widest text-accent-primary mb-3">
                 Research Access

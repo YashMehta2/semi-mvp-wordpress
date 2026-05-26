@@ -1,7 +1,7 @@
 <section class="relative overflow-hidden bg-root pt-12 pb-10 sm:pt-14 sm:pb-12 md:pt-16 md:pb-14 lg:pt-20 lg:pb-16">
     <div class="pointer-events-none absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px); background-size: 26px 26px;"></div>
     <div class="pointer-events-none absolute -top-40 right-[-10%] h-[500px] w-[500px] rounded-full bg-accent-secondary/5 blur-[140px]"></div>
-    <div class="container mx-auto px-5 max-w-[1280px] relative z-10">
+    <div class="container relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px] gap-10 md:gap-14 lg:gap-16 xl:gap-24 items-start">
             <div class="flex flex-col gap-4 sm:gap-5 pt-2 sa-reveal">
                 <div class="inline-flex w-fit items-center gap-2 rounded-md border border-accent-secondary/20 bg-accent-secondary/10 px-3 py-1.5">
@@ -52,7 +52,7 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/30 to-transparent z-10"></div>
                             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Flagship Research" class="h-full w-full object-cover scale-[1.04] group-hover:scale-100 transition-transform duration-700 ease-out" />
                             <div class="absolute bottom-3 left-4 z-20">
-                                <span class="inline-flex items-center text-[10px] font-bold text-content-primary bg-surface border border-border-strong px-2 py-1 rounded-md uppercase tracking-widest shadow-sm">GPUs</span>
+                                <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest border border-accent-secondary/20 bg-accent-secondary/10 text-accent-secondary transition-colors">GPUs</span>
                             </div>
                         </div>
                         <div class="p-5 space-y-3">

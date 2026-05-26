@@ -1,5 +1,5 @@
 <section class="py-10 sm:py-12 bg-root border-y border-border-subtle">
-    <div class="container mx-auto px-5 max-w-[1100px]">
+    <div class="container max-w-[1100px]">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10 sa-reveal">
             <div>
                 <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-2">

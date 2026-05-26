@@ -1,5 +1,5 @@
 <section id="newsletter" class="py-12 sm:py-16 bg-root border-t border-border-subtle">
-    <div class="container mx-auto px-5 max-w-[1280px]">
+    <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center max-w-[1100px] mx-auto">
             <div class="space-y-6 sa-reveal">
                 <div>

@@ -1,5 +1,5 @@
 <section class="border-b border-border-subtle bg-root">
-    <div class="container mx-auto px-5 max-w-[1280px]">
+    <div class="container">
         <div class="grid grid-cols-2 md:grid-cols-4">
             <div class="py-5 sm:py-6 md:py-8 px-4 md:px-8 sa-reveal sa-stagger-1 border-r border-border-subtle md:border-r md:border-border-subtle">
                 <div class="text-xl sm:text-2xl md:text-3xl font-extrabold text-accent-secondary tracking-tight">300+</div>

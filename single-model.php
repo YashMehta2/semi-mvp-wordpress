@@ -15,7 +15,7 @@ get_header();
 ?>
 <main class="min-h-screen bg-root pb-20">
     <section class="relative border-b border-border-subtle pt-12 pb-14 sm:pt-16 sm:pb-20">
-        <div class="container mx-auto px-5 max-w-[1280px] relative z-10">
+        <div class="container relative z-10">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
                 <nav class="flex items-center gap-2 text-[11px] sm:text-[12px] text-content-tertiary font-bold tracking-widest uppercase">
                     <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
@@ -37,9 +37,10 @@ get_header();
             <div class="flex items-center gap-3 mb-4 flex-wrap">
                 <span class="text-xs font-bold uppercase tracking-widest text-accent-secondary"><?php echo esc_html($model['category']); ?></span>
                 <?php if ($model['memberOnly']): ?>
-                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#e59a35]/10 border border-[#e59a35]/30 text-[10px] font-bold uppercase tracking-widest text-[#e59a35] shadow-sm">
-                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Pro
-                </span>
+                <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-0.5 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
+    <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" /><path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
+    Member
+</span>
                 <?php else: ?>
                 <span class="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-accent-tertiary/10 border border-accent-tertiary/20 text-accent-tertiary">
                     Free Preview
@@ -65,7 +66,7 @@ get_header();
         </div>
     </section>
     <section class="py-12 sm:py-16">
-        <div class="container mx-auto px-5 max-w-[1280px]">
+        <div class="container">
             <?php if (!empty($model['metrics'])): ?>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border-subtle border border-border-subtle rounded-xl overflow-hidden mt-6 mb-10">
                 <?php foreach ($model['metrics'] as $metric): ?>

@@ -3,7 +3,7 @@
     </main>
     </main>
     <footer class="border-t border-border-subtle bg-root pt-12 sm:pt-14 pb-8">
-      <div class="container mx-auto px-5 max-w-[1280px]">
+      <div class="container">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
           <div class="col-span-2 sm:col-span-2 md:col-span-1 space-y-4">
             <img

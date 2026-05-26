@@ -1,5 +1,5 @@
 <section class="py-10 sm:py-12 border-y border-border-subtle bg-root">
-    <div class="container mx-auto px-5 max-w-[1100px]">
+    <div class="container max-w-[1100px]">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 xl:gap-16">
             <div class="lg:col-span-4 sa-reveal lg:sticky lg:top-24 lg:self-start">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-2">

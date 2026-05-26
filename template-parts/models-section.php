@@ -1,5 +1,5 @@
 <section class="py-12 sm:py-16 border-b border-border-subtle bg-surface">
-    <div class="container mx-auto px-5 max-w-[1280px]">
+    <div class="container">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16 sa-reveal">
             <div class="space-y-4 max-w-2xl">
                 <p class="text-[12px] font-bold uppercase tracking-[0.15em] text-accent-secondary flex items-center gap-2">

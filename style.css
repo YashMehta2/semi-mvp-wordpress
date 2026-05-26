@@ -5,6 +5,14 @@ Version: 1.0
 Description: Institutional AI research and models platform MVP
 */
 
+/* -- Layout & Utilities -- */
+.container {
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+  max-width: 1280px;
+  width: 100%;
+}
+
 /* -- Scroll-reveal animation system -- */
 @keyframes sa-fade-up {
   from { opacity: 0; transform: translateY(12px); }
