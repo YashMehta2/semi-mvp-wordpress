@@ -18,7 +18,7 @@ get_header();
         <div class="container relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
                 
-                {/* Left Column: Text & Metadata */}
+                <!-- Left Column: Text & Metadata -->
                 <div class="lg:col-span-7">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
                         <nav class="flex items-center gap-2 text-[11px] sm:text-[12px] text-content-tertiary font-bold tracking-widest uppercase">
@@ -69,7 +69,7 @@ get_header();
                     </div>
                 </div>
 
-                {/* Right Column: Premium Visual Asset */}
+                <!-- Right Column: Premium Visual Asset -->
                 <div class="lg:col-span-5 hidden lg:block relative">
                     <div class="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden border border-border-strong bg-surface sa-card sa-reveal shadow-2xl">
                         <div class="absolute inset-0 bg-surface/40 z-10"></div>
