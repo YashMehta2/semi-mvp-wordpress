@@ -266,11 +266,11 @@ get_header();
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div class="space-y-1.5">
                                     <label for="firstName" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">First Name</label>
-                                    <input type="text" id="firstName" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                    <input type="text" id="firstName" placeholder="Jane" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
                                 </div>
                                 <div class="space-y-1.5">
                                     <label for="lastName" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Last Name</label>
-                                    <input type="text" id="lastName" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                    <input type="text" id="lastName" placeholder="Doe" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
                                 </div>
                             </div>
                             <div class="space-y-1.5">
@@ -288,15 +288,15 @@ get_header();
                             </div>
                             <div class="space-y-1.5">
                                 <label for="email" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Work Email</label>
-                                <input type="email" id="email" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                <input type="email" id="email" placeholder="jane@company.com" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
                             </div>
                             <div class="space-y-1.5">
                                 <label for="company" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Company</label>
-                                <input type="text" id="company" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                <input type="text" id="company" placeholder="Acme Corp" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
                             </div>
                             <div class="space-y-1.5">
                                 <label for="message" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">How will you use this model?</label>
-                                <textarea id="message" rows="3" class="w-full p-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors resize-none"></textarea>
+                                <textarea id="message" rows="3" placeholder="Briefly describe your use case or data requirements..." class="w-full p-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors resize-none"></textarea>
                             </div>
                             <button type="submit" class="w-full h-12 mt-3 rounded-lg bg-accent-secondary text-root text-sm font-bold hover:bg-accent-secondary/90 transition-colors duration-200 active:scale-95">
                                 Submit Inquiry
