@@ -46,10 +46,10 @@ get_header();
                 </div>
 
                 <div class="lg:col-span-5 hidden lg:block relative">
-                    <div class="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden border border-border-strong bg-surface sa-card sa-reveal shadow-2xl">
-                        <div class="absolute inset-0 bg-surface/40 z-10"></div>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/data_dashboard.png" alt="Analytics Dashboard" class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-125" />
-                        <div class="absolute inset-0 bg-gradient-to-tr from-root/80 via-root/20 to-transparent z-10"></div>
+                    <div class="relative aspect-video rounded-2xl overflow-hidden sa-reveal">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/data_dashboard.png" alt="Analytics Dashboard" class="absolute inset-0 w-full h-full object-cover opacity-90 brightness-110" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-root via-root/60 to-transparent z-10"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-root/40 to-transparent z-10"></div>
                     </div>
                 </div>
             </div>
