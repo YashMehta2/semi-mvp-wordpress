@@ -2,36 +2,28 @@
 /**
  * Template Name: Models Page
  */
-
 require_once get_stylesheet_directory() . '/data.php';
 $all_models = get_semi_models();
-
 $free_models = array_filter($all_models, function($m) { return !$m['memberOnly']; });
 $pro_models = array_filter($all_models, function($m) { return $m['memberOnly']; });
-
 get_header();
 ?>
-
 <main class="min-h-screen bg-root">
-    <!-- ── Page Hero ── -->
     <section class="relative border-b border-border-subtle bg-root pt-12 pb-14 sm:pt-16 sm:pb-18 md:pt-20 md:pb-20">
         <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 26px 26px;"></div>
         <div class="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-accent-secondary/5 blur-[100px]"></div>
-
         <div class="container mx-auto px-5 max-w-[1280px] relative z-10">
             <nav class="flex items-center gap-2 text-xs text-content-tertiary mb-6 sm:mb-8 font-bold tracking-widest uppercase" aria-label="Breadcrumb">
                 <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
                 <span>/</span>
                 <span class="text-content-secondary">Industry Models &amp; Research</span>
             </nav>
-
             <div class="max-w-3xl">
                 <p class="text-xs font-bold uppercase tracking-[0.15em] text-accent-secondary mb-3">Research Frameworks</p>
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6">Industry Models &amp; Research</h1>
                 <p class="text-[16px] sm:text-[17px] md:text-[18px] text-content-secondary leading-relaxed font-medium max-w-2xl mb-10">
                     Proprietary bottom-up analytical models built by the SemiAnalysis team. Each model tracks the metrics that drive AI infrastructure, semiconductor supply chains, and compute economics — updated monthly.
                 </p>
-
                 <div class="flex flex-wrap gap-8 sm:gap-12">
                     <div>
                         <div class="text-2xl sm:text-3xl font-extrabold text-accent-secondary tracking-tighter">10+</div>
@@ -49,11 +41,8 @@ get_header();
             </div>
         </div>
     </section>
-
-    <!-- ── Model cards grid ── -->
     <section class="py-12 sm:py-16 md:py-20">
         <div class="container mx-auto px-5 max-w-[1280px]">
-
             <div class="flex flex-wrap items-center gap-2 mb-10 sm:mb-12">
                 <span class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mr-2">Filter:</span>
                 <button class="text-xs font-bold px-4 py-1.5 rounded-full border border-border-subtle text-content-secondary hover:border-accent-secondary/30 hover:text-accent-secondary transition-all duration-200 bg-accent-secondary/10 border-accent-secondary/30 text-accent-secondary">All</button>
@@ -64,8 +53,6 @@ get_header();
                 <button class="text-xs font-bold px-4 py-1.5 rounded-full border border-border-subtle text-content-secondary hover:border-accent-secondary/30 hover:text-accent-secondary transition-all duration-200">Data Centers</button>
                 <button class="text-xs font-bold px-4 py-1.5 rounded-full border border-border-subtle text-content-secondary hover:border-accent-secondary/30 hover:text-accent-secondary transition-all duration-200">Markets</button>
             </div>
-
-            <!-- Free preview model -->
             <?php if(count($free_models) > 0): ?>
             <div class="mb-12">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mb-5">Free preview</p>
@@ -73,7 +60,6 @@ get_header();
                     <?php foreach($free_models as $slug => $model): ?>
                     <a href="/models/<?php echo esc_attr($slug); ?>" class="group block">
                         <div class="flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-xl border border-border-strong bg-surface hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl">
-                            <!-- Left: Icon & Core Info -->
                             <div class="md:w-5/12 flex flex-col justify-between">
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
@@ -90,7 +76,6 @@ get_header();
                                     </p>
                                 </div>
                             </div>
-                            <!-- Right: Metadata Grid -->
                             <div class="md:w-7/12 flex flex-col justify-between border-t md:border-t-0 md:border-l border-border-strong pt-5 md:pt-0 md:pl-8">
                                 <div class="grid grid-cols-2 gap-6 mb-6">
                                     <div>
@@ -126,8 +111,6 @@ get_header();
                 </div>
             </div>
             <?php endif; ?>
-
-            <!-- Member models -->
             <?php if(count($pro_models) > 0): ?>
             <div>
                 <p class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mb-5">Member access</p>
@@ -135,7 +118,6 @@ get_header();
                     <?php foreach($pro_models as $slug => $model): ?>
                     <a href="/models/<?php echo esc_attr($slug); ?>" class="group block">
                         <div class="flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-xl border border-border-strong bg-surface hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl">
-                            <!-- Left: Icon & Core Info -->
                             <div class="md:w-5/12 flex flex-col justify-between">
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
@@ -152,7 +134,6 @@ get_header();
                                     </p>
                                 </div>
                             </div>
-                            <!-- Right: Metadata Grid -->
                             <div class="md:w-7/12 flex flex-col justify-between border-t md:border-t-0 md:border-l border-border-strong pt-5 md:pt-0 md:pl-8">
                                 <div class="grid grid-cols-2 gap-6 mb-6">
                                     <div>
@@ -192,8 +173,6 @@ get_header();
                 </div>
             </div>
             <?php endif; ?>
-
-            <!-- Institutional CTA -->
             <div class="mt-16 sm:mt-20 rounded-2xl border border-border-strong bg-surface p-8 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-accent-secondary/5 rounded-full blur-3xl"></div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
@@ -208,9 +187,7 @@ get_header();
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 </main>
-
 <?php get_footer(); ?>

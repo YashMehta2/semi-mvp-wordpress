@@ -1,7 +1,5 @@
 <section class="py-12 sm:py-16 border-b border-border-subtle bg-surface">
     <div class="container mx-auto px-5 max-w-[1280px]">
-
-        <!-- Header -->
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16 sa-reveal">
             <div class="space-y-4 max-w-2xl">
                 <p class="text-[12px] font-bold uppercase tracking-[0.15em] text-accent-secondary flex items-center gap-2">
@@ -19,14 +17,9 @@
                 Explore all models <span class="text-lg leading-none">&rarr;</span>
             </a>
         </div>
-
-        <!-- Model cards grid -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            
-            <!-- Featured Model (Col Span 3) -->
             <a href="#" class="group block sa-reveal sa-stagger-1 text-left lg:col-span-3">
                 <div class="flex flex-col md:flex-row bg-root rounded-xl overflow-hidden border border-border-strong hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl h-full">
-                    <!-- Visual / Metadata Area -->
                     <div class="md:w-5/12 p-8 border-b md:border-b-0 md:border-r border-border-strong bg-surface-hover/30">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex-shrink-0 h-10 w-10 rounded-xl border border-accent-secondary/20 bg-accent-secondary/10 flex items-center justify-center text-accent-secondary">
@@ -54,7 +47,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Content Area -->
                     <div class="flex flex-col md:w-7/12 p-8 sm:p-10 flex-1">
                         <div class="mb-2">
                             <span class="text-[10px] font-bold text-content-primary bg-surface border border-border-strong px-2 py-1 rounded-md uppercase tracking-widest shadow-sm mb-3 inline-block">AI Infrastructure</span>
@@ -77,9 +69,6 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Standard Models -->
-            <!-- Model 2 -->
             <a href="#" class="group block sa-reveal sa-stagger-2 text-left lg:col-span-1">
                 <div class="flex flex-col bg-root rounded-xl overflow-hidden border border-border-strong hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl h-full">
                     <div class="p-6 border-b border-border-strong bg-surface-hover/30">
@@ -115,8 +104,6 @@
                     </div>
                 </div>
             </a>
-            
-            <!-- Model 3 -->
             <a href="#" class="group block sa-reveal sa-stagger-3 text-left lg:col-span-1">
                 <div class="flex flex-col bg-root rounded-xl overflow-hidden border border-border-strong hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl h-full">
                     <div class="p-6 border-b border-border-strong bg-surface-hover/30">
@@ -152,8 +139,6 @@
                     </div>
                 </div>
             </a>
-            
-            <!-- Model 4 -->
             <a href="#" class="group block sa-reveal sa-stagger-4 text-left lg:col-span-1">
                 <div class="flex flex-col bg-root rounded-xl overflow-hidden border border-border-strong hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl h-full">
                     <div class="p-6 border-b border-border-strong bg-surface-hover/30">
@@ -189,8 +174,6 @@
                     </div>
                 </div>
             </a>
-
         </div>
-
     </div>
 </section>

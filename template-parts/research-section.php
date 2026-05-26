@@ -1,6 +1,5 @@
 <section id="featured" class="py-10 sm:py-12 bg-root">
     <div class="container mx-auto px-5 max-w-[1100px]">
-        <!-- Section header -->
         <div class="flex items-center justify-between mb-8 sm:mb-10 sa-reveal">
             <div>
                 <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-1.5">
@@ -14,9 +13,7 @@
                 View all <span class="text-accent-secondary ml-1">&rarr;</span>
             </a>
         </div>
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            <!-- Article 1 -->
             <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group block sa-reveal sa-stagger-1 text-left">
                 <article class="flex flex-col h-full sa-card overflow-hidden sa-card-hover">
                     <div class="relative h-40 sm:h-44 md:h-48 overflow-hidden">
@@ -43,8 +40,6 @@
                     </div>
                 </article>
             </a>
-
-            <!-- Article 2 -->
             <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group block sa-reveal sa-stagger-2 text-left">
                 <article class="flex flex-col h-full sa-card overflow-hidden sa-card-hover">
                     <div class="relative h-40 sm:h-44 md:h-48 overflow-hidden">
@@ -71,8 +66,6 @@
                     </div>
                 </article>
             </a>
-
-            <!-- Article 3 -->
             <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group block sa-reveal sa-stagger-3 text-left">
                 <article class="flex flex-col h-full sa-card overflow-hidden sa-card-hover">
                     <div class="relative h-40 sm:h-44 md:h-48 overflow-hidden">

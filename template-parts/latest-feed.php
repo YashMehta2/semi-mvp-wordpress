@@ -1,8 +1,6 @@
 <section class="py-10 sm:py-12 border-y border-border-subtle bg-root">
     <div class="container mx-auto px-5 max-w-[1100px]">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 xl:gap-16">
-
-            <!-- Left: sticky label -->
             <div class="lg:col-span-4 sa-reveal lg:sticky lg:top-24 lg:self-start">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-2">
                     Latest Research
@@ -17,12 +15,8 @@
                     Subscribe for updates
                 </a>
             </div>
-
-            <!-- Right: dense article list -->
             <div class="lg:col-span-8">
                 <div class="divide-y divide-border-subtle border-t border-border-subtle pt-2">
-                    
-                    <!-- Article 1 (index 1 of ARTICLES) -->
                     <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-3.5 sm:py-4 sa-reveal sa-stagger-1 text-left hover:bg-surface-hover/50 px-3 -mx-3 rounded-lg transition-colors">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-0">
                             <span class="text-[11px] font-mono text-content-tertiary w-6 flex-shrink-0 select-none hidden sm:block">01</span>
@@ -41,8 +35,6 @@
                             <svg class="w-4 h-4 text-content-tertiary group-hover:text-accent-secondary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-
-                    <!-- Article 2 (index 2) -->
                     <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-3.5 sm:py-4 sa-reveal sa-stagger-2 text-left hover:bg-surface-hover/50 px-3 -mx-3 rounded-lg transition-colors">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-0">
                             <span class="text-[11px] font-mono text-content-tertiary w-6 flex-shrink-0 select-none hidden sm:block">02</span>
@@ -61,8 +53,6 @@
                             <svg class="w-4 h-4 text-content-tertiary group-hover:text-accent-secondary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-
-                    <!-- Article 3 (index 3) -->
                     <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-3.5 sm:py-4 sa-reveal sa-stagger-3 text-left hover:bg-surface-hover/50 px-3 -mx-3 rounded-lg transition-colors">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-0">
                             <span class="text-[11px] font-mono text-content-tertiary w-6 flex-shrink-0 select-none hidden sm:block">03</span>
@@ -81,8 +71,6 @@
                             <svg class="w-4 h-4 text-content-tertiary group-hover:text-accent-secondary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-
-                    <!-- Article 4 (index 4) -->
                     <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-3.5 sm:py-4 sa-reveal sa-stagger-4 text-left hover:bg-surface-hover/50 px-3 -mx-3 rounded-lg transition-colors">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-0">
                             <span class="text-[11px] font-mono text-content-tertiary w-6 flex-shrink-0 select-none hidden sm:block">04</span>
@@ -101,8 +89,6 @@
                             <svg class="w-4 h-4 text-content-tertiary group-hover:text-accent-secondary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-
-                    <!-- Article 5 (index 5) -->
                     <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-3.5 sm:py-4 sa-reveal sa-stagger-5 text-left hover:bg-surface-hover/50 px-3 -mx-3 rounded-lg transition-colors">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-0">
                             <span class="text-[11px] font-mono text-content-tertiary w-6 flex-shrink-0 select-none hidden sm:block">05</span>
@@ -121,8 +107,6 @@
                             <svg class="w-4 h-4 text-content-tertiary group-hover:text-accent-secondary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-
-                    <!-- Article 6 -->
                     <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-3.5 sm:py-4 sa-reveal sa-stagger-5 text-left hover:bg-surface-hover/50 px-3 -mx-3 rounded-lg transition-colors">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-0">
                             <span class="text-[11px] font-mono text-content-tertiary w-6 flex-shrink-0 select-none hidden sm:block">06</span>
@@ -141,8 +125,6 @@
                             <svg class="w-4 h-4 text-content-tertiary group-hover:text-accent-secondary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-
-                    <!-- Article 7 -->
                     <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-4 py-3.5 sm:py-4 sa-reveal sa-stagger-5 text-left hover:bg-surface-hover/50 px-3 -mx-3 rounded-lg transition-colors">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-0">
                             <span class="text-[11px] font-mono text-content-tertiary w-6 flex-shrink-0 select-none hidden sm:block">07</span>
@@ -161,16 +143,13 @@
                             <svg class="w-4 h-4 text-content-tertiary group-hover:text-accent-secondary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-
                 </div>
-
                 <div class="mt-4 pt-4 border-t border-border-subtle text-right">
                     <a href="/research" class="inline-flex items-center gap-1.5 text-[13px] font-bold text-content-secondary hover:text-content-primary transition-colors">
                         View full research archive <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

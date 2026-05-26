@@ -2,9 +2,7 @@
 /**
  * Template Name: Research Page
  */
-
 get_header();
-
 $articles = [
     ['title' => 'NVIDIA Blackwell Architecture: Performance and Scaling Bottlenecks', 'category' => 'GPUs', 'author' => 'Dylan Patel', 'date' => 'May 20, 2026', 'readingTime' => '18 min read', 'description' => 'An architectural deep dive into the B200 and GB200 NVL72 rack-scale systems.', 'memberOnly' => true],
     ['title' => 'The Cost of Compute: Why AI Startups Are Transitioning to Custom Silicon', 'category' => 'Semiconductors', 'author' => 'Dylan Patel', 'date' => 'May 12, 2026', 'readingTime' => '12 min read', 'description' => 'Analyzing the unit economics driving the pivot toward custom ASICs.', 'memberOnly' => false],
@@ -14,17 +12,14 @@ $articles = [
 ];
 ?>
 <main class="min-h-screen bg-root">
-    <!-- Page Hero -->
     <section class="relative border-b border-border-subtle bg-root pt-12 pb-12 sm:pt-16 md:pt-20 md:pb-16">
         <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, var(--color-content-secondary) 1px, transparent 1px); background-size: 26px 26px;"></div>
         <div class="container mx-auto px-5 max-w-[1280px] relative z-10">
-            <!-- Breadcrumb -->
             <nav class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-content-tertiary mb-6" aria-label="Breadcrumb">
                 <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
                 <span>/</span>
                 <span class="text-content-secondary">Research Archives</span>
             </nav>
-
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
                 <div class="max-w-2xl">
                     <p class="text-xs font-bold uppercase tracking-[0.15em] text-accent-secondary mb-3">Research Archive</p>
@@ -35,10 +30,8 @@ $articles = [
             </div>
         </div>
     </section>
-
     <div class="container mx-auto px-5 max-w-[1280px] py-10 sm:py-14 md:py-16">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
-            <!-- Sidebar -->
             <aside class="lg:col-span-1 lg:sticky lg:top-20 lg:self-start space-y-8">
                 <div>
                     <p class="text-[11px] font-bold uppercase tracking-[0.12em] text-content-tertiary mb-3">Topics</p>
@@ -52,7 +45,6 @@ $articles = [
                         <li><button class="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-surface transition-all duration-150">Markets</button></li>
                     </ul>
                 </div>
-
                 <div>
                     <p class="text-[11px] font-bold uppercase tracking-[0.12em] text-content-tertiary mb-3">Access</p>
                     <ul class="space-y-1">
@@ -61,7 +53,6 @@ $articles = [
                         <li><button class="w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 text-content-secondary hover:text-content-primary hover:bg-surface">Member Only</button></li>
                     </ul>
                 </div>
-
                 <div class="rounded-xl border border-border-strong bg-surface p-5 space-y-3 shadow-lg">
                     <p class="text-xs font-bold text-content-primary">Full Research Access</p>
                     <p class="text-[13px] font-medium text-content-secondary leading-relaxed">Unlock every report for $50/month or $500/year.</p>
@@ -69,8 +60,6 @@ $articles = [
                     <p class="text-[10px] font-bold uppercase tracking-widest text-content-tertiary text-center">Cancel anytime</p>
                 </div>
             </aside>
-
-            <!-- Article list -->
             <div class="lg:col-span-3 space-y-4">
                 <div class="flex items-center justify-between mb-4">
                     <p class="text-[13px] font-bold text-content-tertiary uppercase tracking-widest">Showing <span class="text-content-primary">5</span> reports</p>
@@ -80,7 +69,6 @@ $articles = [
                         <option>Oldest First</option>
                     </select>
                 </div>
-
                 <?php foreach($articles as $i => $article): 
                     $imgId = ['1518770660439-4636190af475','1550751827-4bd374c3f58b','1620712943543-bcc4688e7485','1639762681485-074b7f938ba0','1666112651311-c6f9b1f14e60'][$i % 5];
                 ?>
@@ -117,14 +105,12 @@ $articles = [
                     </article>
                 </a>
                 <?php endforeach; ?>
-
                 <div class="pt-8 text-center">
                     <button class="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-border-strong bg-surface text-[13px] font-bold text-content-secondary hover:border-accent-secondary/50 hover:text-content-primary transition-all duration-200 shadow-sm">
                         Load more reports
                     </button>
                 </div>
             </div>
-
         </div>
     </div>
 </main>

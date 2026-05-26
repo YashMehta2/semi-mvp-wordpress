@@ -2,28 +2,20 @@
 /**
  * Template Name: Single Model
  */
-
 require_once get_stylesheet_directory() . '/data.php';
-
 $slug = get_query_var('model_slug');
 $all_models = get_semi_models();
 $all_articles = get_semi_articles();
-
-// Provide fallback data in case of unmatched slug
 if (isset($all_models[$slug])) {
     $model = $all_models[$slug];
 } else {
-    // default/fallback to first
     $model = $all_models['ai-compute-supply-model'];
 }
-
 get_header();
 ?>
 <main class="min-h-screen bg-root pb-20">
-    <!-- Page Hero -->
     <section class="relative border-b border-border-subtle pt-12 pb-14 sm:pt-16 sm:pb-20">
         <div class="container mx-auto px-5 max-w-[1280px] relative z-10">
-            <!-- Breadcrumb -->
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
                 <nav class="flex items-center gap-2 text-[11px] sm:text-[12px] text-content-tertiary font-bold tracking-widest uppercase">
                     <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
@@ -32,7 +24,6 @@ get_header();
                     <span>/</span>
                     <span class="text-content-secondary truncate"><?php echo esc_html($model['title']); ?></span>
                 </nav>
-
                 <?php if (!empty($model['enterpriseSignals'])): ?>
                 <div class="flex items-center gap-2 flex-wrap">
                     <?php foreach ($model['enterpriseSignals'] as $signal): ?>
@@ -43,7 +34,6 @@ get_header();
                 </div>
                 <?php endif; ?>
             </div>
-
             <div class="flex items-center gap-3 mb-4 flex-wrap">
                 <span class="text-xs font-bold uppercase tracking-widest text-accent-secondary"><?php echo esc_html($model['category']); ?></span>
                 <?php if ($model['memberOnly']): ?>
@@ -56,15 +46,12 @@ get_header();
                 </span>
                 <?php endif; ?>
             </div>
-
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tighter text-content-primary leading-[1.1] mb-6">
                 <?php echo esc_html($model['title']); ?>
             </h1>
-
             <p class="text-[16px] sm:text-[18px] text-content-secondary leading-relaxed font-medium mb-10 max-w-3xl text-balance">
                 <?php echo esc_html($model['description']); ?>
             </p>
-
             <div class="flex items-center gap-10 sm:gap-14 pt-6 border-t border-border-subtle">
                 <div>
                     <p class="text-[10px] uppercase tracking-[0.15em] text-content-tertiary mb-1.5 font-bold">Last Updated</p>
@@ -77,12 +64,8 @@ get_header();
             </div>
         </div>
     </section>
-
-    <!-- Content & Form Layout -->
     <section class="py-12 sm:py-16">
         <div class="container mx-auto px-5 max-w-[1280px]">
-            
-            <!-- Snapshot Metrics Full Width -->
             <?php if (!empty($model['metrics'])): ?>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border-subtle border border-border-subtle rounded-xl overflow-hidden mt-6 mb-10">
                 <?php foreach ($model['metrics'] as $metric): ?>
@@ -104,12 +87,8 @@ get_header();
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>
-
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mt-8">
-                
-                <!-- Left Column: Editorial Content -->
                 <div class="lg:col-span-7">
-                    
                     <div class="prose prose-invert prose-p:text-content-secondary prose-p:leading-relaxed prose-p:text-[15px] sm:prose-p:text-[16px] max-w-none">
                         <?php if (!empty($model['content'])): ?>
                             <?php foreach ($model['content'] as $para): ?>
@@ -117,8 +96,6 @@ get_header();
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
-
-                    <!-- Research Visual -->
                     <?php if (isset($model['visualType'])): ?>
                         <?php if ($model['visualType'] === 'architecture'): ?>
                             <div class="my-10 p-6 rounded-xl border border-border-subtle bg-surface/50 sa-card select-none">
@@ -188,8 +165,6 @@ get_header();
                             </div>
                         <?php endif; ?>
                     <?php endif; ?>
-
-                    <!-- Key Takeaways -->
                     <?php if (!empty($model['takeaways'])): ?>
                     <div class="my-10">
                         <h3 class="text-[13px] font-bold uppercase tracking-widest text-content-primary mb-6">Executive Summary</h3>
@@ -206,8 +181,6 @@ get_header();
                         </div>
                     </div>
                     <?php endif; ?>
-
-                    <!-- Features -->
                     <?php if (!empty($model['features'])): ?>
                     <div class="my-10">
                         <h3 class="text-[13px] font-bold uppercase tracking-widest text-content-primary mb-6">Core Datasets</h3>
@@ -221,8 +194,6 @@ get_header();
                         </ul>
                     </div>
                     <?php endif; ?>
-
-                    <!-- Methodology Accordion -->
                     <?php if (!empty($model['methodology'])): ?>
                     <div class="mt-12 pt-8 border-t border-border-subtle">
                         <h3 class="text-[13px] font-bold uppercase tracking-widest text-content-primary mb-6">Methodology & Inputs</h3>
@@ -241,10 +212,7 @@ get_header();
                         </div>
                     </div>
                     <?php endif; ?>
-
                 </div>
-
-                <!-- Right Column: Submission Form -->
                 <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
                     <div class="p-6 sm:p-8 shadow-2xl rounded-xl border border-border-strong bg-surface">
                         <div class="mb-6 border-b border-border-subtle pb-6">
@@ -264,7 +232,6 @@ get_header();
                                     <input type="text" id="lastName" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
                                 </div>
                             </div>
-                            
                             <div class="space-y-1.5">
                                 <label class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Model</label>
                                 <div class="relative">
@@ -278,32 +245,26 @@ get_header();
                                     </select>
                                 </div>
                             </div>
-
                             <div class="space-y-1.5">
                                 <label for="email" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Work Email</label>
                                 <input type="email" id="email" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
                             </div>
-
                             <div class="space-y-1.5">
                                 <label for="company" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Company</label>
                                 <input type="text" id="company" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
                             </div>
-
                             <div class="space-y-1.5">
                                 <label for="message" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">How will you use this model?</label>
                                 <textarea id="message" rows="3" class="w-full p-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors resize-none"></textarea>
                             </div>
-
                             <button type="submit" class="w-full h-12 mt-3 rounded-lg bg-accent-secondary text-root text-sm font-bold hover:bg-accent-secondary/90 transition-colors duration-200 active:scale-95">
                                 Submit Inquiry
                             </button>
-                            
                             <div class="text-[10px] text-center font-bold text-content-tertiary mt-3">
                                 By submitting, you agree to our <button type="button" onclick="alert('Coming soon!')" class="underline hover:text-content-secondary">Privacy Policy</button>.
                             </div>
                         </form>
                     </div>
-
                     <div class="p-6 rounded-xl border border-border-subtle bg-surface/50">
                         <h4 class="text-[11px] font-bold uppercase tracking-[0.15em] text-content-primary mb-5">Enterprise Applications</h4>
                         <ul class="space-y-4">
@@ -328,15 +289,11 @@ get_header();
                         </ul>
                     </div>
                 </div>
-
             </div>
-
-            <!-- Related Ecosystem -->
             <?php if (!empty($model['related'])): ?>
             <div class="mt-16 pt-12 border-t border-border-subtle">
                 <h3 class="text-[14px] font-bold tracking-[0.15em] uppercase text-content-tertiary mb-6">Used Alongside</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Related Models -->
                     <?php if (!empty($model['related']['models'])): ?>
                     <div class="space-y-4">
                         <h4 class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary">Other Models</h4>
@@ -361,8 +318,6 @@ get_header();
                         <?php endforeach; ?>
                     </div>
                     <?php endif; ?>
-
-                    <!-- Related Articles -->
                     <?php if (!empty($model['related']['articles'])): ?>
                     <div class="space-y-4">
                         <h4 class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary">Research Reports</h4>
@@ -388,7 +343,6 @@ get_header();
                     </div>
                     <?php endif; ?>
                 </div>
-
                 <div class="mt-8 flex justify-center">
                     <a href="/research" class="inline-flex items-center gap-2 px-6 h-12 rounded-lg bg-surface border border-border-strong text-sm font-bold text-content-secondary hover:text-content-primary hover:border-accent-secondary/50 transition-colors">
                         Browse All Research <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -396,7 +350,6 @@ get_header();
                 </div>
             </div>
             <?php endif; ?>
-
         </div>
     </section>
 </main>

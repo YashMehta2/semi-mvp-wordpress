@@ -1,7 +1,5 @@
 <section class="py-10 sm:py-12 bg-root border-y border-border-subtle">
     <div class="container mx-auto px-5 max-w-[1100px]">
-        
-        <!-- Header -->
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10 sa-reveal">
             <div>
                 <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-2">
@@ -15,11 +13,7 @@
                 Full archive <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </div>
-
-        <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
-            
-            <!-- Category 1 -->
             <a href="/research" class="group block sa-reveal sa-stagger-1 text-left">
                 <div class="flex flex-col gap-4 p-5 rounded-xl border border-border-subtle bg-surface sa-card-hover h-full shadow-sm">
                     <div class="flex items-start justify-between gap-2">
@@ -37,8 +31,6 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Category 2 -->
             <a href="/research" class="group block sa-reveal sa-stagger-2 text-left">
                 <div class="flex flex-col gap-4 p-5 rounded-xl border border-border-subtle bg-surface sa-card-hover h-full shadow-sm">
                     <div class="flex items-start justify-between gap-2">
@@ -56,8 +48,6 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Category 3 -->
             <a href="/research" class="group block sa-reveal sa-stagger-3 text-left">
                 <div class="flex flex-col gap-4 p-5 rounded-xl border border-border-subtle bg-surface sa-card-hover h-full shadow-sm">
                     <div class="flex items-start justify-between gap-2">
@@ -75,8 +65,6 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Category 4 -->
             <a href="/research" class="group block sa-reveal sa-stagger-4 text-left">
                 <div class="flex flex-col gap-4 p-5 rounded-xl border border-border-subtle bg-surface sa-card-hover h-full shadow-sm">
                     <div class="flex items-start justify-between gap-2">
@@ -94,8 +82,6 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Category 5 -->
             <a href="/research" class="group block sa-reveal sa-stagger-5 text-left">
                 <div class="flex flex-col gap-4 p-5 rounded-xl border border-border-subtle bg-surface sa-card-hover h-full shadow-sm">
                     <div class="flex items-start justify-between gap-2">
@@ -113,8 +99,6 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Category 6 -->
             <a href="/research" class="group block sa-reveal sa-stagger-6 text-left">
                 <div class="flex flex-col gap-4 p-5 rounded-xl border border-border-subtle bg-surface sa-card-hover h-full shadow-sm">
                     <div class="flex items-start justify-between gap-2">
@@ -132,7 +116,6 @@
                     </div>
                 </div>
             </a>
-
         </div>
     </div>
 </section>

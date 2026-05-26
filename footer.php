@@ -1,20 +1,10 @@
 <?php
-/**
- * The footer for our theme
- */
 ?>
-    </main><!-- #primary -->
-
-    </main><!-- #primary -->
-
-    <!-- Footer -->
+    </main>
+    </main>
     <footer class="border-t border-border-subtle bg-root pt-12 sm:pt-14 pb-8">
       <div class="container mx-auto px-5 max-w-[1280px]">
-
-        <!-- Top grid: brand + links -->
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
-
-          <!-- Brand column — full width on mobile -->
           <div class="col-span-2 sm:col-span-2 md:col-span-1 space-y-4">
             <img
               src="<?php echo get_template_directory_uri(); ?>/assets/logo.png"
@@ -32,8 +22,6 @@
               <span class="hover:text-accent-secondary transition-colors cursor-pointer">Substack</span>
             </div>
           </div>
-
-          <!-- Link columns -->
           <div class="space-y-3 sm:space-y-4">
             <h4 class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-content-primary">
               Research
@@ -46,7 +34,6 @@
               <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Data Centers</span></li>
             </ul>
           </div>
-
           <div class="space-y-3 sm:space-y-4">
             <h4 class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-content-primary">
               Company
@@ -58,7 +45,6 @@
               <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Events</span></li>
             </ul>
           </div>
-
           <div class="space-y-3 sm:space-y-4">
             <h4 class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-content-primary">
               Legal
@@ -68,10 +54,7 @@
               <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Terms of Service</span></li>
             </ul>
           </div>
-
         </div>
-
-        <!-- Bottom bar -->
         <div class="border-t border-border-subtle pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-content-tertiary">
           <p>© 2026 SemiAnalysis. All rights reserved.</p>
           <p class="text-content-tertiary opacity-70 text-center sm:text-right">
@@ -80,9 +63,7 @@
         </div>
       </div>
     </footer>
-</div><!-- #page -->
-
-<!-- Scroll Reveal Animation Script -->
+</div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries) => {
@@ -93,25 +74,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
     document.querySelectorAll(".sa-reveal, .sa-reveal-fast").forEach(el => {
         observer.observe(el);
     });
 });
 </script>
-
 <?php wp_footer(); ?>
-
 <script>
     function toggleDropdown() {
         const btn = document.getElementById('nav-dropdown-btn');
         const panel = document.getElementById('nav-dropdown-panel');
         const icon = document.getElementById('nav-dropdown-icon');
-        
         const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        
         if (isExpanded) {
-            // Close
             btn.setAttribute('aria-expanded', 'false');
             btn.classList.remove('text-accent-secondary', 'bg-accent-secondary/10');
             btn.classList.add('text-content-secondary');
@@ -119,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
             panel.classList.add('opacity-0', 'invisible');
             icon.classList.remove('rotate-180');
         } else {
-            // Open
             btn.setAttribute('aria-expanded', 'true');
             btn.classList.add('text-accent-secondary', 'bg-accent-secondary/10');
             btn.classList.remove('text-content-secondary');
@@ -128,8 +102,6 @@ document.addEventListener("DOMContentLoaded", function() {
             icon.classList.add('rotate-180');
         }
     }
-
-    // Close on outside click
     document.addEventListener('click', function(e) {
         const container = document.getElementById('nav-dropdown-container');
         const btn = document.getElementById('nav-dropdown-btn');
@@ -139,8 +111,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-
-    // Close mobile drawer on desktop resize
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
             document.getElementById('mobile-drawer').classList.add('opacity-0', 'pointer-events-none');
@@ -150,6 +120,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 </script>
-
 </body>
 </html>

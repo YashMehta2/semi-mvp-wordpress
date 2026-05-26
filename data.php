@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 function get_semi_models() {
     return [
         'ai-compute-supply-model' => [
@@ -47,7 +47,7 @@ function get_semi_models() {
         'gpu-scaling-bottleneck-model' => [
             'id' => 'gpu-scaling-bottleneck',
             'title' => 'GPU Scaling & Bottleneck Model',
-            'description' => 'Quantifies the performance ceiling of current GPU architectures â€” NVLink bandwidth, HBM3e limits, and rack-level thermal constraints on Blackwell and future systems.',
+            'description' => 'Quantifies the performance ceiling of current GPU architectures — NVLink bandwidth, HBM3e limits, and rack-level thermal constraints on Blackwell and future systems.',
             'category' => 'GPUs',
             'lastUpdated' => 'May 2026',
             'dataPoints' => '25+ variables',
@@ -90,7 +90,7 @@ function get_semi_models() {
         'semiconductor-capacity-tracker' => [
             'id' => 'semiconductor-capacity',
             'title' => 'Semiconductor Capacity Tracker',
-            'description' => 'Maps leading-edge fab utilization at TSMC, Samsung, and Intel Foundry across N3, N2, and 18A nodes â€” including yield-adjusted wafer output and CapEx timelines.',
+            'description' => 'Maps leading-edge fab utilization at TSMC, Samsung, and Intel Foundry across N3, N2, and 18A nodes — including yield-adjusted wafer output and CapEx timelines.',
             'category' => 'Semiconductors',
             'lastUpdated' => 'Apr 2026',
             'dataPoints' => '60+ variables',

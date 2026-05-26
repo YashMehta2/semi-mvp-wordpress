@@ -1,7 +1,5 @@
 <section class="py-10 sm:py-14 bg-root border-y border-border-subtle">
     <div class="container mx-auto px-5 max-w-[1280px]">
-        
-        <!-- Section header -->
         <div class="text-center max-w-xl mx-auto mb-10 sm:mb-12 md:mb-14 sa-reveal">
             <p class="text-[11px] font-bold uppercase tracking-widest text-accent-primary mb-3">
                 Research Access
@@ -13,11 +11,7 @@
                 From free weekly briefings to full institutional access — SemiAnalysis research scales with your needs.
             </p>
         </div>
-
-        <!-- Tier cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-10 sm:mb-12">
-            
-            <!-- Free Tier -->
             <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-1 border-border-subtle bg-surface/50">
                 <div class="flex items-center justify-between mb-5 sm:mb-6">
                     <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-white/5 text-content-secondary">
@@ -50,8 +44,6 @@
                     Subscribe Free
                 </a>
             </div>
-
-            <!-- Premium Tier -->
             <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-2 border-accent-primary/30 bg-surface shadow-2xl">
                 <div class="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-accent-primary/60 to-transparent rounded-full"></div>
                 <div class="flex items-center justify-between mb-5 sm:mb-6">
@@ -92,8 +84,6 @@
                     Start Premium
                 </a>
             </div>
-
-            <!-- Enterprise Tier -->
             <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-3 border-border-subtle bg-surface/50">
                 <div class="flex items-center justify-between mb-5 sm:mb-6">
                     <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-white/5 text-content-secondary">
@@ -130,10 +120,7 @@
                     Contact Us
                 </a>
             </div>
-
         </div>
-
-        <!-- Trust bar -->
         <div class="flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-3 sa-reveal">
             <div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-content-tertiary">
                 <svg class="h-3 w-3 text-accent-primary/60" viewBox="0 0 12 12" fill="none"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -152,6 +139,5 @@
                 Cancel anytime
             </div>
         </div>
-
     </div>
 </section>

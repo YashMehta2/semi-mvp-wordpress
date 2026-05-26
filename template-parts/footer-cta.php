@@ -1,8 +1,6 @@
 <section id="newsletter" class="py-12 sm:py-16 bg-root border-t border-border-subtle">
     <div class="container mx-auto px-5 max-w-[1280px]">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center max-w-[1100px] mx-auto">
-            
-            <!-- Left: value prop -->
             <div class="space-y-6 sa-reveal">
                 <div>
                     <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-3">
@@ -15,8 +13,6 @@
                         Join 180,000+ engineers, investors, and executives. Every week, the most important developments in compute — distilled and analyzed.
                     </p>
                 </div>
-
-                <!-- What's included -->
                 <ul class="space-y-4 pt-2">
                     <li class="flex items-center gap-3 text-[14px] text-content-secondary font-bold">
                         <span class="flex items-center justify-center w-8 h-8 rounded-md bg-surface border border-border-strong text-content-primary">
@@ -37,8 +33,6 @@
                         Select open-access research
                     </li>
                 </ul>
-
-                <!-- Stat callout -->
                 <div class="mt-4 inline-flex items-center gap-4 rounded-xl border border-border-subtle bg-surface px-5 py-4 sa-card-hover">
                     <div class="text-2xl font-extrabold text-accent-primary tracking-tighter">180K+</div>
                     <div class="text-[12px] text-content-secondary leading-snug font-bold">
@@ -46,11 +40,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Right: subscription form -->
             <div class="sa-reveal sa-stagger-2">
                 <div class="sa-card p-8 md:p-10 space-y-6 shadow-2xl">
-                    <!-- Card header -->
                     <div>
                         <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-1.5">
                             Free access
@@ -59,7 +50,6 @@
                             Get the weekly research brief
                         </h3>
                     </div>
-
                     <form class="space-y-4">
                         <input
                             type="email"
@@ -74,13 +64,9 @@
                             Subscribe Free
                         </button>
                     </form>
-
-                    <!-- Trust footer -->
                     <p class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary text-center leading-relaxed">
                         No spam &middot; Unsubscribe anytime
                     </p>
-
-                    <!-- Upgrade hook -->
                     <div class="pt-5 border-t border-border-subtle text-center">
                         <p class="text-[12px] font-bold text-content-secondary">
                             Need full institutional access? 
@@ -89,10 +75,8 @@
                             </a>
                         </p>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 </section>
