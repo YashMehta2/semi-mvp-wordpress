@@ -20,29 +20,35 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <a href="#" class="group block sa-reveal sa-stagger-1 text-left lg:col-span-3">
                 <div class="flex flex-col md:flex-row bg-root rounded-xl overflow-hidden border border-border-strong hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl h-full">
-                    <div class="md:w-5/12 p-8 border-b md:border-b-0 md:border-r border-border-strong bg-surface-hover/30">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-xl border border-accent-secondary/20 bg-accent-secondary/10 flex items-center justify-center text-accent-secondary">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" stroke-linecap="round"/></svg>
-                            </div>
-                            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface border border-border-strong shadow-sm">
-                                <svg class="w-3.5 h-3.5 text-accent-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                <span class="text-[10px] font-bold uppercase tracking-widest text-content-primary">Institutional</span>
-                            </div>
+                    <div class="md:w-5/12 p-8 border-b md:border-b-0 md:border-r border-border-strong bg-surface-hover/30 relative overflow-hidden">
+                        <div class="absolute inset-0 z-0 opacity-[0.15] mix-blend-luminosity grayscale pointer-events-none">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/blueprint.png" alt="" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-hover via-transparent to-transparent"></div>
                         </div>
-                        <div class="mt-auto hidden md:block space-y-4 pt-12">
-                            <div>
-                                <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Research Methodology</p>
-                                <p class="text-[13px] font-medium text-content-secondary">Supply chain triangulation, fab utilization models, and hyperscaler capex tracking.</p>
-                            </div>
-                            <div class="flex gap-6">
-                                <div>
-                                    <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Data Points</p>
-                                    <p class="text-[16px] font-bold text-accent-secondary">15,000+</p>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-xl border border-accent-secondary/20 bg-accent-secondary/10 flex items-center justify-center text-accent-secondary">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" stroke-linecap="round"/></svg>
                                 </div>
+                                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface border border-border-strong shadow-sm">
+                                    <svg class="w-3.5 h-3.5 text-accent-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-content-primary">Institutional</span>
+                                </div>
+                            </div>
+                            <div class="mt-auto hidden md:block space-y-4 pt-12">
                                 <div>
-                                    <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Update Cadence</p>
-                                    <p class="text-[16px] font-bold text-content-primary">Monthly</p>
+                                    <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Research Methodology</p>
+                                    <p class="text-[13px] font-medium text-content-secondary">Supply chain triangulation, fab utilization models, and hyperscaler capex tracking.</p>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div>
+                                        <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Data Points</p>
+                                        <p class="text-[16px] font-bold text-accent-secondary">15,000+</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Update Cadence</p>
+                                        <p class="text-[16px] font-bold text-content-primary">Monthly</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

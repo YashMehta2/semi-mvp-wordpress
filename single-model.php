@@ -196,22 +196,33 @@ get_header();
                     </div>
                     <?php endif; ?>
                     <?php if (!empty($model['methodology'])): ?>
-                    <div class="mt-12 pt-8 border-t border-border-subtle">
-                        <h3 class="text-[13px] font-bold uppercase tracking-widest text-content-primary mb-6">Methodology & Inputs</h3>
-                        <div class="divide-y divide-border-subtle border-y border-border-subtle bg-root">
-                            <?php foreach ($model['methodology'] as $i => $item): ?>
-                            <div class="py-4">
-                                <button onclick="this.nextElementSibling.classList.toggle('max-h-0'); this.nextElementSibling.classList.toggle('max-h-96'); this.nextElementSibling.classList.toggle('opacity-0'); this.nextElementSibling.classList.toggle('opacity-100'); this.nextElementSibling.classList.toggle('mt-3'); this.querySelector('svg').classList.toggle('rotate-180');" class="flex items-center justify-between w-full text-left group">
-                                    <span class="text-[14px] font-bold text-content-primary group-hover:text-accent-secondary transition-colors"><?php echo esc_html($item['category']); ?></span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-content-tertiary transition-transform duration-200 <?php echo $i === 0 ? 'rotate-180 text-content-primary' : ''; ?>"><path d="m6 9 6 6 6-6"/></svg>
-                                </button>
-                                <div class="overflow-hidden transition-all duration-300 <?php echo $i === 0 ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'; ?>">
-                                    <p class="text-[13.5px] text-content-secondary leading-relaxed font-medium pb-2 pr-8"><?php echo esc_html($item['details']); ?></p>
-                                </div>
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                      <div class="mt-12 pt-8 border-t border-border-subtle">
+                          <h3 class="text-[13px] font-bold uppercase tracking-widest text-content-primary mb-6">Methodology & Inputs</h3>
+                          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                              <div class="divide-y divide-border-subtle border-y border-border-subtle bg-root">
+                                  <?php foreach ($model['methodology'] as $i => $item): ?>
+                                  <div class="py-4">
+                                      <button onclick="this.nextElementSibling.classList.toggle('max-h-0'); this.nextElementSibling.classList.toggle('max-h-96'); this.nextElementSibling.classList.toggle('opacity-0'); this.nextElementSibling.classList.toggle('opacity-100'); this.nextElementSibling.classList.toggle('mt-3'); this.querySelector('svg').classList.toggle('rotate-180');" class="flex items-center justify-between w-full text-left group">
+                                          <span class="text-[14px] font-bold text-content-primary group-hover:text-accent-secondary transition-colors"><?php echo esc_html($item['category']); ?></span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-content-tertiary transition-transform duration-200 <?php echo $i === 0 ? 'rotate-180 text-content-primary' : ''; ?>"><path d="m6 9 6 6 6-6"/></svg>
+                                      </button>
+                                      <div class="overflow-hidden transition-all duration-300 <?php echo $i === 0 ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'; ?>">
+                                          <p class="text-[13.5px] text-content-secondary leading-relaxed font-medium pb-2 pr-8"><?php echo esc_html($item['details']); ?></p>
+                                      </div>
+                                  </div>
+                                  <?php endforeach; ?>
+                              </div>
+                              <div class="relative h-48 md:h-full min-h-[250px] rounded-xl border border-border-strong overflow-hidden bg-surface sa-card sa-reveal">
+                                  <div class="absolute inset-0 bg-surface/80 z-10 mix-blend-multiply"></div>
+                                  <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/supply-chain.png" alt="Methodology Structure" class="absolute inset-0 w-full h-full object-cover opacity-[0.35] mix-blend-luminosity grayscale" />
+                                  <div class="absolute bottom-4 left-4 z-20">
+                                      <span class="text-[10px] font-bold uppercase tracking-widest text-content-tertiary px-2 py-1 rounded bg-surface border border-border-subtle">
+                                          Data Architecture
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                     <?php endif; ?>
                 </div>
                 <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
