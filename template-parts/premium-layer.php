@@ -1,9 +1,9 @@
 <section class="relative overflow-hidden py-10 sm:py-14 bg-root border-y border-border-subtle">
     <!-- Abstract infrastructure background -->
     <div class="absolute inset-0 z-0 pointer-events-none">
-        <div class="absolute inset-0 bg-root/90 z-10"></div>
+        <div class="absolute inset-0 bg-root/40 z-10"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-root via-transparent to-root z-10"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/blueprint.png" alt="" class="w-full h-full object-cover opacity-[0.4] mix-blend-plus-lighter grayscale" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/blueprint.png" alt="" class="w-full h-full object-cover opacity-60 mix-blend-plus-lighter" />
     </div>
     <div class="container relative z-10">
         <div class="text-center max-w-xl mx-auto mb-10 sm:mb-12 md:mb-14 sa-reveal">

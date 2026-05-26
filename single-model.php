@@ -161,7 +161,7 @@ get_header();
                             <div class="my-10 relative rounded-xl border border-border-strong overflow-hidden bg-surface sa-card sa-reveal">
                                 <div class="aspect-[21/9] sm:aspect-[2.39/1] relative">
                                     <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10"></div>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/abstract_data_dashboard.png" alt="Ecosystem Map Preview" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 hover:scale-105 transition-transform duration-700 ease-out" />
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/abstract_data_dashboard.png" alt="Ecosystem Map Preview" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-screen hover:scale-105 transition-transform duration-700 ease-out" />
                                     <div class="absolute bottom-4 left-5 z-20 flex items-center gap-2">
                                         <div class="w-2 h-2 rounded-full bg-accent-secondary animate-pulse"></div>
                                         <span class="text-[10px] font-bold uppercase tracking-widest text-content-primary px-2 py-1 rounded bg-surface border border-border-strong shadow-md">
