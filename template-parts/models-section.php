@@ -21,7 +21,7 @@
             <a href="#" class="group block sa-reveal sa-stagger-1 text-left lg:col-span-3">
                 <div class="flex flex-col md:flex-row bg-root rounded-xl overflow-hidden border border-border-strong hover:border-accent-secondary/50 transition-all duration-300 hover:shadow-2xl h-full">
                     <div class="md:w-5/12 p-8 border-b md:border-b-0 md:border-r border-border-strong bg-surface-hover/30 relative overflow-hidden">
-                        <div class="absolute inset-0 z-0 opacity-[0.4] mix-blend-plus-lighter grayscale pointer-events-none">
+                        <div class="absolute inset-0 z-0 opacity-80 mix-blend-screen pointer-events-none">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/blueprint.png" alt="" class="w-full h-full object-cover" />
                             <div class="absolute inset-0 bg-gradient-to-t from-surface-hover via-transparent to-transparent"></div>
                         </div>
