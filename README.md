@@ -43,7 +43,7 @@ semi-theme/
 2. Navigate to your LocalWP site directory: `app/public/wp-content/themes/`.
 3. Clone this repository into the `themes` directory:
    ```bash
-   git clone https://github.com/YashMehta2/semi-mvp-wordpress.git semi-theme
+   git clone https://github.com/username/semi-mvp-wordpress.git semi-theme
    ```
 4. Log into the WordPress Admin dashboard (`/wp-admin`).
 5. Navigate to **Appearance -> Themes**.
