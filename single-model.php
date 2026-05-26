@@ -20,7 +20,7 @@ get_header();
                 
                 <!-- Left Column: Text & Metadata -->
                 <div class="lg:col-span-7">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
+                    <div class="mb-6 sm:mb-8">
                         <nav class="flex items-center gap-2 text-[11px] sm:text-[12px] text-content-tertiary font-bold tracking-widest uppercase">
                             <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
                             <span>/</span>
@@ -28,20 +28,13 @@ get_header();
                             <span>/</span>
                             <span class="text-content-secondary truncate"><?php echo esc_html($model['title']); ?></span>
                         </nav>
-                        <?php if (!empty($model['enterpriseSignals'])): ?>
-                        <div class="flex items-center gap-2 flex-wrap">
-                            <?php foreach ($model['enterpriseSignals'] as $signal): ?>
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-content-tertiary px-2 py-1 rounded bg-surface border border-border-subtle">
-                                <?php echo esc_html($signal); ?>
-                            </span>
-                            <?php endforeach; ?>
-                        </div>
-                        <?php endif; ?>
                     </div>
-                    <div class="flex items-center gap-3 mb-4 flex-wrap">
-                        <span class="text-xs font-bold uppercase tracking-widest text-accent-secondary"><?php echo esc_html($model['category']); ?></span>
+
+                    <div class="flex items-center gap-2 mb-5 flex-wrap">
+                        <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-accent-secondary bg-accent-secondary/10 px-2.5 py-1 rounded-md border border-accent-secondary/20"><?php echo esc_html($model['category']); ?></span>
+                        
                         <?php if ($model['memberOnly']): ?>
-                        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-0.5 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
+                        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
             <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" /><path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
             Member
         </span>
@@ -49,6 +42,14 @@ get_header();
                         <span class="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-accent-tertiary/10 border border-accent-tertiary/20 text-accent-tertiary">
                             Free Preview
                         </span>
+                        <?php endif; ?>
+
+                        <?php if (!empty($model['enterpriseSignals'])): ?>
+                            <?php foreach ($model['enterpriseSignals'] as $signal): ?>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-content-tertiary px-2.5 py-1 rounded-md bg-surface border border-border-subtle">
+                                <?php echo esc_html($signal); ?>
+                            </span>
+                            <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
                     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tighter text-content-primary leading-[1.1] mb-6">
