@@ -219,7 +219,7 @@ get_header();
                                   <?php endforeach; ?>
                               </div>
                                 <div class="relative h-48 md:h-full min-h-[250px] rounded-xl border border-border-strong overflow-hidden bg-surface sa-card sa-reveal">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/supply-chain.png" alt="Methodology Structure" class="absolute inset-0 w-full h-full object-cover opacity-80" />
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/supply-chain.png" alt="Methodology Structure" class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-150 contrast-125" />
                                     <div class="absolute bottom-4 left-4 z-20">
                                         <span class="text-[10px] font-bold uppercase tracking-widest text-content-primary px-2 py-1 rounded bg-surface border border-border-strong shadow-md">
                                             Data Architecture
