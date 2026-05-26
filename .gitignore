@@ -1,0 +1,19 @@
+node_modules/
+.next/
+vendor/
+uploads/
+cache/
+logs/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+! .env.example
+.idea/
+.vscode/
+LocalWP*
+wp-admin/
+wp-includes/
+plugins/
+*.sql
