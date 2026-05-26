@@ -70,7 +70,7 @@ $articles = [
                     </select>
                 </div>
                 <?php foreach($articles as $i => $article): 
-                    $imgId = ['1518770660439-4636190af475','1550751827-4bd374c3f58b','1620712943543-bcc4688e7485','1639762681485-074b7f938ba0','1666112651311-c6f9b1f14e60'][$i % 5];
+                    $imgId = ['1518770660439-4636190af475','1550751827-4bd374c3f58b','1620712943543-bcc4688e7485','1639762681485-074b7f938ba0','1558618666-fcd25c85cd64'][$i % 5];
                 ?>
                 <a href="https://semianalysis.com/archive" target="_blank" rel="noopener noreferrer" class="group block">
                     <article class="flex gap-4 sm:gap-6 p-4 sm:p-5 rounded-xl border border-border-subtle bg-surface hover:border-accent-secondary/30 transition-all duration-300 hover:shadow-lg">
