@@ -73,9 +73,23 @@ get_header();
                 <!-- Right Column: Premium Visual Asset -->
                 <div class="lg:col-span-5 hidden lg:block relative">
                     <div class="relative aspect-video rounded-2xl overflow-hidden sa-reveal">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/<?php echo $model['visualType'] === 'supply-chain' ? 'supply-chain.png' : 'server_rack.png'; ?>" alt="Infrastructure Visualization" class="absolute inset-0 w-full h-full object-cover opacity-90 brightness-110" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-root via-root/60 to-transparent z-10"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-root/40 to-transparent z-10"></div>
+                        <?php 
+                        $visualType = isset($model['visualType']) ? $model['visualType'] : '';
+                        if ($visualType === 'supply-chain') {
+                            $visual = 'supply-chain.png';
+                        } elseif ($visualType === 'architecture') {
+                            $visual = 'server_rack.png';
+                        } elseif ($visualType === 'semiconductor') {
+                            $visual = 'wafer.png';
+                        } elseif ($visualType === 'cloud') {
+                            $visual = 'blueprint.png';
+                        } else {
+                            $visual = 'data_dashboard.png';
+                        }
+                        ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/<?php echo $visual; ?>" alt="Infrastructure Visualization" class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-125" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-root via-root/20 to-transparent z-10"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-root/20 to-transparent z-10"></div>
                     </div>
                 </div>
 
