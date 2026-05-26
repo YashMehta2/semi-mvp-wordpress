@@ -1,7 +1,7 @@
-<section class="py-12 sm:py-16 border-b border-border-subtle bg-surface">
-    <div class="container">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16 sa-reveal">
-            <div class="space-y-4 max-w-2xl">
+<section class="py-10 sm:py-12 border-b border-border-subtle bg-surface">
+    <div class="container max-w-[1100px]">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-8 mb-8 sm:mb-10 sa-reveal">
+            <div class="lg:w-1/2 space-y-4">
                 <p class="text-[12px] font-bold uppercase tracking-[0.15em] text-accent-secondary flex items-center gap-2">
                     <span class="w-8 h-[2px] bg-accent-secondary"></span>
                     Institutional Intelligence
@@ -9,13 +9,15 @@
                 <h2 class="text-3xl sm:text-4xl md:text-[42px] font-extrabold tracking-tighter text-content-primary leading-[1.1]">
                     Proprietary Industry Models
                 </h2>
-                <p class="text-[16px] text-content-secondary leading-relaxed font-medium">
+            </div>
+            <div class="lg:w-1/2 flex flex-col items-start lg:items-end text-left lg:text-right gap-5">
+                <p class="text-[15px] sm:text-[16px] text-content-secondary leading-relaxed font-medium max-w-md">
                     The definitive source of truth for the semiconductor and AI infrastructure ecosystem. We track fab capacity, compute supply, and hyperscaler deployments using deep supply chain intelligence.
                 </p>
+                <a href="#" class="text-[13px] font-bold text-root bg-accent-secondary px-6 py-3 rounded-lg hover:bg-accent-secondary-hover transition-colors flex items-center gap-2 whitespace-nowrap">
+                    Explore all models <span class="text-lg leading-none">&rarr;</span>
+                </a>
             </div>
-            <a href="#" class="self-start text-[13px] font-bold text-root bg-accent-secondary px-6 py-3 rounded-lg hover:bg-accent-secondary-hover transition-colors flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-                Explore all models <span class="text-lg leading-none">&rarr;</span>
-            </a>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <a href="#" class="group block sa-reveal sa-stagger-1 text-left lg:col-span-3">
