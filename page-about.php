@@ -9,11 +9,11 @@ get_header();
     
     <!-- 1. Hero Section -->
     <section class="border-b border-border-subtle bg-root pt-12 pb-12 overflow-hidden">
-        <div class="container max-w-5xl sa-reveal">
+        <div class="container">
             <h1 class="text-3xl sm:text-4xl md:text-[44px] font-extrabold tracking-tighter text-content-primary leading-[1.1] mb-6 text-balance capitalize">
                 Bridging the gap between business and the world's most important industry.
             </h1>
-            <p class="text-[16px] sm:text-[18px] text-content-secondary leading-[1.6] font-medium max-w-3xl text-balance">
+            <p class="text-[16px] sm:text-[18px] text-content-secondary leading-[1.6] font-medium text-balance">
                 SemiAnalysis is an independent research and analysis company specializing in the Semiconductor and AI industries. Our in-depth coverage spans the entire supply chain, from semiconductor fabrication essentials to cutting-edge AI Models, software, and infrastructure for them.
             </p>
         </div>
@@ -21,7 +21,7 @@ get_header();
 
     <!-- 2. What We Cover -->
     <section class="py-10 border-b border-border-subtle bg-surface/30">
-        <div class="container max-w-5xl">
+        <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                 <div class="md:col-span-4 sa-reveal">
                     <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-content-primary">What We Cover</h2>
@@ -45,7 +45,7 @@ get_header();
 
     <!-- 3. The Research Team -->
     <section class="py-10 border-b border-border-subtle">
-        <div class="container max-w-5xl">
+        <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                 <div class="md:col-span-4 sa-reveal">
                     <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-content-primary">The Research Team</h2>
@@ -89,7 +89,7 @@ get_header();
 
     <!-- 4. Unique Selling Points -->
     <section class="py-10 border-b border-border-subtle bg-surface/30">
-        <div class="container max-w-5xl">
+        <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                 <div class="md:col-span-4 sa-reveal">
                     <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-content-primary">Unique Selling Points</h2>
@@ -122,7 +122,7 @@ get_header();
 
     <!-- 5. Services We Offer -->
     <section class="py-10 border-b border-border-subtle">
-        <div class="container max-w-5xl">
+        <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                 <div class="md:col-span-4 sa-reveal">
                     <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-content-primary">Services We Offer</h2>
