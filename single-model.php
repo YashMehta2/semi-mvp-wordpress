@@ -14,85 +14,88 @@ if (isset($all_models[$slug])) {
 get_header();
 ?>
 <main class="min-h-screen bg-root pb-20">
-    <section class="relative border-b border-border-subtle pt-12 pb-14 sm:pt-16 sm:pb-20 overflow-hidden">
+    <section class="relative border-b border-border-subtle pt-12 pb-14 sm:pt-16 sm:pb-20 overflow-hidden bg-root">
+        
+        <!-- Absolute Background Image fading from right -->
+        <div class="absolute inset-0 z-0 hidden lg:block">
+            <?php 
+            $visualType = isset($model['visualType']) ? $model['visualType'] : '';
+            if ($visualType === 'supply-chain') {
+                $visual = 'supply-chain.png';
+            } elseif ($visualType === 'architecture') {
+                $visual = 'server_rack.png';
+            } elseif ($visualType === 'semiconductor') {
+                $visual = 'wafer.png';
+            } elseif ($visualType === 'cloud') {
+                $visual = 'blueprint.png';
+            } else {
+                $visual = 'data_dashboard.png';
+            }
+            ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/<?php echo $visual; ?>" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70" />
+            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
+        </div>
+
         <div class="container relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-                
-                <!-- Left Column: Text & Metadata -->
-                <div class="lg:col-span-7">
-                    <div class="mb-6 sm:mb-8">
-                        <nav class="flex items-center gap-2 text-[11px] sm:text-[12px] text-content-tertiary font-bold tracking-widest uppercase">
-                            <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
-                            <span>/</span>
-                            <a href="/models" class="hover:text-accent-secondary transition-colors">Models</a>
-                            <span>/</span>
-                            <span class="text-content-secondary truncate"><?php echo esc_html($model['title']); ?></span>
-                        </nav>
-                    </div>
-
-                    <div class="flex items-center gap-2 mb-5 flex-wrap">
-                        <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-accent-secondary bg-accent-secondary/10 px-2.5 py-1 rounded-md border border-accent-secondary/20"><?php echo esc_html($model['category']); ?></span>
-                        
-                        <?php if ($model['memberOnly']): ?>
-                        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
-            <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" /><path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
-            Member
-        </span>
-                        <?php else: ?>
-                        <span class="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-accent-tertiary/10 border border-accent-tertiary/20 text-accent-tertiary">
-                            Free Preview
-                        </span>
-                        <?php endif; ?>
-
-                        <?php if (!empty($model['enterpriseSignals'])): ?>
-                            <?php foreach ($model['enterpriseSignals'] as $signal): ?>
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-content-tertiary px-2.5 py-1 rounded-md bg-surface border border-border-subtle">
-                                <?php echo esc_html($signal); ?>
-                            </span>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </div>
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tighter text-content-primary leading-[1.1] mb-6">
-                        <?php echo esc_html($model['title']); ?>
-                    </h1>
-                    <p class="text-[16px] sm:text-[18px] text-content-secondary leading-relaxed font-medium mb-10 text-balance">
-                        <?php echo esc_html($model['description']); ?>
-                    </p>
-                    <div class="flex items-center gap-10 sm:gap-14 pt-6 border-t border-border-subtle">
-                        <div>
-                            <p class="text-[10px] uppercase tracking-[0.15em] text-content-tertiary mb-1.5 font-bold">Last Updated</p>
-                            <p class="text-[14px] font-extrabold tracking-tight text-content-primary"><?php echo isset($model['lastUpdated']) ? esc_html($model['lastUpdated']) : 'May 2026'; ?></p>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase tracking-[0.15em] text-content-tertiary mb-1.5 font-bold">Coverage</p>
-                            <p class="text-[14px] font-extrabold tracking-tight text-accent-secondary"><?php echo esc_html($model['dataPoints']); ?></p>
-                        </div>
-                    </div>
+            <!-- Left Column: Text & Metadata -->
+            <div class="max-w-3xl">
+                <div class="mb-6 sm:mb-8">
+                    <nav class="flex items-center gap-2 text-[11px] sm:text-[12px] text-content-tertiary font-bold tracking-widest uppercase">
+                        <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
+                        <span>/</span>
+                        <a href="/models" class="hover:text-accent-secondary transition-colors">Models</a>
+                        <span>/</span>
+                        <span class="text-content-secondary truncate"><?php echo esc_html($model['title']); ?></span>
+                    </nav>
                 </div>
 
-                <!-- Right Column: Premium Visual Asset -->
-                <div class="lg:col-span-5 hidden lg:block relative">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden sa-reveal">
-                        <?php 
-                        $visualType = isset($model['visualType']) ? $model['visualType'] : '';
-                        if ($visualType === 'supply-chain') {
-                            $visual = 'supply-chain.png';
-                        } elseif ($visualType === 'architecture') {
-                            $visual = 'server_rack.png';
-                        } elseif ($visualType === 'semiconductor') {
-                            $visual = 'wafer.png';
-                        } elseif ($visualType === 'cloud') {
-                            $visual = 'blueprint.png';
-                        } else {
-                            $visual = 'data_dashboard.png';
+                <div class="flex items-center gap-2 mb-5 flex-wrap">
+                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-accent-secondary bg-accent-secondary/10 px-2.5 py-1 rounded-md border border-accent-secondary/20">
+                        <?php echo esc_html($model['category']); ?>
+                    </span>
+                    
+                    <?php if($model['memberOnly']): ?>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
+                        <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" />
+                            <path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                        </svg>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.15em]">Member</span>
+                    </div>
+                    <?php else: ?>
+                    <span class="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-accent-tertiary/10 border border-accent-tertiary/20 text-accent-tertiary">
+                        Free Preview
+                    </span>
+                    <?php endif; ?>
+
+                    <?php 
+                    if(isset($model['enterpriseSignals']) && is_array($model['enterpriseSignals'])) {
+                        foreach($model['enterpriseSignals'] as $signal) {
+                            echo '<span class="text-[10px] font-bold uppercase tracking-widest text-content-tertiary px-2.5 py-1 rounded-md bg-surface border border-border-subtle">' . esc_html($signal) . '</span>';
                         }
-                        ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/<?php echo $visual; ?>" alt="Infrastructure Visualization" class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-125" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-root via-root/20 to-transparent z-10"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-root/20 to-transparent z-10"></div>
-                    </div>
+                    }
+                    ?>
                 </div>
 
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tighter text-content-primary leading-[1.1] mb-6">
+                    <?php echo esc_html($model['title']); ?>
+                </h1>
+
+                <p class="text-[16px] sm:text-[18px] text-content-secondary leading-relaxed font-medium mb-10 text-balance">
+                    <?php echo esc_html($model['description']); ?>
+                </p>
+
+                <div class="flex items-center gap-10 sm:gap-14 pt-6 border-t border-border-subtle">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.15em] text-content-tertiary mb-1.5 font-bold">Last Updated</p>
+                        <p class="text-[14px] font-extrabold tracking-tight text-content-primary"><?php echo isset($model['lastUpdated']) ? esc_html($model['lastUpdated']) : 'May 2026'; ?></p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.15em] text-content-tertiary mb-1.5 font-bold">Coverage</p>
+                        <p class="text-[14px] font-extrabold tracking-tight text-accent-secondary"><?php echo esc_html($model['dataPoints']); ?></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

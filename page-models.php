@@ -9,47 +9,45 @@ $pro_models = array_filter($all_models, function($m) { return $m['memberOnly']; 
 get_header();
 ?>
 <main class="min-h-screen bg-root">
-    <section class="relative border-b border-border-subtle bg-root pt-12 pb-14 sm:pt-16 sm:pb-18 md:pt-20 md:pb-20">
-        <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 26px 26px;"></div>
-        <div class="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-accent-secondary/5 blur-[100px]"></div>
+    <section class="relative border-b border-border-subtle bg-root pt-12 pb-14 sm:pt-16 sm:pb-18 md:pt-20 md:pb-20 overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 opacity-[0.04] z-10" style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 26px 26px;"></div>
+        <div class="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-accent-secondary/5 blur-[100px] z-10"></div>
+        
+        <!-- Absolute Background Image fading from right -->
+        <div class="absolute inset-0 z-0 hidden lg:block">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/data_dashboard.png" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70" />
+            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
+        </div>
+
         <div class="container relative z-10">
             <nav class="flex items-center gap-2 text-xs text-content-tertiary mb-6 sm:mb-8 font-bold tracking-widest uppercase" aria-label="Breadcrumb">
                 <a href="/" class="hover:text-accent-secondary transition-colors">Home</a>
                 <span>/</span>
                 <span class="text-content-secondary">Industry Models &amp; Research</span>
             </nav>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-                <div class="lg:col-span-7">
-                    <p class="text-xs font-bold uppercase tracking-[0.15em] text-accent-secondary mb-3">
-                        Research Frameworks
-                    </p>
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6">
-                        Industry Models &amp; Research
-                    </h1>
-                    <p class="text-[16px] sm:text-[17px] md:text-[18px] text-content-secondary leading-relaxed font-medium mb-10 text-balance">
-                        Proprietary bottom-up analytical models built by the SemiAnalysis team. Each model tracks the metrics that drive AI infrastructure, semiconductor supply chains, and compute economics &mdash; updated monthly.
-                    </p>
-                    <div class="flex flex-wrap gap-8 sm:gap-12">
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-accent-secondary tracking-tighter">10+</div>
-                            <div class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mt-1.5">Active models</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-accent-secondary tracking-tighter">Monthly</div>
-                            <div class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mt-1.5">Update cadence</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-accent-secondary tracking-tighter">200+</div>
-                            <div class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mt-1.5">Tracked variables</div>
-                        </div>
+            <div class="max-w-3xl">
+                <p class="text-xs font-bold uppercase tracking-[0.15em] text-accent-secondary mb-3">
+                    Research Frameworks
+                </p>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6">
+                    Industry Models &amp; Research
+                </h1>
+                <p class="text-[16px] sm:text-[17px] md:text-[18px] text-content-secondary leading-relaxed font-medium mb-10 text-balance">
+                    Proprietary bottom-up analytical models built by the SemiAnalysis team. Each model tracks the metrics that drive AI infrastructure, semiconductor supply chains, and compute economics &mdash; updated monthly.
+                </p>
+                <div class="flex flex-wrap gap-8 sm:gap-12">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-accent-secondary tracking-tighter">10+</div>
+                        <div class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mt-1.5">Active models</div>
                     </div>
-                </div>
-
-                <div class="lg:col-span-5 hidden lg:block relative">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden sa-reveal">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/data_dashboard.png" alt="Analytics Dashboard" class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-125" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-root via-root/20 to-transparent z-10"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-root/20 to-transparent z-10"></div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-accent-secondary tracking-tighter">Monthly</div>
+                        <div class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mt-1.5">Update cadence</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-accent-secondary tracking-tighter">200+</div>
+                        <div class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mt-1.5">Tracked variables</div>
                     </div>
                 </div>
             </div>
