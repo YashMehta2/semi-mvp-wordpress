@@ -8,7 +8,7 @@ get_header();
 <main class="min-h-screen bg-root pb-12">
     
     <!-- 1. Hero Section - Centered, Cinematic, No side dead-space -->
-    <section class="relative border-b border-border-subtle bg-root pt-20 pb-20 overflow-hidden flex flex-col items-center justify-center text-center">
+    <section class="relative border-b border-border-subtle bg-root pt-12 pb-12 overflow-hidden flex flex-col items-center justify-center text-center">
         <!-- Dynamic Background -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#a1a1aa 1px, transparent 1px), linear-gradient(90deg, #a1a1aa 1px, transparent 1px); background-size: 32px 32px;"></div>
@@ -33,7 +33,7 @@ get_header();
     </section>
 
     <!-- 2. What We Cover - Premium Grid to eliminate 1/3-2/3 dead space -->
-    <section class="py-16 sm:py-24 border-b border-border-subtle bg-surface/30">
+    <section class="py-10 sm:py-16 border-b border-border-subtle bg-surface/30">
         <div class="container">
             <div class="text-center max-w-2xl mx-auto mb-12 sa-reveal">
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-content-primary mb-4">Coverage & Intelligence</h2>
@@ -73,9 +73,9 @@ get_header();
     </section>
 
     <!-- 3. Methodology & Team - Merged into a beautiful 2-column feature -->
-    <section class="py-16 sm:py-24 border-b border-border-subtle overflow-hidden">
+    <section class="py-10 sm:py-16 border-b border-border-subtle overflow-hidden">
         <div class="container">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 
                 <!-- Left: Philosophy -->
                 <div class="sa-reveal">
@@ -140,7 +140,7 @@ get_header();
     </section>
 
     <!-- 4. Full-Width CTA to kill bottom dead space -->
-    <section class="py-16 sm:py-20 bg-surface relative overflow-hidden">
+    <section class="py-10 sm:py-14 bg-surface relative overflow-hidden">
         <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at center, #F7B041 0%, transparent 60%);"></div>
         <div class="container relative z-10 text-center max-w-3xl sa-reveal">
             <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-content-primary mb-6">
