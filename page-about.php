@@ -20,10 +20,10 @@ get_header();
             <img 
                 src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/placeholders/blueprint.png" 
                 alt="" 
-                class="absolute inset-y-0 right-0 w-[55%] h-full object-cover opacity-60 grayscale"
+                class="absolute inset-y-0 right-0 w-[60%] h-full object-cover opacity-100 brightness-110 contrast-125 grayscale"
             />
-            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-root/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
         </div>
 
         <div class="container relative z-10 sa-reveal">
