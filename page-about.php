@@ -7,28 +7,47 @@ get_header();
 
 <main class="min-h-screen bg-root pb-12">
     
-    <!-- 1. Hero Section - Centered, Cinematic, No side dead-space -->
-    <section class="relative border-b border-border-subtle bg-root pt-12 pb-12 overflow-hidden flex flex-col items-center justify-center text-center">
+    <!-- 1. Hero Section - 2-Column with Image to kill dead-space -->
+    <section class="relative border-b border-border-subtle bg-root pt-16 pb-16 lg:pt-24 lg:pb-24 overflow-hidden">
         <!-- Dynamic Background -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#a1a1aa 1px, transparent 1px), linear-gradient(90deg, #a1a1aa 1px, transparent 1px); background-size: 32px 32px;"></div>
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-accent-secondary/10 rounded-full blur-[120px] opacity-70"></div>
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-secondary/10 rounded-full blur-[120px] opacity-70"></div>
         </div>
 
-        <div class="container relative z-10 max-w-4xl sa-reveal">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border-subtle text-accent-secondary text-[12px] font-bold uppercase tracking-widest mb-8">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-secondary opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-secondary"></span>
-                </span>
-                Independent Research
+        <div class="container relative z-10 sa-reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left: Text Content -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border-subtle text-accent-secondary text-[12px] font-bold uppercase tracking-widest mb-8">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-secondary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-secondary"></span>
+                        </span>
+                        Independent Research
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-[52px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6 text-balance capitalize">
+                        Bridging the gap between business and the world's most important industry.
+                    </h1>
+                    <p class="text-[18px] sm:text-[20px] text-content-secondary leading-relaxed font-medium text-balance">
+                        SemiAnalysis is an independent research and analysis company specializing in the Semiconductor and AI industries. Our in-depth coverage spans the entire supply chain, from semiconductor fabrication essentials to cutting-edge AI Models, software, and infrastructure.
+                    </p>
+                </div>
+
+                <!-- Right: Image Placeholder -->
+                <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border-subtle shadow-2xl sa-reveal sa-delay-100">
+                    <div class="absolute inset-0 bg-surface/50 mix-blend-overlay z-10"></div>
+                    <img 
+                        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/placeholders/blueprint.png" 
+                        alt="Semiconductor Architecture" 
+                        class="absolute inset-0 w-full h-full object-cover grayscale opacity-80"
+                    />
+                    <!-- Subtle tech overlay accents -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-root/80 via-transparent to-accent-secondary/10 z-20"></div>
+                </div>
+
             </div>
-            <h1 class="text-4xl sm:text-5xl md:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6 text-balance capitalize">
-                Bridging the gap between business and the world's most important industry.
-            </h1>
-            <p class="text-[18px] sm:text-[20px] text-content-secondary leading-relaxed font-medium mx-auto max-w-3xl text-balance">
-                SemiAnalysis is an independent research and analysis company specializing in the Semiconductor and AI industries. Our in-depth coverage spans the entire supply chain, from semiconductor fabrication essentials to cutting-edge AI Models, software, and infrastructure.
-            </p>
         </div>
     </section>
 
