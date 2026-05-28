@@ -86,7 +86,7 @@ get_header();
                 <div class="group flex flex-col sm:flex-row bg-root border border-border-subtle rounded-2xl overflow-hidden sa-card-hover sa-reveal sa-delay-100">
                     <div class="relative w-full sm:w-[220px] h-48 sm:h-auto shrink-0 border-r border-border-subtle bg-surface">
                         <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/placeholders/abstract_wafer_fabric.png" alt="Wafer" class="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:scale-105 transition-transform duration-700" />
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/placeholders/wafer.png" alt="Wafer" class="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:scale-105 transition-transform duration-700" />
                         <div class="absolute top-4 left-4 z-20 bg-root border border-border-strong text-content-secondary px-3 py-1 rounded text-[11px] font-bold uppercase tracking-widest">
                             Waitlist
                         </div>
@@ -182,43 +182,56 @@ get_header();
 
     <!-- 4. Past Events Archive -->
     <section class="py-12 sm:py-16 border-b border-border-subtle bg-surface/30">
-        <div class="container max-w-4xl">
-            <div class="flex items-center justify-between mb-8 sa-reveal">
+        <div class="container">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 sa-reveal">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-1">Archive</h2>
-                    <p class="text-[14px] text-content-secondary font-medium">Past summits and institutional calls.</p>
+                    <p class="text-[15px] text-content-secondary font-medium">Past summits and institutional calls.</p>
                 </div>
-                <div class="hidden sm:flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-content-tertiary border border-border-strong px-3 py-1.5 rounded-full">
+                <div class="inline-flex w-fit items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-content-tertiary border border-border-strong px-3 py-1.5 rounded-full">
                     <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 15+ Past Events
                 </div>
             </div>
 
-            <div class="border border-border-subtle rounded-2xl bg-root overflow-hidden sa-reveal sa-delay-100">
-                <div class="divide-y divide-border-subtle">
-                    <?php
-                    $past_events = [
-                        ['year' => '2025', 'title' => 'GPU Economics Virtual Summit', 'type' => 'Virtual', 'link' => '#'],
-                        ['year' => '2024', 'title' => 'SemiAnalysis Asia Forum', 'type' => 'Taipei', 'link' => '#'],
-                        ['year' => '2024', 'title' => 'Advanced Packaging Deep Dive', 'type' => 'Virtual', 'link' => '#'],
-                        ['year' => '2023', 'title' => 'Inaugural AI Infra Conference', 'type' => 'San Francisco', 'link' => '#'],
-                    ];
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <?php
+                $past_events = [
+                    ['year' => '2025', 'title' => 'GPU Economics Virtual Summit', 'type' => 'Virtual', 'img' => 'data_dashboard.png', 'link' => '#'],
+                    ['year' => '2024', 'title' => 'SemiAnalysis Asia Forum', 'type' => 'Taipei, Taiwan', 'img' => 'supply-chain.png', 'link' => '#'],
+                    ['year' => '2024', 'title' => 'Advanced Packaging Deep Dive', 'type' => 'Virtual', 'img' => 'blueprint.png', 'link' => '#'],
+                ];
 
-                    foreach($past_events as $event) {
-                        echo '<div class="flex flex-col sm:flex-row sm:items-center justify-between p-5 sm:p-6 hover:bg-surface/50 transition-colors group">';
-                        echo '  <div class="flex items-center gap-4 mb-3 sm:mb-0">';
-                        echo '    <span class="text-[14px] font-bold text-accent-secondary/70 group-hover:text-accent-secondary transition-colors w-12">' . esc_html($event['year']) . '</span>';
-                        echo '    <h4 class="text-[15px] sm:text-[16px] font-bold text-content-primary">' . esc_html($event['title']) . '</h4>';
-                        echo '  </div>';
-                        echo '  <div class="flex items-center gap-6 text-[13px]">';
-                        echo '    <span class="text-content-secondary font-medium flex items-center gap-1.5"><svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ' . esc_html($event['type']) . '</span>';
-                        echo '    <a href="' . esc_url($event['link']) . '" class="flex items-center gap-1.5 text-content-primary font-bold hover:text-accent-secondary transition-colors">';
-                        echo '      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> Watch';
-                        echo '    </a>';
-                        echo '  </div>';
-                        echo '</div>';
-                    }
-                    ?>
-                </div>
+                $i = 0;
+                foreach($past_events as $event) {
+                    $imgUrl = get_template_directory_uri() . '/assets/placeholders/' . $event['img'];
+                    $delay = ($i % 3) * 100;
+                    
+                    echo '<div class="group flex flex-col bg-root border border-border-subtle rounded-2xl overflow-hidden sa-reveal opacity-80 hover:opacity-100 transition-opacity" style="animation-delay: ' . $delay . 'ms">';
+                    echo '  <div class="relative w-full h-40 shrink-0 border-b border-border-subtle bg-surface overflow-hidden">';
+                    echo '    <div class="absolute inset-0 bg-surface/40 mix-blend-overlay z-10"></div>';
+                    echo '    <img src="' . esc_url($imgUrl) . '" alt="' . esc_attr($event['title']) . '" class="w-full h-full object-cover grayscale opacity-50" />';
+                    echo '    <div class="absolute top-4 left-4 z-20 bg-surface border border-border-strong text-content-tertiary px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">';
+                    echo '      ' . esc_html($event['year']);
+                    echo '    </div>';
+                    echo '  </div>';
+                    echo '  <div class="p-6 flex flex-col flex-1">';
+                    echo '    <h3 class="text-[17px] font-extrabold text-content-primary mb-3 leading-tight group-hover:text-accent-secondary transition-colors">';
+                    echo '      ' . esc_html($event['title']);
+                    echo '    </h3>';
+                    echo '    <div class="flex items-center gap-1.5 text-[12px] font-bold text-content-tertiary uppercase tracking-wider mb-6">';
+                    echo '      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ' . esc_html($event['type']);
+                    echo '    </div>';
+                    echo '    <div class="mt-auto pt-4 border-t border-border-subtle">';
+                    echo '      <a href="' . esc_url($event['link']) . '" class="inline-flex items-center gap-2 text-content-secondary group-hover:text-content-primary text-[13px] font-bold transition-colors">';
+                    echo '        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> Watch Recordings';
+                    echo '      </a>';
+                    echo '    </div>';
+                    echo '  </div>';
+                    echo '</div>';
+                    
+                    $i++;
+                }
+                ?>
             </div>
         </div>
     </section>
