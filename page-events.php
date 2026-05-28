@@ -8,7 +8,7 @@ get_header();
 <main class="min-h-screen bg-root pb-12">
     
     <!-- 1. Hero Section - Restrained Institutional Edge-Fade Background -->
-    <section class="relative border-b border-border-subtle bg-root pt-16 pb-16 lg:pt-24 lg:pb-24 overflow-hidden">
+    <section class="relative border-b border-border-subtle bg-root pt-12 pb-12 lg:pt-16 lg:pb-16 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#a1a1aa 1px, transparent 1px), linear-gradient(90deg, #a1a1aa 1px, transparent 1px); background-size: 32px 32px;"></div>
             <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-secondary/5 rounded-full blur-[140px] opacity-70"></div>
@@ -27,14 +27,14 @@ get_header();
 
         <div class="container relative z-10 sa-reveal">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border-subtle text-accent-secondary text-[12px] font-bold uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border-subtle text-accent-secondary text-[12px] font-bold uppercase tracking-widest mb-4">
                     <span class="relative flex h-2 w-2">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-secondary opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-secondary"></span>
                     </span>
                     Industry Gatherings
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6 text-balance">
+                <h1 class="text-4xl sm:text-5xl md:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-4 text-balance">
                     Where the semiconductor and AI supply chain connects.
                 </h1>
                 <p class="text-[17px] sm:text-[19px] text-content-secondary leading-relaxed font-medium text-balance max-w-2xl">
@@ -45,9 +45,9 @@ get_header();
     </section>
 
     <!-- 2. Upcoming Events Grid -->
-    <section class="py-12 sm:py-16 border-b border-border-subtle bg-surface/30">
+    <section class="py-10 sm:py-12 border-b border-border-subtle bg-surface/30">
         <div class="container">
-            <div class="mb-10 sa-reveal">
+            <div class="mb-8 sa-reveal">
                 <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-2">Upcoming Summits</h2>
                 <p class="text-[15px] text-content-secondary font-medium">Register for our upcoming institutional gatherings.</p>
             </div>
@@ -63,15 +63,15 @@ get_header();
                             Upcoming
                         </div>
                     </div>
-                    <div class="p-6 sm:p-8 flex flex-col justify-center flex-1">
-                        <h3 class="text-[20px] font-extrabold text-content-primary mb-3 leading-tight group-hover:text-accent-secondary transition-colors">
+                    <div class="p-5 sm:p-6 flex flex-col justify-center flex-1">
+                        <h3 class="text-[20px] font-extrabold text-content-primary mb-2.5 leading-tight group-hover:text-accent-secondary transition-colors">
                             AI Infrastructure Summit 2026
                         </h3>
-                        <div class="flex flex-wrap gap-y-2 gap-x-6 text-[13px] font-bold text-content-tertiary uppercase tracking-wider mb-4">
+                        <div class="flex flex-wrap gap-y-2 gap-x-6 text-[13px] font-bold text-content-tertiary uppercase tracking-wider mb-3">
                             <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Oct 12-14, 2026</div>
                             <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> San Francisco, CA</div>
                         </div>
-                        <p class="text-[14px] text-content-secondary leading-relaxed font-medium mb-6 line-clamp-3">
+                        <p class="text-[14px] text-content-secondary leading-relaxed font-medium mb-4 line-clamp-3">
                             A deep dive into datacenter expansion, cooling limitations, and the next generation of GPU networking fabrics. Featuring keynotes from hyperscaler infrastructure leads.
                         </p>
                         <div class="mt-auto">
@@ -91,15 +91,15 @@ get_header();
                             Waitlist
                         </div>
                     </div>
-                    <div class="p-6 sm:p-8 flex flex-col justify-center flex-1">
-                        <h3 class="text-[20px] font-extrabold text-content-primary mb-3 leading-tight group-hover:text-accent-secondary transition-colors">
+                    <div class="p-5 sm:p-6 flex flex-col justify-center flex-1">
+                        <h3 class="text-[20px] font-extrabold text-content-primary mb-2.5 leading-tight group-hover:text-accent-secondary transition-colors">
                             Semiconductor Supply Chain Forum
                         </h3>
-                        <div class="flex flex-wrap gap-y-2 gap-x-6 text-[13px] font-bold text-content-tertiary uppercase tracking-wider mb-4">
+                        <div class="flex flex-wrap gap-y-2 gap-x-6 text-[13px] font-bold text-content-tertiary uppercase tracking-wider mb-3">
                             <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Feb 05-06, 2027</div>
                             <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Taipei, Taiwan</div>
                         </div>
-                        <p class="text-[14px] text-content-secondary leading-relaxed font-medium mb-6 line-clamp-3">
+                        <p class="text-[14px] text-content-secondary leading-relaxed font-medium mb-4 line-clamp-3">
                             Navigating geopolitical shifts, advanced packaging bottlenecks, and foundry utilization rates. A closed-door session for institutional clients and supply chain executives.
                         </p>
                         <div class="mt-auto">
@@ -115,14 +115,14 @@ get_header();
     </section>
 
     <!-- 3. Featured Speakers & Conference Themes (2 Column Layout) -->
-    <section class="py-12 sm:py-16 border-b border-border-subtle">
+    <section class="py-10 sm:py-12 border-b border-border-subtle">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
                 
                 <!-- Left Column: Conference Tracks -->
                 <div class="lg:col-span-5 sa-reveal">
                     <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight text-content-primary mb-2">Core Research Tracks</h3>
-                    <p class="text-[14px] text-content-secondary mb-8 font-medium">Our events mirror our research verticals.</p>
+                    <p class="text-[14px] text-content-secondary mb-5 font-medium">Our events mirror our research verticals.</p>
                     
                     <div class="space-y-3">
                         <?php
@@ -148,7 +148,7 @@ get_header();
                 <!-- Right Column: Featured Speakers -->
                 <div class="lg:col-span-7 sa-reveal sa-delay-100">
                     <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight text-content-primary mb-2">Featured Voices</h3>
-                    <p class="text-[14px] text-content-secondary mb-8 font-medium">Industry leaders defining the hardware roadmap.</p>
+                    <p class="text-[14px] text-content-secondary mb-5 font-medium">Industry leaders defining the hardware roadmap.</p>
                     
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         <?php
@@ -164,8 +164,8 @@ get_header();
                         foreach($speakers as $speaker) {
                             $imgUrl = get_template_directory_uri() . '/assets/placeholders/' . $speaker['img'];
                             
-                            echo '<div class="group flex flex-col p-4 rounded-xl border border-border-subtle bg-surface hover:border-accent-secondary/30 transition-colors text-center">';
-                            echo '  <div class="w-16 h-16 mx-auto rounded-full overflow-hidden mb-3 border border-border-strong">';
+                            echo '<div class="group flex flex-col p-3 rounded-xl border border-border-subtle bg-surface hover:border-accent-secondary/30 transition-colors text-center">';
+                            echo '  <div class="w-16 h-16 mx-auto rounded-full overflow-hidden mb-2 border border-border-strong">';
                             echo '    <img src="' . esc_url($imgUrl) . '" alt="' . esc_attr($speaker['name']) . '" class="w-full h-full object-cover grayscale opacity-90 group-hover:scale-110 transition-transform duration-500" />';
                             echo '  </div>';
                             echo '  <h4 class="text-[14px] font-bold text-content-primary leading-tight mb-1">' . esc_html($speaker['name']) . '</h4>';
@@ -181,9 +181,9 @@ get_header();
     </section>
 
     <!-- 4. Past Events Archive -->
-    <section class="py-12 sm:py-16 border-b border-border-subtle bg-surface/30">
+    <section class="py-10 sm:py-12 border-b border-border-subtle bg-surface/30">
         <div class="container">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 sa-reveal">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 sa-reveal">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-1">Archive</h2>
                     <p class="text-[15px] text-content-secondary font-medium">Past summits and institutional calls.</p>
@@ -214,14 +214,14 @@ get_header();
                     echo '      ' . esc_html($event['year']);
                     echo '    </div>';
                     echo '  </div>';
-                    echo '  <div class="p-6 flex flex-col flex-1">';
-                    echo '    <h3 class="text-[17px] font-extrabold text-content-primary mb-3 leading-tight group-hover:text-accent-secondary transition-colors">';
+                    echo '  <div class="p-5 flex flex-col flex-1">';
+                    echo '    <h3 class="text-[17px] font-extrabold text-content-primary mb-2.5 leading-tight group-hover:text-accent-secondary transition-colors">';
                     echo '      ' . esc_html($event['title']);
                     echo '    </h3>';
-                    echo '    <div class="flex items-center gap-1.5 text-[12px] font-bold text-content-tertiary uppercase tracking-wider mb-6">';
+                    echo '    <div class="flex items-center gap-1.5 text-[12px] font-bold text-content-tertiary uppercase tracking-wider mb-4">';
                     echo '      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ' . esc_html($event['type']);
                     echo '    </div>';
-                    echo '    <div class="mt-auto pt-4 border-t border-border-subtle">';
+                    echo '    <div class="mt-auto pt-3 border-t border-border-subtle">';
                     echo '      <a href="' . esc_url($event['link']) . '" class="inline-flex items-center gap-2 text-content-secondary group-hover:text-content-primary text-[13px] font-bold transition-colors">';
                     echo '        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> Watch Recordings';
                     echo '      </a>';
@@ -237,13 +237,13 @@ get_header();
     </section>
 
     <!-- 5. Institutional CTA -->
-    <section class="py-14 sm:py-20 bg-surface relative overflow-hidden">
+    <section class="py-10 sm:py-14 bg-surface relative overflow-hidden">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at center, var(--color-accent-secondary) 0%, transparent 70%);"></div>
         <div class="container relative z-10 text-center max-w-2xl sa-reveal">
             <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-4">
                 Participate in our Events
             </h2>
-            <p class="text-[15px] text-content-secondary leading-relaxed font-medium mb-8">
+            <p class="text-[15px] text-content-secondary leading-relaxed font-medium mb-6">
                 Interested in sponsoring an upcoming summit or bringing your engineering team? We offer select institutional participation packages for organizations aligned with our research focus.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
