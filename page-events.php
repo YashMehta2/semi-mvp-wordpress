@@ -38,7 +38,7 @@ get_header();
                     Where the semiconductor and AI supply chain connects.
                 </h1>
                 <p class="text-[17px] sm:text-[19px] text-content-secondary leading-relaxed font-medium text-balance max-w-2xl">
-                    SemiAnalysis hosts highly curated, technical summits focused on the realities of AI infrastructure, fabrication economics, and semiconductor scale. Not a startup pitch fest—just high-signal institutional intelligence.
+                    SemiAnalysis hosts highly curated, technical events focused on the realities of AI infrastructure, fabrication economics, and semiconductor scale. Not a startup pitch fest—just high-signal institutional intelligence.
                 </p>
             </div>
         </div>
@@ -48,7 +48,7 @@ get_header();
     <section class="py-10 sm:py-12 border-b border-border-subtle bg-surface/30">
         <div class="container">
             <div class="mb-8 sa-reveal">
-                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-2">Upcoming Summits</h2>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-2">Upcoming Events</h2>
                 <p class="text-[15px] text-content-secondary font-medium">Register for our upcoming institutional gatherings.</p>
             </div>
 
@@ -65,7 +65,7 @@ get_header();
                     </div>
                     <div class="p-5 sm:p-6 flex flex-col justify-center flex-1">
                         <h3 class="text-[20px] font-extrabold text-content-primary mb-2.5 leading-tight group-hover:text-accent-secondary transition-colors">
-                            AI Infrastructure Summit 2026
+                            AI Infrastructure Event 2026
                         </h3>
                         <div class="flex flex-wrap gap-y-2 gap-x-6 text-[13px] font-bold text-content-tertiary uppercase tracking-wider mb-3">
                             <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Oct 12-14, 2026</div>
@@ -186,7 +186,7 @@ get_header();
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 sa-reveal">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-1">Archive</h2>
-                    <p class="text-[15px] text-content-secondary font-medium">Past summits and institutional calls.</p>
+                    <p class="text-[15px] text-content-secondary font-medium">Past events and institutional calls.</p>
                 </div>
                 <div class="inline-flex w-fit items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-content-tertiary border border-border-strong px-3 py-1.5 rounded-full">
                     <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 15+ Past Events
@@ -196,7 +196,7 @@ get_header();
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <?php
                 $past_events = [
-                    ['year' => '2025', 'title' => 'GPU Economics Virtual Summit', 'type' => 'Virtual', 'img' => 'data_dashboard.png', 'link' => '#'],
+                    ['year' => '2025', 'title' => 'GPU Economics Virtual Event', 'type' => 'Virtual', 'img' => 'data_dashboard.png', 'link' => '#'],
                     ['year' => '2024', 'title' => 'SemiAnalysis Asia Forum', 'type' => 'Taipei, Taiwan', 'img' => 'supply-chain.png', 'link' => '#'],
                     ['year' => '2024', 'title' => 'Advanced Packaging Deep Dive', 'type' => 'Virtual', 'img' => 'blueprint.png', 'link' => '#'],
                 ];
@@ -244,7 +244,7 @@ get_header();
                 Participate in our Events
             </h2>
             <p class="text-[15px] text-content-secondary leading-relaxed font-medium mb-6">
-                Interested in sponsoring an upcoming summit or bringing your engineering team? We offer select institutional participation packages for organizations aligned with our research focus.
+                Interested in sponsoring an upcoming event or bringing your engineering team? We offer select institutional participation packages for organizations aligned with our research focus.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="mailto:events@semianalysis.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-content-primary text-root text-[13px] font-extrabold uppercase tracking-widest rounded-lg hover:scale-105 hover:bg-content-secondary transition-all shadow-xl shadow-root/50">
