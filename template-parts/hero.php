@@ -7,31 +7,30 @@
                 <div class="inline-flex w-fit items-center gap-2 rounded-md border border-accent-secondary/20 bg-accent-secondary/10 px-3 py-1.5">
                     <span class="h-1.5 w-1.5 rounded-full bg-accent-secondary animate-pulse"></span>
                     <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-accent-secondary">
-                        Technical Research Intelligence
+                        Institutional AI Infrastructure Intelligence
                     </span>
                 </div>
                 <h1 class="text-[38px] sm:text-[46px] md:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold tracking-tighter leading-[1.05] text-content-primary">
-                    Rigorous Research on <br>
+                    Institutional AI Infrastructure &amp; <br>
                     <span style="background: linear-gradient(135deg, #e59a35 0%, #f5ab46 55%, #e59a35 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                        AI &amp; Semiconductors
+                        Semiconductor Intelligence
                     </span>
                 </h1>
                 <p class="text-[15px] sm:text-[16px] md:text-[17px] font-medium text-content-secondary leading-relaxed max-w-[540px]">
-                    Deep technical analysis of GPU architecture, compute supply chains, fab economics,
-                    and the infrastructure defining the next decade of AI.
+                    Proprietary bottom-up models and supply chain forecasting for hyperscalers, chip designers, and institutional investors. Restrained, analyst-backed intelligence on wafer allocations, CapEx tracking, and hardware roadmap constraints.
                 </p>
                 <div class="flex flex-wrap items-center gap-3 pt-2">
-                    <a href="/models" class="inline-flex items-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-accent-primary text-root text-[14px] sm:text-[15px] font-bold hover:bg-accent-primary-hover active:scale-95 transition-all duration-200">
-                        View Industry Models
+                    <a href="#premium" class="inline-flex items-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-accent-primary text-root text-[14px] sm:text-[15px] font-bold hover:bg-accent-primary-hover active:scale-95 transition-all duration-200">
+                        Request Institutional Access
                         <svg class="h-3.5 w-3.5" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
                     </a>
-                    <a href="#featured" class="inline-flex items-center gap-2 px-5 py-2.5 sm:py-3 rounded-lg border border-border-strong text-[14px] sm:text-[15px] font-bold text-content-secondary hover:border-accent-primary/30 hover:text-content-primary transition-all duration-200">
-                        Browse Research
+                    <a href="/models" class="inline-flex items-center gap-2 px-5 py-2.5 sm:py-3 rounded-lg border border-border-strong text-[14px] sm:text-[15px] font-bold text-content-secondary hover:border-accent-primary/30 hover:text-content-primary transition-all duration-200">
+                        Explore Industry Models
                     </a>
                 </div>
                 <div class="flex flex-col gap-2 pt-4">
                     <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-content-tertiary">
-                        Read by engineers &amp; investors at
+                        Trusted by key decision-makers at
                     </p>
                     <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-5 gap-y-2">
                         <span class="text-[12px] sm:text-[13px] font-bold text-content-tertiary hover:text-content-secondary transition-colors cursor-default">NVIDIA</span>

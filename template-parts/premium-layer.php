@@ -8,23 +8,23 @@
     <div class="container relative z-10">
         <div class="text-center max-w-xl mx-auto mb-10 sm:mb-12 md:mb-14 sa-reveal">
             <p class="text-[11px] font-bold uppercase tracking-widest text-accent-primary mb-3">
-                Research Access
+                Institutional Access
             </p>
             <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-content-primary mb-3">
-                Intelligence built for people who build the future
+                Institutional Intelligence Access
             </h2>
             <p class="text-sm text-content-secondary leading-relaxed">
-                From free weekly briefings to full institutional access — SemiAnalysis research scales with your needs.
+                From weekly research digests to organization-wide platform licensing — access the intelligence that drives capacity and CapEx planning.
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-10 sm:mb-12">
             <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-1 border-border-subtle bg-surface/50">
                 <div class="flex items-center justify-between mb-5 sm:mb-6">
                     <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-white/5 text-content-secondary">
-                        Free
+                        Free Briefings
                     </span>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Weekly Research Briefing</h3>
+                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Weekly Digest</h3>
                 <p class="text-xs sm:text-[13px] text-content-secondary leading-relaxed mb-6 sm:mb-8 flex-1">
                     Get our weekly digest of the most important AI infrastructure and semiconductor developments — free to every subscriber.
                 </p>
@@ -54,13 +54,13 @@
                 <div class="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-accent-primary/60 to-transparent rounded-full"></div>
                 <div class="flex items-center justify-between mb-5 sm:mb-6">
                     <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-accent-primary/15 text-accent-primary">
-                        Premium
+                        Professional Access
                     </span>
                     <span class="text-[10px] font-bold text-accent-primary/80 uppercase tracking-widest">
                         Most popular
                     </span>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Full Research Access</h3>
+                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Full Research &amp; Models</h3>
                 <p class="text-xs sm:text-[13px] text-content-secondary leading-relaxed mb-6 sm:mb-8 flex-1">
                     Unlock every deep-dive report, proprietary industry models, and structured data — the same intelligence used by leading hyperscalers and chip designers.
                 </p>
@@ -71,7 +71,7 @@
                     </li>
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
                         <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        AI Compute & GPU Scaling models
+                        AI Compute &amp; GPU Scaling models
                     </li>
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
                         <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -79,7 +79,7 @@
                     </li>
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
                         <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Hyperscaler CapEx data & charts
+                        Hyperscaler CapEx data &amp; charts
                     </li>
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
                         <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -87,18 +87,18 @@
                     </li>
                 </ul>
                 <a href="#" class="mt-auto inline-flex items-center justify-center h-12 rounded-lg text-sm font-bold transition-all duration-200 active:scale-95 bg-accent-primary text-root hover:bg-accent-primary-hover">
-                    Start Premium
+                    Subscribe Pro
                 </a>
             </div>
             <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-3 border-border-subtle bg-surface/50">
                 <div class="flex items-center justify-between mb-5 sm:mb-6">
                     <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-white/5 text-content-secondary">
-                        Enterprise
+                        Enterprise Licensing
                     </span>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Institutional Intelligence</h3>
+                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Institutional Partnership</h3>
                 <p class="text-xs sm:text-[13px] text-content-secondary leading-relaxed mb-6 sm:mb-8 flex-1">
-                    Custom research briefs, team access, and direct analyst consultation for companies making nine-figure infrastructure decisions.
+                    Custom research briefs, organization-wide access, and direct analyst consultation for companies making nine-figure infrastructure decisions.
                 </p>
                 <ul class="space-y-3 sm:space-y-3.5 mb-8 sm:mb-10">
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
@@ -111,39 +111,59 @@
                     </li>
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
                         <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Team & org-wide access
+                        Team &amp; org-wide access
                     </li>
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
                         <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Analyst Q&A sessions
+                        Analyst Q&amp;A sessions
                     </li>
                     <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
                         <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
                         API data access
                     </li>
                 </ul>
-                <a href="#" class="mt-auto inline-flex items-center justify-center h-12 rounded-lg text-sm font-bold transition-all duration-200 active:scale-95 border border-border-strong text-content-secondary hover:border-accent-primary/30 hover:text-content-primary">
-                    Contact Us
-                </a>
+                <form class="mt-auto space-y-2 pt-4 border-t border-border-subtle" onsubmit="event.preventDefault();">
+                    <div class="space-y-1">
+                        <input
+                            type="email"
+                            placeholder="Work Email"
+                            required
+                            class="w-full h-9 px-3 rounded-md bg-root border border-border-strong text-xs font-medium text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
+                        />
+                    </div>
+                    <div class="space-y-1">
+                        <input
+                            type="text"
+                            placeholder="Organization"
+                            required
+                            class="w-full h-9 px-3 rounded-md bg-root border border-border-strong text-xs font-medium text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full inline-flex items-center justify-center h-10 rounded-md bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200"
+                    >
+                        Request Institutional Access
+                    </button>
+                </form>
             </div>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-3 sa-reveal">
-            <div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-content-tertiary">
-                <svg class="h-3 w-3 text-accent-primary/60" viewBox="0 0 12 12" fill="none"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                180,000+ subscribers
-            </div>
-            <div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-content-tertiary">
-                <svg class="h-3 w-3 text-accent-primary/60" viewBox="0 0 12 12" fill="none"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                300+ research reports
-            </div>
-            <div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-content-tertiary">
-                <svg class="h-3 w-3 text-accent-primary/60" viewBox="0 0 12 12" fill="none"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                No lock-in contracts
-            </div>
-            <div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-content-tertiary">
-                <svg class="h-3 w-3 text-accent-primary/60" viewBox="0 0 12 12" fill="none"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                Cancel anytime
-            </div>
+            <?php
+            $proofs = [
+                "AI infrastructure intelligence",
+                "Semiconductor supply chain tracking",
+                "Hyperscaler ecosystem research",
+                "Enterprise research workflows",
+                "Institutional-grade analysis"
+            ];
+            foreach ($proofs as $proof) {
+                echo '<div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-content-tertiary">';
+                echo '  <svg class="h-3 w-3 text-accent-primary/60" viewBox="0 0 12 12" fill="none"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>';
+                echo '  ' . esc_html($proof);
+                echo '</div>';
+            }
+            ?>
         </div>
     </div>
 </section>

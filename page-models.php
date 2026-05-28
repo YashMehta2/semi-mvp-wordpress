@@ -6,6 +6,16 @@ require_once get_stylesheet_directory() . '/data.php';
 $all_models = get_semi_models();
 $free_models = array_filter($all_models, function($m) { return !$m['memberOnly']; });
 $pro_models = array_filter($all_models, function($m) { return $m['memberOnly']; });
+
+$use_cases = [
+    'ai-compute-supply' => 'TSMC CoWoS capacity tracking & NVIDIA wafer allocation forecasting.',
+    'gpu-scaling-bottleneck' => 'Datacenter power planning, optical transceiver forecasting, & interconnect bandwidth limits.',
+    'semiconductor-capacity' => 'Foundry utilization modeling & ASML EUV lithography equipment deployment.',
+    'cloud-infra-growth' => 'Hyperscaler GPU cluster velocity, energy procurement timelines, & datacenter buildouts.',
+    'memory-supply' => 'High Bandwidth Memory (HBM) wafer allocation & allocation-adjusted chip cost modeling.',
+    'data-center-power' => 'Interconnection queue forecasting, utility PPA modeling, & grid capacity bottleneck mapping.'
+];
+
 get_header();
 ?>
 <main class="min-h-screen bg-root">
@@ -31,10 +41,10 @@ get_header();
                     Research Frameworks
                 </p>
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6">
-                    Industry Models &amp; Research
+                    Enterprise Infrastructure Models
                 </h1>
                 <p class="text-[16px] sm:text-[17px] md:text-[18px] text-content-secondary leading-relaxed font-medium mb-10 text-balance">
-                    Proprietary bottom-up analytical models built by the SemiAnalysis team. Each model tracks the metrics that drive AI infrastructure, semiconductor supply chains, and compute economics &mdash; updated monthly.
+                    Proprietary bottom-up analytical models built by the SemiAnalysis team. We track fab capacity, compute supply, and hyperscaler deployments using deep supply chain intelligence to inform capacity planning, CapEx forecasting, and investment decisions.
                 </p>
                 <div class="flex flex-wrap gap-8 sm:gap-12">
                     <div>
@@ -83,9 +93,15 @@ get_header();
                                     <h3 class="text-[18px] sm:text-[20px] font-extrabold text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-tight tracking-tight mb-3">
                                         <?php echo esc_html($model['title']); ?>
                                     </h3>
-                                    <p class="text-[14px] text-content-secondary leading-relaxed font-medium line-clamp-3">
+                                    <p class="text-[14px] text-content-secondary leading-relaxed font-medium line-clamp-3 mb-4">
                                         <?php echo esc_html($model['description']); ?>
                                     </p>
+                                    <?php if (isset($use_cases[$slug])): ?>
+                                    <div class="mt-4 pt-3 border-t border-border-subtle/50">
+                                        <p class="text-[10px] uppercase font-bold tracking-wider text-content-tertiary mb-1">Enterprise Use Case</p>
+                                        <p class="text-[12px] font-semibold text-content-secondary leading-normal"><?php echo esc_html($use_cases[$slug]); ?></p>
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="md:w-7/12 flex flex-col justify-between border-t md:border-t-0 md:border-l border-border-strong pt-5 md:pt-0 md:pl-8">
@@ -113,7 +129,7 @@ get_header();
                                         Live Data
                                     </span>
                                     <span class="text-[12px] font-bold uppercase tracking-widest text-accent-secondary group-hover:translate-x-1 transition-transform">
-                                        View Model &rarr;
+                                        View Free Preview &rarr;
                                     </span>
                                 </div>
                             </div>
@@ -141,9 +157,15 @@ get_header();
                                     <h3 class="text-[18px] sm:text-[20px] font-extrabold text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-tight tracking-tight mb-3">
                                         <?php echo esc_html($model['title']); ?>
                                     </h3>
-                                    <p class="text-[14px] text-content-secondary leading-relaxed font-medium line-clamp-3">
+                                    <p class="text-[14px] text-content-secondary leading-relaxed font-medium line-clamp-3 mb-4">
                                         <?php echo esc_html($model['description']); ?>
                                     </p>
+                                    <?php if (isset($use_cases[$slug])): ?>
+                                    <div class="mt-4 pt-3 border-t border-border-subtle/50">
+                                        <p class="text-[10px] uppercase font-bold tracking-wider text-content-tertiary mb-1">Enterprise Use Case</p>
+                                        <p class="text-[12px] font-semibold text-content-secondary leading-normal"><?php echo esc_html($use_cases[$slug]); ?></p>
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="md:w-7/12 flex flex-col justify-between border-t md:border-t-0 md:border-l border-border-strong pt-5 md:pt-0 md:pl-8">
@@ -152,9 +174,9 @@ get_header();
                                         <p class="text-[10px] uppercase tracking-widest text-content-tertiary mb-1 font-bold">Access Level</p>
                                         <div class="flex items-center gap-1.5">
                                             <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-0.5 rounded-md bg-accent-primary/10 border border-accent-primary/20 text-accent-primary mt-1">
-    <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" /><path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
-    Member
-</span>
+                                                <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" /><path d="M4 5V3.5a2 2 0 114 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
+                                                Member
+                                            </span>
                                         </div>
                                     </div>
                                     <div>
@@ -176,7 +198,7 @@ get_header();
                                         Live Data
                                     </span>
                                     <span class="text-[12px] font-bold uppercase tracking-widest text-accent-secondary group-hover:translate-x-1 transition-transform">
-                                        View Model &rarr;
+                                        Request Access &rarr;
                                     </span>
                                 </div>
                             </div>
@@ -195,13 +217,43 @@ get_header();
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
                     <div>
                         <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-3">Institutional Access</p>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-4 leading-snug">Need full model access for your team?</h2>
-                        <p class="text-[15px] text-content-secondary leading-relaxed font-medium">Enterprise licensing includes all 10+ industry models, monthly ChipBook reports, API data access, and direct analyst consultation. Pricing based on team size and scope.</p>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-4 leading-snug">Request Enterprise Licensing</h2>
+                        <p class="text-[15px] text-content-secondary leading-relaxed font-medium">Enterprise licensing includes access to all active models, weekly supply chain data feeds, API integrations, and direct analyst consultation. Submit your inquiry to request a platform demonstration and pricing proposal.</p>
                     </div>
-                    <div class="flex flex-col sm:flex-row lg:justify-end gap-3">
-                        <a href="mailto:sales@semianalysis.com" class="inline-flex items-center justify-center h-12 rounded-lg px-8 bg-accent-secondary text-root text-sm font-bold hover:bg-accent-secondary/90 transition-colors shadow-lg">Contact Sales</a>
-                        <a href="/research" class="inline-flex items-center justify-center h-12 rounded-lg px-8 border border-border-strong bg-surface-hover text-sm font-bold text-content-secondary hover:border-accent-secondary/50 hover:text-content-primary transition-all">Browse Research &rarr;</a>
-                    </div>
+                    <form class="space-y-3 bg-root/60 backdrop-blur-md p-6 rounded-xl border border-border-subtle" onsubmit="event.preventDefault();">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <input
+                                    type="email"
+                                    placeholder="Work Email"
+                                    required
+                                    class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Company"
+                                    required
+                                    class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <textarea
+                                placeholder="Describe your research focus or data requirements..."
+                                rows="3"
+                                required
+                                class="w-full p-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors resize-none"
+                            ></textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            class="w-full inline-flex items-center justify-center h-10 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200"
+                        >
+                            Request Proposal
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
