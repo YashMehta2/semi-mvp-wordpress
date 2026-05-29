@@ -47,43 +47,48 @@ get_header();
         </div>
     </section>
 
-    <!-- Model list -->
-    <section class="py-10 md:py-12">
+    <!-- Model card grid -->
+    <section class="py-12 md:py-16">
         <div class="container">
 
-            <div class="flex flex-col divide-y divide-border-subtle border-t border-border-subtle border-b border-border-subtle mb-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border-subtle border border-border-subtle rounded-xl overflow-hidden mb-16">
                 <?php $idx = 1; foreach ($all_models as $slug => $model):
                     $img = $visual_images[$model['visualType']] ?? $fallback_img;
                 ?>
-                <a href="/models/<?php echo esc_attr($slug); ?>" class="group block py-5 sm:py-6">
-                    <div class="flex items-center gap-5 sm:gap-8">
-
-                        <!-- Monospace index -->
-                        <span class="font-mono text-[10px] font-bold tracking-[0.2em] text-content-tertiary select-none w-6 shrink-0">
+                <a href="/models/<?php echo esc_attr($slug); ?>" class="group block bg-surface hover:bg-surface-hover transition-colors duration-300">
+                    <!-- Image panel -->
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="<?php echo esc_url($img); ?>" alt=""
+                             class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500 ease-out" />
+                        <!-- Bottom fade -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+                        <!-- Index badge -->
+                        <span class="absolute top-4 left-4 font-mono text-[10px] font-bold tracking-[0.2em] text-content-tertiary bg-root/70 backdrop-blur-sm px-2 py-1 rounded">
                             <?php echo str_pad($idx, 2, '0', STR_PAD_LEFT); ?>
                         </span>
+                    </div>
 
-                        <!-- Thumbnail image -->
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-border-strong bg-surface">
-                            <img src="<?php echo esc_url($img); ?>" alt=""
-                                 class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-90 group-hover:grayscale-0 transition-all duration-500" />
+                    <!-- Text content -->
+                    <div class="p-6">
+                        <!-- Amber accent line -->
+                        <div class="w-6 h-[2px] bg-accent-secondary mb-4 group-hover:w-12 transition-all duration-300 ease-out"></div>
+
+                        <h2 class="text-[17px] sm:text-[18px] font-extrabold tracking-tight text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-snug mb-2">
+                            <?php echo esc_html($model['title']); ?>
+                        </h2>
+
+                        <p class="text-[13px] text-content-tertiary leading-relaxed font-medium line-clamp-3 mb-5">
+                            <?php echo esc_html($model['description']); ?>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-content-tertiary">
+                                <?php echo esc_html($model['category']); ?>
+                            </span>
+                            <span class="text-[11px] font-bold text-content-tertiary group-hover:text-accent-secondary group-hover:translate-x-1 inline-block transition-all duration-200">
+                                &rarr;
+                            </span>
                         </div>
-
-                        <!-- Main text block -->
-                        <div class="flex-1 min-w-0">
-                            <h2 class="text-[16px] sm:text-[18px] md:text-[20px] font-extrabold tracking-tight text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-snug mb-1.5">
-                                <?php echo esc_html($model['title']); ?>
-                            </h2>
-                            <p class="text-[13px] sm:text-[14px] text-content-secondary leading-snug font-medium line-clamp-2 max-w-2xl">
-                                <?php echo esc_html($model['description']); ?>
-                            </p>
-                        </div>
-
-                        <!-- Arrow -->
-                        <span class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary group-hover:text-accent-secondary group-hover:translate-x-1 inline-block transition-all duration-200 shrink-0">
-                            &rarr;
-                        </span>
-
                     </div>
                 </a>
                 <?php $idx++; endforeach; ?>
