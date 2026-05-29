@@ -195,8 +195,16 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.querySelectorAll('a[href="#"], span.cursor-pointer, .cursor-pointer').forEach(el => {
-    // Only attach if it's not the dropdown button
-    if (el.id !== 'nav-dropdown-btn' && !el.closest('#nav-dropdown-btn')) {
+    // Only attach if it's not a button, the dropdown button, or has role-btn/sandbox-tab classes
+    if (
+        el.tagName !== 'BUTTON' &&
+        el.id !== 'nav-dropdown-btn' && 
+        !el.closest('#nav-dropdown-btn') &&
+        !el.classList.contains('sa-role-btn') &&
+        !el.classList.contains('sandbox-tab') &&
+        !el.closest('.sa-role-btn') &&
+        !el.closest('.sandbox-tab')
+    ) {
         el.addEventListener('click', openModal);
     }
   });

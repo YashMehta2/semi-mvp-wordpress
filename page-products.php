@@ -30,7 +30,7 @@ get_header();
 <main class="min-h-screen bg-root pb-20">
     
     <!-- ── 1. Institutional Hero Section ── -->
-    <section class="relative border-b border-border-subtle bg-root pt-8 pb-10 md:pt-10 md:pb-12 lg:pt-12 lg:pb-14 overflow-hidden">
+    <section class="relative border-b border-border-subtle bg-root pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <!-- Dot-grid texture -->
         <div class="pointer-events-none absolute inset-0 opacity-[0.03] z-10" style="background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px); background-size: 26px 26px;"></div>
         <div class="pointer-events-none absolute top-0 right-0 h-96 w-96 rounded-full bg-accent-secondary/5 blur-[120px] z-10"></div>
@@ -43,14 +43,14 @@ get_header();
         </div>
 
         <div class="container relative z-10">
-            <div class="max-w-3xl space-y-6">
+            <div class="max-w-3xl space-y-4 sa-reveal">
                 <div class="inline-flex w-fit items-center gap-2 rounded-md border border-accent-secondary/20 bg-accent-secondary/10 px-3 py-1.5">
                     <span class="h-1.5 w-1.5 rounded-full bg-accent-secondary animate-pulse"></span>
                     <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary">
                         Technical Data Products
                     </span>
                 </div>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-extrabold tracking-tighter text-content-primary leading-[1.05]">
+                <h1 class="text-3xl sm:text-4xl md:text-[48px] lg:text-[54px] font-extrabold tracking-tighter text-content-primary leading-[1.05]">
                     AI Infrastructure Datasets &amp; <br />
                     <span class="text-accent-primary">Bottom-Up Semiconductor Models</span>
                 </h1>
@@ -71,10 +71,10 @@ get_header();
     </section>
 
     <!-- ── 2. Subtle Role-Based Segmentation ── -->
-    <section class="py-8 border-b border-border-subtle bg-root">
+    <section class="py-6 border-b border-border-subtle bg-root">
         <div class="container">
-            <div class="max-w-xl mb-8">
-                <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-2">Workflow Alignment</h3>
+            <div class="max-w-xl mb-5 sa-reveal">
+                <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-1.5">Workflow Alignment</h3>
                 <h2 class="text-xl sm:text-2xl font-extrabold text-content-primary">Select Your Organization Focus</h2>
                 <p class="text-xs sm:text-sm text-content-secondary mt-1">Identify which datasets match your specific research objectives and database schemas.</p>
             </div>
@@ -84,7 +84,7 @@ get_header();
                 <div class="flex flex-wrap gap-2 border-b border-border-subtle pb-4">
                     <button
                       data-role="investors"
-                      class="sa-role-btn text-xs font-bold px-4 py-2 rounded-lg border transition-all duration-150 cursor-pointer bg-accent-secondary/10 border-accent-secondary/30 text-accent-secondary font-extrabold"
+                      class="sa-role-btn text-xs font-bold px-4 py-2 rounded-lg border transition-all duration-150 cursor-pointer bg-accent-secondary/10 border-accent-secondary/30 text-accent-secondary font-extrabold border-l-[3px] border-l-accent-secondary"
                     >
                       Investment &amp; Buy-Side Analysts
                     </button>
@@ -103,7 +103,7 @@ get_header();
                 </div>
 
                 <!-- Role Content details -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface/50 border border-border-subtle p-6 rounded-xl">
+                <div id="role-content-wrapper" class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface/50 border border-border-subtle p-6 rounded-xl animate-in fade-in slide-in-from-bottom-2 duration-300">
                   <div class="space-y-4">
                     <div>
                       <h4 class="text-[10px] uppercase tracking-widest text-content-tertiary font-bold mb-1.5">Core Research Focus</h4>
@@ -148,19 +148,19 @@ get_header();
     </section>
 
     <!-- ── 3. Product / Model Grid with Enterprise Use-Cases ── -->
-    <section id="models-list" class="py-8 border-b border-border-subtle bg-surface/30">
+    <section id="models-list" class="py-6 border-b border-border-subtle bg-surface/30">
         <div class="container">
           
-          <div class="max-w-xl mb-12">
-            <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-2">Core Platforms</h3>
+          <div class="max-w-xl mb-6 sa-reveal">
+            <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-1.5">Core Platforms</h3>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-content-primary">Flagship Enterprise Models</h2>
             <p class="text-xs sm:text-sm text-content-secondary mt-1">Our main research databases containing bottoms-up metrics modeling the physical bottlenecks of computing.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <?php foreach ($flagship_products as $slug => $product): ?>
-              <div class="flex flex-col bg-root rounded-xl border border-border-strong p-6 sm:p-7 hover:border-border-strong transition-all h-full">
-                <div class="flex items-center justify-between mb-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <?php $stagger = 1; foreach ($flagship_products as $slug => $product): ?>
+              <div class="group flex flex-col bg-root rounded-xl border border-border-strong p-5 hover:border-accent-secondary/30 transition-all duration-200 h-full sa-reveal sa-stagger-<?php echo $stagger++; ?>" style="transition: transform 250ms cubic-bezier(0.16,1,0.3,1), box-shadow 250ms cubic-bezier(0.16,1,0.3,1), border-color 250ms ease;">
+                <div class="flex items-center justify-between mb-3">
                   <span class="text-[10px] uppercase font-bold tracking-widest text-content-secondary px-2.5 py-1 bg-surface border border-border-subtle rounded">
                     <?php echo esc_html($product['category']); ?>
                   </span>
@@ -172,28 +172,28 @@ get_header();
                   </div>
                 </div>
 
-                <h3 class="text-lg font-bold text-content-primary mb-2 leading-snug">
+                <h3 class="text-[15px] font-extrabold text-content-primary mb-2 leading-snug">
                   <?php echo esc_html($product['title']); ?>
                 </h3>
-                <p class="text-xs text-content-secondary leading-relaxed mb-6 flex-grow">
+                <p class="text-[12px] text-content-secondary leading-relaxed mb-4 flex-grow" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
                   <?php echo esc_html($product['description']); ?>
                 </p>
 
-                <!-- Enterprise Use Case Section -->
+                <!-- Enterprise Use Case Section — preserved, visually tightened -->
                 <?php 
                 $useCase = isset($use_cases[$slug]) ? $use_cases[$slug] : '';
                 if (!empty($useCase)): ?>
-                  <div class="mb-6 p-3.5 bg-surface/50 rounded-lg border border-border-subtle">
-                    <p class="text-[9px] uppercase font-extrabold tracking-wider text-content-tertiary mb-1">Enterprise Application</p>
-                    <p class="text-xs font-semibold text-content-secondary leading-normal"><?php echo esc_html($useCase); ?></p>
+                  <div class="mb-4 px-3 py-2 bg-surface/50 rounded-lg border border-border-subtle/40">
+                    <p class="text-[9px] uppercase font-extrabold tracking-wider text-content-tertiary mb-0.5">Enterprise Application</p>
+                    <p class="text-[11px] font-semibold text-content-secondary leading-normal"><?php echo esc_html($useCase); ?></p>
                   </div>
                 <?php endif; ?>
 
-                <div class="flex items-center justify-between pt-4 border-t border-border-subtle mt-auto text-xs font-bold">
+                <div class="flex items-center justify-between pt-3 border-t border-border-subtle mt-auto text-xs font-bold">
                   <span class="text-content-tertiary uppercase tracking-widest">
                     Coverage: <span class="text-accent-secondary"><?php echo esc_html($product['dataPoints']); ?></span>
                   </span>
-                  <a href="/models/<?php echo esc_attr($slug); ?>" class="text-content-primary hover:text-accent-primary transition-colors flex items-center gap-1">
+                  <a href="/models/<?php echo esc_attr($slug); ?>" class="text-content-primary hover:text-accent-secondary transition-colors flex items-center gap-1">
                     <span>View Specifications</span>
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                   </a>
@@ -206,10 +206,10 @@ get_header();
     </section>
 
     <!-- ── 4. Gated Data Previews (DataSandbox) ── -->
-    <section class="py-8 border-b border-border-subtle bg-root">
+    <section class="py-6 border-b border-border-subtle bg-root">
         <div class="container">
-          <div class="max-w-xl mb-8">
-            <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-2">Technical Preview</h3>
+          <div class="max-w-xl mb-5 sa-reveal">
+            <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-1.5">Technical Preview</h3>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-content-primary">Spreadsheet Schema Previews</h2>
             <p class="text-xs sm:text-sm text-content-secondary mt-1">Review the grid format, formula structures, and sample columns contained in our raw Excel files.</p>
           </div>
@@ -301,89 +301,59 @@ get_header();
     <!-- ── 5. Embedded Institutional Inquiry Flow ── -->
     <section id="inquiry" class="py-8 bg-surface/20">
         <div class="container">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-6 space-y-6">
-              <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary">Licensing Request</h3>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-content-primary leading-snug">Request Platform &amp; Model Licensing</h2>
-              <p class="text-sm text-content-secondary leading-relaxed font-medium">
-                Our licensing plans are structured for equity research desks, buy-side funds, corporate development, and product procurement teams. Submitting a request allows our analyst team to customize a proposal based on your team size and coverage requirements.
-              </p>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-              <div class="space-y-4 pt-2">
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 flex-shrink-0 text-accent-primary">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-content-primary uppercase tracking-wider">Restrained Compliance Rules</h4>
-                    <p class="text-xs text-content-secondary leading-relaxed mt-0.5">We maintain strict adherence to primary research compliance standards and MNPI guidelines.</p>
-                  </div>
+            <!-- Left Column: Title and Compliance Bullets -->
+            <div class="lg:col-span-5 space-y-6 sa-reveal">
+              <div>
+                <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-1.5">Licensing Request</h3>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-content-primary leading-snug">Request Platform &amp; Model Licensing</h2>
+                <p class="text-sm text-content-secondary leading-relaxed font-medium mt-2">
+                  Our licensing plans are structured for equity research desks, buy-side funds, corporate development, and product procurement teams. Submitting a request allows our analyst team to customize a proposal based on your team size and coverage requirements.
+                </p>
+              </div>
+
+              <!-- Trust bullets — stacked cleanly on the left -->
+              <div class="space-y-4 pt-5 border-t border-border-subtle">
+                <div class="flex items-start gap-3 text-[12px] font-medium text-content-secondary">
+                  <svg class="w-4 h-4 flex-shrink-0 text-accent-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span><span class="font-bold text-content-primary">Restrained Compliance Rules</span> — MNPI &amp; primary research standards</span>
                 </div>
-
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 flex-shrink-0 text-accent-primary">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-content-primary uppercase tracking-wider">Multi-User Management</h4>
-                    <p class="text-xs text-content-secondary leading-relaxed mt-0.5">Direct SAML/SSO access and organization-wide domain licensing configurations available.</p>
-                  </div>
+                <div class="flex items-start gap-3 text-[12px] font-medium text-content-secondary">
+                  <svg class="w-4 h-4 flex-shrink-0 text-accent-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                  <span><span class="font-bold text-content-primary">Multi-User Management</span> — SAML/SSO &amp; domain-wide licensing</span>
                 </div>
-
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 flex-shrink-0 text-accent-primary">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-content-primary uppercase tracking-wider">Custom Data Pipelines</h4>
-                    <p class="text-xs text-content-secondary leading-relaxed mt-0.5">Enterprise licenses include automated weekly updates via email attachment, SFTP, or direct API payload.</p>
-                  </div>
+                <div class="flex items-start gap-3 text-[12px] font-medium text-content-secondary">
+                  <svg class="w-4 h-4 flex-shrink-0 text-accent-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                  <span><span class="font-bold text-content-primary">Custom Data Pipelines</span> — Email, SFTP, or direct API payload</span>
                 </div>
               </div>
             </div>
 
-            <div class="lg:col-span-6">
-              <div class="bg-surface border border-border-strong p-6 sm:p-8 rounded-2xl shadow-2xl">
-                <div class="mb-6 border-b border-border-subtle pb-4">
+            <!-- Right Column: Inquiry Form Card -->
+            <div class="lg:col-span-7 sa-reveal sa-stagger-1">
+              <div class="bg-surface border border-border-strong p-5 sm:p-6 rounded-xl shadow-2xl">
+                <div class="mb-4 border-b border-border-subtle pb-3">
                   <h3 class="text-sm font-bold uppercase tracking-wider text-content-primary">Inquiry Configuration</h3>
                   <p class="text-xs text-content-secondary leading-normal mt-1">Specify your dataset focus and research goals below.</p>
                 </div>
-                <form id="enterprise-inquiry-form" class="space-y-3 bg-root/60 backdrop-blur-md p-6 rounded-xl border border-border-subtle">
+                <form id="enterprise-inquiry-form" class="space-y-3">
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <input
-                        type="email"
-                        id="inquiry-email"
-                        placeholder="Work Email"
-                        required
-                        class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
-                      />
+                      <input type="email" id="inquiry-email" placeholder="Work Email" required
+                        class="w-full h-10 px-3 rounded-lg bg-root border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors">
                     </div>
                     <div>
-                      <input
-                        type="text"
-                        id="inquiry-company"
-                        placeholder="Company"
-                        required
-                        class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
-                      />
+                      <input type="text" id="inquiry-company" placeholder="Company" required
+                        class="w-full h-10 px-3 rounded-lg bg-root border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors">
                     </div>
                   </div>
                   <div>
-                    <textarea
-                      id="inquiry-requirements"
-                      placeholder="Describe your research focus or data requirements..."
-                      rows="3"
-                      required
-                      class="w-full p-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors resize-none"
-                    ></textarea>
+                    <textarea id="inquiry-requirements" placeholder="Describe your research focus or data requirements..." rows="3" required
+                      class="w-full p-3 rounded-lg bg-root border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors resize-none"></textarea>
                   </div>
-                  <button
-                    type="submit"
-                    id="inquiry-submit-btn"
-                    class="w-full inline-flex items-center justify-center h-10 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200 cursor-pointer"
-                  >
+                  <button type="submit" id="inquiry-submit-btn"
+                    class="w-full inline-flex items-center justify-center h-10 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200 cursor-pointer">
                     Request Proposal
                   </button>
                   <div id="inquiry-success-msg" class="hidden text-center text-xs font-bold text-emerald-500 pt-2">
@@ -398,6 +368,7 @@ get_header();
     </section>
 
 </main>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -423,11 +394,18 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.sa-role-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.sa-role-btn').forEach(b => {
-                b.classList.remove('bg-accent-secondary/10', 'border-accent-secondary/30', 'text-accent-secondary', 'font-extrabold');
+                b.classList.remove('bg-accent-secondary/10', 'border-accent-secondary/30', 'text-accent-secondary', 'font-extrabold', 'border-l-[3px]', 'border-l-accent-secondary');
                 b.classList.add('border-border-strong', 'text-content-secondary');
             });
             this.classList.remove('border-border-strong', 'text-content-secondary');
-            this.classList.add('bg-accent-secondary/10', 'border-accent-secondary/30', 'text-accent-secondary', 'font-extrabold');
+            this.classList.add('bg-accent-secondary/10', 'border-accent-secondary/30', 'text-accent-secondary', 'font-extrabold', 'border-l-[3px]', 'border-l-accent-secondary');
+            
+            const contentDiv = document.getElementById('role-content-wrapper');
+            if(contentDiv) {
+                contentDiv.classList.remove('animate-in', 'fade-in', 'slide-in-from-bottom-2', 'duration-300');
+                void contentDiv.offsetWidth; // trigger reflow
+                contentDiv.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-2', 'duration-300');
+            }
             
             const roleId = this.getAttribute('data-role');
             const data = ROLES_DATA[roleId];
