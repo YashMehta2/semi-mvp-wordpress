@@ -17,27 +17,12 @@ function get_semi_models() {
                 "Our data is provided for 2023 to 2027 on a quarterly basis. Subscription to this model grants the user quarterly updates for one year. These models are not included with the annual membership to the SemiAnalysis Newsletter. All models are separate institutional offerings."
             ],
             'features' => [
-                "Number of shipments and ASPs of AI accelerators by SKU.",
+                "Number of shipments and ASPs of AI accelerators by SKU (including Nvidia, Google TPU, Meta MTIA, AWS Inferentia/Trainium, Microsoft Maia, OpenAI, Softbank Izanagi, Tesla Dojo, AMD, Intel, Bytedance, Huawei, Iluvater, Cambricon, and more).",
                 "Accelerator revenue forecasts for merchant and semi-custom providers: Nvidia, AMD, Broadcom, Marvell, Intel, Alchip, Mediatek.",
-                "Supply chain and capacity orders for these chips from both a supply perspective (total potential units based on capacity orders) and actual demand perspective (actual shipments).",
-                "Shipments by customer and accelerator installed base for over 60 major customers.",
+                "Supply chain and capacity orders for these chips: Number of Foundry wafers, Number of 2.5D wafers, package sizes, and yields (TSMC, Samsung, Intel, Amkor, ASE SPIL), and Total number of die attach steps (BESI, ASMPT, etc) from both a supply and actual shipments perspective.",
+                "Implications for upstream fabrication, packaging, and equipment demand: HBM type, Total capacity, Layer count, Total number of stacks, Total bits, and Manufacturer.",
+                "Shipments by customer and accelerator installed base for over 60 major customers (US and Chinese hyperscalers, Enterprises, Neoclouds such as Coreweave, other startups and sovereign AI initiatives).",
                 "Total compute install base including peak theoretical FLOPS and effective FLOPS based on training Model Flops Utilization by chip."
-            ],
-            'metrics' => [
-                [ 'label' => 'Coverage Period', 'value' => '2023 - 2027', 'trend' => 'Quarterly' ],
-                [ 'label' => 'Major Customers', 'value' => '60+', 'trend' => 'Tracked' ],
-                [ 'label' => 'Providers Covered', 'value' => '7 Major', 'trend' => 'Merchant & Custom' ],
-            ],
-            'takeaways' => [
-                [ 'title' => 'What this model tracks', 'description' => 'Shipments and ASPs of AI accelerators by SKU, revenue forecasts, capacity orders, and customer install base.' ],
-                [ 'title' => 'Who uses this', 'description' => 'Hyperscalers, major semiconductor companies, and large investors in public and private markets.' ],
-                [ 'title' => 'Why it matters', 'description' => 'Enables upstream and downstream supply chain information tracking from equipment to deployed capacity.' ],
-                [ 'title' => 'Key insight', 'description' => 'Helps estimate revenue for firms across the fabrication, packaging, and equipment value chain.' ],
-            ],
-            'methodology' => [
-                [ 'category' => 'Data Sources', 'details' => 'Upstream and downstream supply chain information gathered from equipment requirements, foundry capacity, and customer allocations.' ],
-                [ 'category' => 'Update Cadence', 'details' => 'Quarterly updates for one year included with the subscription.' ],
-                [ 'category' => 'Usage', 'details' => 'Separate institutional offering, not included with the annual newsletter membership.' ],
             ],
             'enterpriseSignals' => ["Updated Quarterly", "2023 - 2027 Forecasts", "Institutional Access"],
             'visualType' => "supply-chain",
@@ -63,27 +48,15 @@ function get_semi_models() {
                 "The model will also include one year of quarterly updates for additional features and improvements, an initial call with SemiAnalysis to explain the model and methodologies employed, as well as subsequent ad-hoc calls to answer any questions that arise from the use of the models. These models are not included with the annual membership to the SemiAnalysis Newsletter. All models are separate institutional offerings."
             ],
             'features' => [
-                "Examines the ownership economics of AI Clouds purchasing accelerators and selling bare metal or cloud GPU compute.",
-                "Sheds light on the likely future cost curves for AI Compute based on upcoming AI Accelerators.",
-                "Analyzes the impact of various optimization techniques and parallelism schemes being implemented in the market.",
-                "Evaluates the business case for establishing and running an AI Cloud for management, equity, and debt investors.",
-                "Benchmarking and planning tool for customers procuring AI Compute, particularly on a long-term basis."
-            ],
-            'metrics' => [
-                [ 'label' => 'Residual Value', 'value' => 'Accelerators', 'trend' => 'Estimated' ],
-                [ 'label' => 'Future Cost Curves', 'value' => 'AI Compute', 'trend' => 'Projected' ],
-                [ 'label' => 'Update Cadence', 'value' => 'Quarterly', 'trend' => '1 Year' ],
-            ],
-            'takeaways' => [
-                [ 'title' => 'What this model tracks', 'description' => 'Ownership economics of AI Clouds, cloud GPU compute economics, future cost curves, and parallelism schemes.' ],
-                [ 'title' => 'Who uses this', 'description' => 'AI Cloud management teams, equity/debt investors, and customers procuring AI compute on a long-term basis.' ],
-                [ 'title' => 'Why it matters', 'description' => 'Evaluates the business case for establishing and running an AI Cloud, and serves as a benchmarking tool.' ],
-                [ 'title' => 'Key insight', 'description' => 'Sheds light on future cost curves based on upcoming accelerators and optimization techniques.' ],
-            ],
-            'methodology' => [
-                [ 'category' => 'Data Sources', 'details' => 'Bottom-up analysis of accelerator hardware capital expenditure, facility power constraints, PUE, and network overhead.' ],
-                [ 'category' => 'Update Cadence', 'details' => 'Quarterly updates for one year included with subscription.' ],
-                [ 'category' => 'Support', 'details' => 'Includes initial methodology call and subsequent ad-hoc consulting Q&A support.' ],
+                "Historical and future rental price analysis and estimates for a variety of GPUs, incorporating detailed install base by GPU projections through 2028 and estimated GPU total unit shipments by major vendor through 2034.",
+                "GPU metrics including Inference throughput, Training throughput, GPU TDP, All-in TDP per GPU, cost of ownership ($/hr), Inference Cost per M tokens, and Training Cost per FLOP for Nvidia, AMD, Intel, and custom accelerators.",
+                "Market-wide metrics: inference/training throughput, advanced inference/training cost ($/M tokens), and average training cost ($/hr per PFLOP).",
+                "Analysis of the impact of various optimizations and parallelism schemes (Pipeline Parallel, Tensor Parallel, Expert Parallel, Data Parallel) on GPU inference and training throughput.",
+                "Future GPU rental price scenario analysis based on supply-demand dynamics and cost curve evolution given future GPU capabilities.",
+                "GPU Total Cost of Ownership analysis: comprehensive cost of operating GPU servers ($/hr) based on upfront server capex, system power consumption, colocation and electricity costs, and cost of capital.",
+                "Returns and Residual Value analysis: NPV and residual value analysis for a GPU cluster based on future earnings, cumulative project/equity cash flow, IRR, return on assets, ROIC, and ROE.",
+                "AI Cloud Full Financial Model: Three-statement model (Income Statement, Balance Sheet, Cash Flow) including server depreciation, unearned revenue, and borrowings.",
+                "Support for key financial assumptions: capital structures, PIK interest, depreciation, colocation, electricity, maintenance contracts, sales and marketing, fixed pricing duration, customer prepay, operating lifetime, and taxes."
             ],
             'enterpriseSignals' => ["TCO & Economics", "Quarterly Updates", "Institutional Access"],
             'visualType' => "cloud",
@@ -108,26 +81,18 @@ function get_semi_models() {
                 "These models are not included with the annual membership to the SemiAnalysis Newsletter. All models are separate institutional offerings."
             ],
             'features' => [
-                "Detailed Cluster Configuration Analysis by each hyperscaler.",
-                "Bottom-up build-up of AI data center networking structures for each hyperscaler (Microsoft, Google, Meta, Amazon, Oracle, X.AI) as well as for the Neoclouds.",
-                "Top-down analysis of total market conditions and vendor market shares for optical modules, switches, and AECs.",
-                "Master pricing table of key networking devices and components used in AI data centers including pricing for Hyperscalers/Neocloud Giants/Emerging Neoclouds and power budgets."
-            ],
-            'metrics' => [
-                [ 'label' => 'Tracked Providers', 'value' => 'Microsoft, Google', 'trend' => 'Meta, AWS, Oracle' ],
-                [ 'label' => 'Neocloud Giants', 'value' => 'X.AI & more', 'trend' => 'Tracked' ],
-                [ 'label' => 'Device Types', 'value' => 'AEC/DAC/Optical', 'trend' => 'Switches & Cables' ],
-            ],
-            'takeaways' => [
-                [ 'title' => 'What this model tracks', 'description' => 'Switches, transceivers, cables, AEC/DACs for scale-up, scale-out backend, front end, and out of band networks.' ],
-                [ 'title' => 'Who uses this', 'description' => 'Hyperscalers, neocloud giants, and infrastructure planners evaluating networking device options.' ],
-                [ 'title' => 'Why it matters', 'description' => 'Decodes the increasingly critical networking layer of AI and cloud infrastructure.' ],
-                [ 'title' => 'Key insight', 'description' => 'Provides bottom-up data center structures, master pricing table, and power budgets.' ],
-            ],
-            'methodology' => [
-                [ 'category' => 'Data Sources', 'details' => 'Hyperscaler data center architecture profiling, optical vendor market share checks, and master component pricing surveys.' ],
-                [ 'category' => 'Update Cadence', 'details' => 'Regular updates with market conditions and pricing shifts.' ],
-                [ 'category' => 'Scope', 'details' => 'Covers optical transceivers, AEC/DAC copper connections, and backend networks.' ],
+                "Over 80 configuration panels detailing how each hyperscaler (Microsoft, Google, Meta, Amazon, Oracle, X.AI) as well as how Neoclouds build their AI Cluster networks, covering scale-up, scale-out, front-end, and out of band networks.",
+                "Provides all configurations in use across different accelerator SKUs for each Hyperscaler as well as for the Neoclouds.",
+                "Detailed device tracking per configuration: SKU and quantity of switches, optical modules, fibers, AECs, ACCs, and DACs utilized, along with their attachment ratios to accelerators.",
+                "Pricing and power consumption breakdown of switches, optical modules, fibers, AECs, ACCs, DACs, and other networking devices.",
+                "Networking configuration breakdown per each deployed accelerator (H100, H200, B100, B200, GB200 NVL36, GB200 NVL72, B300, GB300 NVL, VR200, MI300, MI325, MI350, custom ASICs).",
+                "Summary of by-customer and market-wide units and spend for switches, transceivers, and cables, including forecasts for 200G/400G/800G/1.6T transceivers and Broadcom/Arista/Nvidia switches.",
+                "Detailed breakdown by SKU of Switches, Optical Modules, AECs/ACCs/DACs procured by each hyperscaler for their AI data centers.",
+                "Switch vendor wallet share breakdown covering Nvidia, Arista, Celestica, Cisco, Accton, Juniper, Nexthop, Huawei, Broadcom, Marvell, and others.",
+                "Optical module vendor wallet share and market forecasts covering Nvidia, Zhongji Innolight, Coherent, Eoptolink, Fabrinet, TFC Optical, Lumentum/Cloudlight, AAOI, Accelink, Source Photonics, and others.",
+                "AEC/ACC/DAC/fiber vendor coverage including Nvidia, Credo, Astera Labs, Amphenol, TE Connectivity, Molex, Luxshare, Broadex, and others.",
+                "Total market volume and market share breakdown quarterly from 2023 to 1Q 2025, and forecasts for 2025 and 2026.",
+                "Detailed breakdown of vendor wallet share at each hyperscaler for optical modules (1.6T/800G/400G), switches (BlackBox/WhiteBox), and AECs (800G/400G)."
             ],
             'enterpriseSignals' => ["Optical & Switches", "Pricing Tables", "Institutional Access"],
             'visualType' => "architecture",
@@ -154,27 +119,18 @@ function get_semi_models() {
                 "Our data is provided for 2023 to 2030. The model will also include one year of quarterly updates, an initial call with SemiAnalysis to explain the model and methodologies employed, as well as subsequent ad-hoc calls to answer any questions that arise from the use of the models. These models are not included with the annual membership to the SemiAnalysis Newsletter. All models are separate institutional offerings."
             ],
             'features' => [
-                "Tracks over 5,000 datacenters and their deployments globally.",
-                "Uses property records, permits, power usage, FOIA requests, and satellite images.",
-                "Employs computer vision models to accelerate satellite imaging and track progress.",
-                "Analyzes capacity constraints by major player and location drivers.",
-                "Examines economics of AI Accelerator clouds, datacenter colocation, and facility capex."
-            ],
-            'metrics' => [
-                [ 'label' => 'Tracked Facilities', 'value' => '5,000+', 'trend' => 'Globally' ],
-                [ 'label' => 'Coverage Period', 'value' => '2023 - 2030', 'trend' => 'Projections' ],
-                [ 'label' => 'Update Cadence', 'value' => 'Quarterly', 'trend' => '1 Year' ],
-            ],
-            'takeaways' => [
-                [ 'title' => 'What this model tracks', 'description' => 'Current and forecast critical IT power capacity for colocation and hyperscale datacenters.' ],
-                [ 'title' => 'Who uses this', 'description' => 'Hyperscalers, major semiconductor companies, and large investors in public and private markets.' ],
-                [ 'title' => 'Why it matters', 'description' => 'Helps understand location decisions, economics of accelerator clouds, and facility capex.' ],
-                [ 'title' => 'Key insight', 'description' => 'Tracks power usage and timelines using computer vision models on satellite imagery.' ],
-            ],
-            'methodology' => [
-                [ 'category' => 'Data Sources', 'details' => 'Property records, permits, power usage reports, FOIA requests, and satellite images.' ],
-                [ 'category' => 'Processing', 'details' => 'Computer vision models run on satellite imagery to track datacenter footprints, critical substation power, and construction timelines.' ],
-                [ 'category' => 'Update Cadence', 'details' => 'Quarterly updates for one year included.' ],
+                "Accelerator unit shipment forecasts through 2027, deployments, install base, and AI datacenter requirements by major Hyperscalers and AI clouds.",
+                "All-in power requirements per Accelerator unit across various major chips/models.",
+                "Forecast AI datacenter critical IT power demand, PUE, utility power, and annual power consumption by major geography (US, North America, Asia Pacific, China, EMEA) and region.",
+                "Historical, current, and forecast datacenter capacity by major hyperscaler by site, cluster, and region, along with forecast major hyperscaler datacenter and IT capex, based on over 5,000 individual datacenter facilities tracked.",
+                "Accelerator deployments plans and installed base of >50 companies (including US hyperscalers, Chinese hyperscalers, neoclouds like Coreweave, enterprises, and sovereign AI initiatives).",
+                "Self-build and leased capacity (in MW) and future plans for Microsoft, AWS, Meta, Google, Oracle, Apple, Coreweave, Tesla, x.AI, and more.",
+                "Critical IT capacity of cities and major buildings in USA, Canada, China, Singapore, Malaysia, Australia, India, Europe & UK, and Middle East.",
+                "Forecast industry-wide datacenter capex (excluding IT equipment) and breakdown by major category (Power, Cooling, Facilities) and subcategories.",
+                "AI Supply/Demand Analysis by major hyperscaler and geographic region, examining whether under-development supply will meet power demand from estimated accelerator shipments.",
+                "Geospatial data and grid tagging for US Datacenter power consumption.",
+                "Datacenter Anatomy and key suppliers of equipment (Generators, Transformers, UPS, Chillers, CDUs, CRAH/CRAC/PAHUs).",
+                "AI/GPU Cloud Total Cost of Ownership Analysis, solar power economics, global industrial electricity tariffs, and power cost scenario analysis."
             ],
             'enterpriseSignals' => ["5,000+ Datacenters", "2023 - 2030 Forecasts", "Satellite Auditing"],
             'visualType' => "cloud",
@@ -199,26 +155,18 @@ function get_semi_models() {
                 "The data is provided for 2021 to 2027 on an annual basis. The model will also include one year of quarterly updates, an initial call with SemiAnalysis to explain the model and methodologies employed, as well as subsequent ad-hoc calls to answer any questions that arise from the use of the models. These models are not included with the annual membership to the SemiAnalysis Newsletter. All models are separate institutional offerings."
             ],
             'features' => [
-                "Bottoms-up forecast of semiconductor equipment sales based on wafer capacity and process nodes.",
-                "Detailed layer-by-layer flow modeling for advanced logic process requirements.",
-                "Critical specifications database for leading edge and next-generation processes (including 1.4nm-class).",
-                "Lithography tool tracking, including high-NA EUV equipment bookings and requirements."
-            ],
-            'metrics' => [
-                [ 'label' => 'Coverage Period', 'value' => '2021 - 2027', 'trend' => 'Annual' ],
-                [ 'label' => 'Advanced Process', 'value' => '1.4nm-class', 'trend' => 'Tracked' ],
-                [ 'label' => 'Lithography Node', 'value' => 'High-NA EUV', 'trend' => 'Detailed' ],
-            ],
-            'takeaways' => [
-                [ 'title' => 'What this model tracks', 'description' => 'Semiconductor equipment sales, wafer capacity, and process node requirements via a bottoms-up approach.' ],
-                [ 'title' => 'Who uses this', 'description' => 'Foundry managers, wafer capacity planners, and capital equipment investors.' ],
-                [ 'title' => 'Why it matters', 'description' => 'Models process requirements with a detailed layer-by-layer flow for advanced logic.' ],
-                [ 'title' => 'Key insight', 'description' => 'Critical specifications for leading edge and next generation logic processes and tools are database-enumerated.' ],
-            ],
-            'methodology' => [
-                [ 'category' => 'Data Sources', 'details' => 'Bottoms-up fab capacity planning, process node requirements, and layer-by-layer lithography flow modeling.' ],
-                [ 'category' => 'Update Cadence', 'details' => 'Annual forecasting with quarterly adjustments and updates.' ],
-                [ 'category' => 'Support', 'details' => 'Includes setup methodology briefings and direct Q&A support call blocks.' ],
+                "Wafer capacity for leading edge logic major nodes out to 2027.",
+                "Lithography equipment sales forecasts through 2027 for advanced logic major nodes (processes using EUV lithography) by model, units, and revenue, broken down by chipmaker and process node.",
+                "Layer by layer lithography requirements for advanced logic major nodes, by technology (EUV, ArFi, KrF, etc.), broken down by chipmaker and process node, from 1st use of EUV through 1.4nm-equivalent including finFET, GAA, and backside power delivery.",
+                "Wafer capacity forecasts through 2027 for advanced logic and leading-edge memory chipmakers (10-nm class DRAM), by major process node.",
+                "Wafer fab equipment sales through 2027 for major segments: lithography, deposition, etch, wafer track (coat, bake, develop), and metrology/inspection.",
+                "Covers all major equipment vendors: Applied Materials, ASML, Lam Research, KLA, Screen, ASMI, Kokusai Electric, Tokyo Electron, and more.",
+                "Sales revenue broken down by end-use segment: leading edge logic, specialty (trailing edge logic, analog, power, rf, etc), DRAM, NAND/non-volatile, and China.",
+                "Aggregate specialty equipment sales revenue by equipment segment through 2027.",
+                "Annual equipment capital expenditure by advanced logic chipmaker and process, forecast through 2027.",
+                "Detailed lithography tool database including model, throughput, uptime, rework rate, release date, and ASP including upcoming next generation tools.",
+                "Non-lithography tool database as an easy reference for key tools.",
+                "Includes forecast on effect of pattern shaping (Applied Material's Sculpta tool) and directed-self assembly on EUV lithography requirements."
             ],
             'enterpriseSignals' => ["1.4nm & EUV Focus", "Layer-by-Layer Flow", "Annual Forecasts"],
             'visualType' => "semiconductor",
