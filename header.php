@@ -1,4 +1,6 @@
 <?php
+require_once get_stylesheet_directory() . '/data.php';
+$header_models = get_semi_models();
 ?><!doctype html>
 <html <?php language_attributes(); ?> class="scroll-smooth">
 <head>
@@ -145,12 +147,9 @@
                             <p class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary px-3 py-2">
                                 Industry Models
                             </p>
-                            <a href="/models/ai-compute-supply-model" class="block px-3 py-2 text-sm text-content-secondary hover:text-accent-secondary hover:bg-white/5 rounded-lg transition-all duration-150">Accelerator &amp; HBM Model</a>
-                            <a href="/models/gpu-scaling-bottleneck-model" class="block px-3 py-2 text-sm text-content-secondary hover:text-accent-secondary hover:bg-white/5 rounded-lg transition-all duration-150">AI Cloud TCO Model</a>
-                            <a href="/models/semiconductor-capacity-tracker" class="block px-3 py-2 text-sm text-content-secondary hover:text-accent-secondary hover:bg-white/5 rounded-lg transition-all duration-150">Foundry Industry Model</a>
-                            <a href="/models/data-center-power-model" class="block px-3 py-2 text-sm text-content-secondary hover:text-accent-secondary hover:bg-white/5 rounded-lg transition-all duration-150">Datacenter Industry Model</a>
-                            <a href="/models/memory-supply-model" class="block px-3 py-2 text-sm text-content-secondary hover:text-accent-secondary hover:bg-white/5 rounded-lg transition-all duration-150">Memory Model</a>
-                            <a href="/models/cloud-infrastructure-growth-model" class="block px-3 py-2 text-sm text-content-secondary hover:text-accent-secondary hover:bg-white/5 rounded-lg transition-all duration-150">Energy Model</a>
+                            <?php foreach ($header_models as $slug => $m): ?>
+                            <a href="/models/<?php echo esc_attr($slug); ?>" class="block px-3 py-2 text-sm text-content-secondary hover:text-accent-secondary hover:bg-white/5 rounded-lg transition-all duration-150"><?php echo esc_html($m['title']); ?></a>
+                            <?php endforeach; ?>
                             <div class="my-2 border-t border-border-subtle"></div>
                             <a href="/models" class="block px-3 py-2 text-sm font-bold text-accent-secondary hover:bg-accent-secondary/10 rounded-lg transition-all">
                                 View all models &rarr;
@@ -168,11 +167,7 @@
                 <a href="/about" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">About</a>
             </nav>
             <div class="flex items-center gap-3">
-                <div class="hidden sm:flex items-center gap-1.5 p-1 bg-surface border border-border-subtle rounded-lg mr-2">
-                    <span class="text-[10px] uppercase font-bold text-content-tertiary pl-2 pr-1 select-none tracking-widest">Demo</span>
-                    <button id="auth-btn-guest" class="px-3 py-1 text-[11px] font-bold rounded-md transition-all bg-white/10 text-content-primary">Guest</button>
-                    <button id="auth-btn-pro" class="px-3 py-1 text-[11px] font-bold rounded-md transition-all text-content-secondary hover:text-content-primary">Pro</button>
-                </div>
+
                 <button class="text-content-secondary hover:text-content-primary p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </button>
@@ -190,10 +185,9 @@
         <div id="mobile-drawer-inner" class="absolute top-16 left-0 right-0 bg-root border-b border-border-subtle transition-transform duration-300 max-h-[calc(100vh-64px)] overflow-y-auto -translate-y-4">
             <nav class="container py-6 flex flex-col gap-2">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary px-3 pt-2 pb-1">Industry Models</p>
-                <a href="/models/ai-compute-supply-model" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Accelerator &amp; HBM Model</a>
-                <a href="/models/gpu-scaling-bottleneck-model" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">AI Cloud TCO Model</a>
-                <a href="/models/semiconductor-capacity-tracker" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Foundry Industry Model</a>
-                <a href="/models/data-center-power-model" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Datacenter Industry Model</a>
+                <?php foreach ($header_models as $slug => $m): ?>
+                <a href="/models/<?php echo esc_attr($slug); ?>" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all"><?php echo esc_html($m['title']); ?></a>
+                <?php endforeach; ?>
                 <a href="/models" class="px-3 py-3 text-sm font-bold text-accent-secondary hover:bg-accent-secondary/10 rounded-xl transition-all">View all models &rarr;</a>
                 <div class="my-3 border-t border-border-subtle"></div>
                 <a href="/research" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Research</a>
@@ -201,13 +195,7 @@
                 <a href="/products" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Products</a>
                 <a href="/about" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">About</a>
                 <div class="pt-4 mt-2 border-t border-border-subtle">
-                    <div class="flex items-center justify-between p-4 mb-4 bg-surface border border-border-subtle rounded-xl">
-                        <span class="text-[11px] uppercase font-bold text-content-tertiary tracking-widest">Demo State</span>
-                        <div class="flex items-center gap-1.5">
-                            <button id="auth-btn-guest-mobile" class="px-4 py-2 text-xs font-bold rounded-lg transition-all bg-white/10 text-content-primary">Guest</button>
-                            <button id="auth-btn-pro-mobile" class="px-4 py-2 text-xs font-bold rounded-lg transition-all text-content-secondary hover:text-content-primary">Pro</button>
-                        </div>
-                    </div>
+
                     <a href="/subscribe" class="flex items-center justify-center h-12 rounded-lg text-sm font-bold bg-accent-primary text-root hover:bg-accent-primary-hover transition-colors">
                         Subscribe &mdash; $50/mo
                     </a>

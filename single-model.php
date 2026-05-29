@@ -9,7 +9,7 @@ $all_articles = get_semi_articles();
 if (isset($all_models[$slug])) {
     $model = $all_models[$slug];
 } else {
-    $model = $all_models['ai-compute-supply-model'];
+    $model = reset($all_models);
 }
 get_header();
 ?>
@@ -310,12 +310,9 @@ get_header();
                                 <label class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Model</label>
                                 <div class="relative">
                                     <select class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary appearance-none focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors">
-                                        <option <?php selected($slug, 'ai-compute-supply-model'); ?>>AI Compute Supply Model</option>
-                                        <option <?php selected($slug, 'gpu-scaling-bottleneck-model'); ?>>GPU Scaling &amp; Bottleneck Model</option>
-                                        <option <?php selected($slug, 'semiconductor-capacity-tracker'); ?>>Semiconductor Capacity Tracker</option>
-                                        <option <?php selected($slug, 'cloud-infrastructure-growth-model'); ?>>Cloud Infrastructure Growth Model</option>
-                                        <option <?php selected($slug, 'memory-supply-model'); ?>>Memory Supply Model</option>
-                                        <option <?php selected($slug, 'data-center-power-model'); ?>>Data Center Power Model</option>
+                                        <?php foreach ($all_models as $key => $m): ?>
+                                        <option value="<?php echo esc_attr($key); ?>" <?php selected($slug, $key); ?>><?php echo esc_html($m['title']); ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>

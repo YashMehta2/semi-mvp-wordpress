@@ -7,14 +7,7 @@ $all_models = get_semi_models();
 $free_models = array_filter($all_models, function($m) { return !$m['memberOnly']; });
 $pro_models = array_filter($all_models, function($m) { return $m['memberOnly']; });
 
-$use_cases = [
-    'ai-compute-supply' => 'TSMC CoWoS capacity tracking & NVIDIA wafer allocation forecasting.',
-    'gpu-scaling-bottleneck' => 'Datacenter power planning, optical transceiver forecasting, & interconnect bandwidth limits.',
-    'semiconductor-capacity' => 'Foundry utilization modeling & ASML EUV lithography equipment deployment.',
-    'cloud-infra-growth' => 'Hyperscaler GPU cluster velocity, energy procurement timelines, & datacenter buildouts.',
-    'memory-supply' => 'High Bandwidth Memory (HBM) wafer allocation & allocation-adjusted chip cost modeling.',
-    'data-center-power' => 'Interconnection queue forecasting, utility PPA modeling, & grid capacity bottleneck mapping.'
-];
+// Use cases are loaded dynamically from data.php
 
 get_header();
 ?>
@@ -96,10 +89,10 @@ get_header();
                                     <p class="text-[14px] text-content-secondary leading-relaxed font-medium line-clamp-3 mb-4">
                                         <?php echo esc_html($model['description']); ?>
                                     </p>
-                                    <?php if (isset($use_cases[$slug])): ?>
+                                    <?php if (isset($model['useCase'])): ?>
                                     <div class="mt-4 pt-3 border-t border-border-subtle/50">
                                         <p class="text-[10px] uppercase font-bold tracking-wider text-content-tertiary mb-1">Enterprise Use Case</p>
-                                        <p class="text-[12px] font-semibold text-content-secondary leading-normal"><?php echo esc_html($use_cases[$slug]); ?></p>
+                                        <p class="text-[12px] font-semibold text-content-secondary leading-normal"><?php echo esc_html($model['useCase']); ?></p>
                                     </div>
                                     <?php endif; ?>
                                 </div>
@@ -160,10 +153,10 @@ get_header();
                                     <p class="text-[14px] text-content-secondary leading-relaxed font-medium line-clamp-3 mb-4">
                                         <?php echo esc_html($model['description']); ?>
                                     </p>
-                                    <?php if (isset($use_cases[$slug])): ?>
+                                    <?php if (isset($model['useCase'])): ?>
                                     <div class="mt-4 pt-3 border-t border-border-subtle/50">
                                         <p class="text-[10px] uppercase font-bold tracking-wider text-content-tertiary mb-1">Enterprise Use Case</p>
-                                        <p class="text-[12px] font-semibold text-content-secondary leading-normal"><?php echo esc_html($use_cases[$slug]); ?></p>
+                                        <p class="text-[12px] font-semibold text-content-secondary leading-normal"><?php echo esc_html($model['useCase']); ?></p>
                                     </div>
                                     <?php endif; ?>
                                 </div>
@@ -261,93 +254,27 @@ get_header();
                     </div>
                 </div>
 
-                <!-- Right Column: Interactive Glassmorphic Spreadsheet Mockup -->
-                <div class="lg:col-span-7 sa-card overflow-hidden border border-border-strong bg-surface shadow-2xl relative">
-                    <!-- Spreadsheet Header / Menu Bar -->
-                    <div class="bg-surface-hover/80 border-b border-border-strong px-4 py-3 flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-red-500/60"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-green-500/60"></span>
-                            <span class="text-[11px] font-semibold text-content-tertiary ml-2 font-mono uppercase">TSMC_CoWoS_Allocation_2026.xlsx</span>
-                        </div>
-                        <div class="flex items-center gap-1.5 bg-root border border-border-strong px-2 py-0.5 rounded text-[10px] font-bold text-emerald-500">
-                            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                            <span>EXCEL ACTIVE</span>
-                        </div>
+                <!-- Right Column: Institutional Request Card -->
+                <div class="lg:col-span-7 sa-card p-8 border border-border-strong bg-surface/50 shadow-2xl flex flex-col justify-center space-y-6 relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(circle, var(--color-content-secondary) 1px, transparent 1px); background-size: 16px 16px;"></div>
+                    <div class="space-y-3">
+                        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary">
+                            Institutional Verification Required
+                        </p>
+                        <h3 class="text-xl font-extrabold text-content-primary tracking-tight leading-snug">
+                            Model Skeletons &amp; Schemas Available on Request
+                        </h3>
+                        <p class="text-sm text-content-secondary leading-relaxed font-medium">
+                            Full mathematical structures, formula logic sheets, and data schemas are provided exclusively to verified institutional licensing clients. Contact our analyst team to request a sample model package.
+                        </p>
                     </div>
-
-                    <!-- Spreadsheet Grid Mockup -->
-                    <div class="overflow-x-auto p-4">
-                        <table class="w-full text-left font-mono text-[11px] border-collapse">
-                            <thead>
-                                <tr class="border-b border-border-strong text-content-tertiary">
-                                    <th class="py-2 px-3 bg-root border-r border-border-strong font-bold">Node / Product</th>
-                                    <th class="py-2 px-3 bg-root border-r border-border-strong font-bold">Variable</th>
-                                    <th class="py-2 px-3 bg-root border-r border-border-strong font-bold">Q1 2026</th>
-                                    <th class="py-2 px-3 bg-root border-r border-border-strong font-bold">Q2 2026 (F)</th>
-                                    <th class="py-2 px-3 bg-root border-r border-border-strong font-bold">Q3 2026 (F)</th>
-                                    <th class="py-2 px-3 bg-root font-bold text-accent-secondary">Formula Logic</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Row 1 -->
-                                <tr class="border-b border-border-subtle text-content-primary hover:bg-surface-hover/40 transition-colors">
-                                    <td class="py-2.5 px-3 border-r border-border-subtle font-bold">TSMC N3B</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle text-content-secondary">Wafer Starts / Mo</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">55,000</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">60,000</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">62,500</td>
-                                    <td class="py-2.5 px-3 text-emerald-500 font-semibold">=SUM(Fabs[N3B_Cap])</td>
-                                </tr>
-                                <!-- Row 2 -->
-                                <tr class="border-b border-border-subtle text-content-primary hover:bg-surface-hover/40 transition-colors">
-                                    <td class="py-2.5 px-3 border-r border-border-subtle font-bold">TSMC CoWoS-L</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle text-content-secondary">Yield Projection</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">92.5%</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">94.0%</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">95.2%</td>
-                                    <td class="py-2.5 px-3 text-emerald-500 font-semibold">=AVERAGE(YieldCurve)</td>
-                                </tr>
-                                <!-- Row 3 -->
-                                <tr class="border-b border-border-subtle text-content-primary hover:bg-surface-hover/40 transition-colors">
-                                    <td class="py-2.5 px-3 border-r border-border-subtle font-bold">NVIDIA B200</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle text-content-secondary">CoWoS Allocation</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">12,500</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">18,200</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">22,000</td>
-                                    <td class="py-2.5 px-3 text-emerald-500 font-semibold">=Alloc[NvidiaB200]</td>
-                                </tr>
-                                <!-- Row 4 (Blurred / Locked) -->
-                                <tr class="border-b border-border-subtle text-content-tertiary select-none opacity-40 blur-[1px]">
-                                    <td class="py-2.5 px-3 border-r border-border-subtle font-bold">TSMC N2 (GAA)</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">Wafer Starts / Mo</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">2,500</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">4,800</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">8,500</td>
-                                    <td class="py-2.5 px-3 text-content-tertiary">=LockedFormula</td>
-                                </tr>
-                                <!-- Row 5 (More Blurred / Locked) -->
-                                <tr class="border-b border-border-subtle text-content-tertiary select-none opacity-20 blur-[2px]">
-                                    <td class="py-2.5 px-3 border-r border-border-subtle font-bold">Blackwell-Ultra</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">Total Wafer Starts</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">-</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">-</td>
-                                    <td class="py-2.5 px-3 border-r border-border-subtle">6,200</td>
-                                    <td class="py-2.5 px-3 text-content-tertiary">=LockedFormula</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Lock Overlay -->
-                    <div class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-surface via-surface/90 to-transparent flex items-end justify-center pb-6">
-                        <div class="flex items-center gap-2 bg-root border border-border-strong px-4 py-2 rounded-xl shadow-2xl backdrop-blur-md">
-                            <svg class="w-3.5 h-3.5 text-accent-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-content-primary">
-                                Institutional Access Required to View Remaining Schema
-                            </span>
-                        </div>
+                    <div class="pt-2">
+                        <button 
+                            onclick="document.querySelector('form').scrollIntoView({ behavior: 'smooth' });"
+                            class="inline-flex items-center justify-center px-6 h-12 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover transition-all duration-200 cursor-pointer"
+                        >
+                            Request Sample Schema
+                        </button>
                     </div>
                 </div>
             </div>

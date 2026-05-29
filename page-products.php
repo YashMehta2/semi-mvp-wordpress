@@ -5,25 +5,9 @@
 require_once get_stylesheet_directory() . '/data.php';
 $all_models = get_semi_models();
 
-$flagship_slugs = [
-    'ai-compute-supply-model',
-    'gpu-scaling-bottleneck-model',
-    'semiconductor-capacity-tracker',
-    'cloud-infrastructure-growth-model'
-];
-$flagship_products = [];
-foreach ($flagship_slugs as $slug) {
-    if (isset($all_models[$slug])) {
-        $flagship_products[$slug] = $all_models[$slug];
-    }
-}
 
-$use_cases = [
-    'ai-compute-supply-model' => 'TSMC CoWoS capacity tracking & NVIDIA wafer allocation forecasting.',
-    'gpu-scaling-bottleneck-model' => 'Datacenter power planning, optical transceiver forecasting, & interconnect bandwidth limits.',
-    'semiconductor-capacity-tracker' => 'Foundry utilization modeling & ASML EUV lithography equipment deployment.',
-    'cloud-infrastructure-growth-model' => 'Hyperscaler GPU cluster velocity, energy procurement timelines, & datacenter buildouts.',
-];
+$flagship_products = array_slice($all_models, 0, 5);
+
 
 get_header();
 ?>
@@ -126,19 +110,13 @@ get_header();
                         <svg class="w-3.5 h-3.5 text-accent-secondary flex-shrink-0" viewBox="0 0 16 16" fill="none">
                           <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span>AI Compute Supply Model</span>
+                        <span>Accelerator &amp; HBM Model</span>
                       </li>
                       <li class="flex items-center gap-2 text-xs font-semibold text-content-primary">
                         <svg class="w-3.5 h-3.5 text-accent-secondary flex-shrink-0" viewBox="0 0 16 16" fill="none">
                           <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span>Semiconductor Capacity Tracker</span>
-                      </li>
-                      <li class="flex items-center gap-2 text-xs font-semibold text-content-primary">
-                        <svg class="w-3.5 h-3.5 text-accent-secondary flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                          <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <span>Memory Supply Model</span>
+                        <span>Wafer Fab Equipment Model</span>
                       </li>
                     </ul>
                   </div>
@@ -181,7 +159,7 @@ get_header();
 
                 <!-- Enterprise Use Case Section — preserved, visually tightened -->
                 <?php 
-                $useCase = isset($use_cases[$slug]) ? $use_cases[$slug] : '';
+                $useCase = isset($product['useCase']) ? $product['useCase'] : '';
                 if (!empty($useCase)): ?>
                   <div class="mb-4 px-3 py-2 bg-surface/50 rounded-lg border border-border-subtle/40">
                     <p class="text-[9px] uppercase font-extrabold tracking-wider text-content-tertiary mb-0.5">Enterprise Application</p>
@@ -377,17 +355,17 @@ document.addEventListener("DOMContentLoaded", function() {
         investors: {
             focus: "Leading-edge semiconductor capacity, WFE spending, HBM supply bottlenecks, and hyperscaler CapEx dynamics.",
             useCase: "Building bottoms-up revenue models for semiconductor OEMs, chip designers, and foundry groups prior to official earnings cycles.",
-            models: ["AI Compute Supply Model", "Semiconductor Capacity Tracker", "Memory Supply Model"]
+            models: ["Accelerator & HBM Model", "Wafer Fab Equipment Model"]
         },
         hyperscalers: {
             focus: "GPU cluster buildout velocity, hardware scaling limits (thermal/network), power availability, and TCO optimization.",
             useCase: "Assessing competitive capacity constraints, rack density thresholds, and network interconnect roadmaps for Blackwell/Rubin clusters.",
-            models: ["GPU Scaling & Bottleneck Model", "Cloud Infrastructure Growth Model", "Data Center Power Model"]
+            models: ["AI Cloud TCO Model", "AI Networking Model", "Datacenter Industry Model"]
         },
         oems: {
             focus: "Wafer starts by fab node, advanced packaging yields (CoWoS-S/L), and sub-component supply demand balances.",
             useCase: "Forecasting equipment demand schedules (EUV/WFE), tool bookings, and raw wafer allocation schedules globally.",
-            models: ["AI Compute Supply Model", "Semiconductor Capacity Tracker"]
+            models: ["Accelerator & HBM Model", "Wafer Fab Equipment Model"]
         }
     };
 
