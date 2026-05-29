@@ -32,8 +32,15 @@ get_header();
     <!-- ── 1. Institutional Hero Section ── -->
     <section class="relative border-b border-border-subtle bg-root pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24 overflow-hidden">
         <!-- Dot-grid texture -->
-        <div class="pointer-events-none absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px); background-size: 26px 26px;"></div>
-        <div class="pointer-events-none absolute top-0 right-0 h-96 w-96 rounded-full bg-accent-secondary/5 blur-[120px]"></div>
+        <div class="pointer-events-none absolute inset-0 opacity-[0.03] z-10" style="background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px); background-size: 26px 26px;"></div>
+        <div class="pointer-events-none absolute top-0 right-0 h-96 w-96 rounded-full bg-accent-secondary/5 blur-[120px] z-10"></div>
+
+        <!-- Absolute Background Image fading from right -->
+        <div class="absolute inset-0 z-0 hidden lg:block">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/placeholders/silicon_macro_editorial.png" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70" />
+            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
+        </div>
 
         <div class="container relative z-10 max-w-[1100px]">
             <div class="max-w-3xl space-y-6">
