@@ -78,10 +78,15 @@
                             <a href="/models" class="block px-3 py-2 text-sm font-bold text-accent-secondary hover:bg-accent-secondary/10 rounded-lg transition-all">
                                 View all models &rarr;
                             </a>
+                            <div class="my-1 border-t border-border-subtle"></div>
+                            <a href="/products" class="block px-3 py-2 text-sm font-bold text-accent-primary hover:bg-accent-primary/10 rounded-lg transition-all">
+                                Data Products Hub &rarr;
+                            </a>
                         </div>
                     </div>
                 </div>
                 <a href="/research" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Research</a>
+                <a href="/products" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Products</a>
                 <a href="/about" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">About</a>
                 <a href="/events" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Events</a>
                 <a href="/careers" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Careers</a>
@@ -116,6 +121,7 @@
                 <a href="/models" class="px-3 py-3 text-sm font-bold text-accent-secondary hover:bg-accent-secondary/10 rounded-xl transition-all">View all models &rarr;</a>
                 <div class="my-3 border-t border-border-subtle"></div>
                 <a href="/research" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Research Archives</a>
+                <a href="/products" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Data Products</a>
                 <a href="/about" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">About</a>
                 <a href="/events" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Events</a>
                 <a href="/careers" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Careers</a>

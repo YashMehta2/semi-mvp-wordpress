@@ -35,6 +35,9 @@ function semi_mvp_custom_routing($template) {
     if ($path === 'research') {
         return get_stylesheet_directory() . '/page-research.php';
     }
+    if ($path === 'products') {
+        return get_stylesheet_directory() . '/page-products.php';
+    }
     if (strpos($path, 'models/') === 0) {
         set_query_var('model_slug', str_replace('models/', '', $path));
         return get_stylesheet_directory() . '/single-model.php';
@@ -45,7 +48,7 @@ add_filter('template_include', 'semi_mvp_custom_routing', 99);
 add_action('pre_get_posts', function($query) {
     if (!is_admin() && $query->is_main_query()) {
         $path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-        if ($path === 'models' || $path === 'research' || strpos($path, 'models/') === 0) {
+        if ($path === 'models' || $path === 'research' || $path === 'products' || strpos($path, 'models/') === 0) {
             $query->set('is_404', false);
             status_header(200);
         }
@@ -57,6 +60,8 @@ add_filter('document_title_parts', function($title) {
         $title['title'] = 'Industry Models';
     } elseif ($path === 'research') {
         $title['title'] = 'Research Archive';
+    } elseif ($path === 'products') {
+        $title['title'] = 'AI Infrastructure Data Products & Models';
     } elseif (strpos($path, 'models/') === 0) {
         require_once get_stylesheet_directory() . '/data.php';
         $slug = str_replace('models/', '', $path);
