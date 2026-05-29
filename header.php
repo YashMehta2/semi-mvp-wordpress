@@ -8,11 +8,88 @@
     <?php wp_head(); ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ── CSS Custom Properties (mirrors Next.js globals.css @theme) ── */
         :root {
             --font-ibm-plex: 'IBM Plex Sans', sans-serif;
+            --font-ibm-plex-mono: 'IBM Plex Mono', monospace;
+
+            /* Surface colors */
+            --color-root:            #0c0c0e;
+            --color-surface:         #141417;
+            --color-surface-hover:   #1c1c20;
+
+            /* Typography colors */
+            --color-content-primary:   #f0f0f4;
+            --color-content-secondary: #9ca3af;
+            --color-content-tertiary:  #6b7280;
+
+            /* Accents */
+            --color-accent-primary:          #e59a35;
+            --color-accent-primary-hover:    #f5ab46;
+            --color-accent-secondary:        #2ba6d4;
+            --color-accent-secondary-hover:  #3ec1f0;
+            --color-accent-tertiary:         #22c55e;
+
+            /* Borders */
+            --color-border-subtle: rgba(255, 255, 255, 0.05);
+            --color-border-strong: rgba(255, 255, 255, 0.12);
         }
+
+        /* Base resets matching Next.js body */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--color-root);
+            color: var(--color-content-primary);
+            font-family: var(--font-ibm-plex), sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* font-extrabold shim — Tailwind CDN maps 800 correctly only if loaded */
+        .font-extrabold { font-weight: 800 !important; }
+        .font-mono { font-family: var(--font-ibm-plex-mono), monospace !important; }
+
+        /* Opacity slash-syntax shims for CDN Tailwind v3 */
+        .bg-accent-primary\/15  { background-color: rgba(229, 154, 53, 0.15) !important; }
+        .bg-accent-primary\/10  { background-color: rgba(229, 154, 53, 0.10) !important; }
+        .bg-accent-secondary\/10 { background-color: rgba(43, 166, 212, 0.10) !important; }
+        .bg-white\/5  { background-color: rgba(255,255,255,0.05) !important; }
+        .bg-white\/10 { background-color: rgba(255,255,255,0.10) !important; }
+        .bg-root\/80  { background-color: rgba(12, 12, 14, 0.80) !important; }
+        .bg-root\/40  { background-color: rgba(12, 12, 14, 0.40) !important; }
+        .bg-surface\/90 { background-color: rgba(20, 20, 23, 0.90) !important; }
+        .bg-surface\/50 { background-color: rgba(20, 20, 23, 0.50) !important; }
+        .bg-surface\/10 { background-color: rgba(20, 20, 23, 0.10) !important; }
+        .bg-surface-hover\/30 { background-color: rgba(28, 28, 32, 0.30) !important; }
+        .border-accent-primary\/30 { border-color: rgba(229, 154, 53, 0.30) !important; }
+        .border-accent-secondary\/50 { border-color: rgba(43, 166, 212, 0.50) !important; }
+        .border-accent-secondary\/20 { border-color: rgba(43, 166, 212, 0.20) !important; }
+        .border-accent-secondary\/40 { border-color: rgba(43, 166, 212, 0.40) !important; }
+        .border-border-subtle\/50 { border-color: rgba(255,255,255,0.025) !important; }
+        .border-border-subtle\/30 { border-color: rgba(255,255,255,0.015) !important; }
+        .border-border-subtle\/40 { border-color: rgba(255,255,255,0.02) !important; }
+        .text-accent-primary\/80  { color: rgba(229, 154, 53, 0.80) !important; }
+        .text-accent-primary\/60  { color: rgba(229, 154, 53, 0.60) !important; }
+        .accent-secondary\/5 { background-color: rgba(43,166,212,0.05) !important; }
+        .shadow-accent-primary\/10 { box-shadow: 0 10px 30px rgba(229,154,53,0.10) !important; }
+        /* hover: opacity slash — Tailwind CDN can't JIT these */
+        .hover\:border-accent-primary\/30:hover { border-color: rgba(229, 154, 53, 0.30) !important; }
+        .hover\:border-accent-secondary\/40:hover { border-color: rgba(43, 166, 212, 0.40) !important; }
+        .hover\:bg-accent-secondary\/10:hover { background-color: rgba(43, 166, 212, 0.10) !important; }
+        .hover\:bg-accent-primary\/10:hover { background-color: rgba(229, 154, 53, 0.10) !important; }
+        .hover\:bg-white\/5:hover  { background-color: rgba(255,255,255,0.05) !important; }
+
+        /* Border-l color shims */
+        .border-l-accent-secondary { border-left-color: var(--color-accent-secondary) !important; }
+        .border-l-accent-primary   { border-left-color: var(--color-accent-primary) !important; }
+
+        /* Gradient shims */
+        .from-transparent { --tw-gradient-from: transparent !important; }
+        .via-accent-primary\/60 { --tw-gradient-stops: var(--tw-gradient-from), rgba(229,154,53,0.6), var(--tw-gradient-to, transparent) !important; }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -86,10 +163,9 @@
                     </div>
                 </div>
                 <a href="/research" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Research</a>
+                <a href="/models" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Models</a>
                 <a href="/products" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Products</a>
                 <a href="/about" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">About</a>
-                <a href="/events" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Events</a>
-                <a href="/careers" class="px-3 py-2 text-[14px] font-semibold text-content-secondary hover:text-content-primary rounded-lg hover:bg-white/5 transition-all duration-150">Careers</a>
             </nav>
             <div class="flex items-center gap-3">
                 <div class="hidden sm:flex items-center gap-1.5 p-1 bg-surface border border-border-subtle rounded-lg mr-2">
@@ -120,11 +196,10 @@
                 <a href="/models/data-center-power-model" class="px-3 py-3 text-sm font-medium text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Datacenter Industry Model</a>
                 <a href="/models" class="px-3 py-3 text-sm font-bold text-accent-secondary hover:bg-accent-secondary/10 rounded-xl transition-all">View all models &rarr;</a>
                 <div class="my-3 border-t border-border-subtle"></div>
-                <a href="/research" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Research Archives</a>
-                <a href="/products" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Data Products</a>
+                <a href="/research" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Research</a>
+                <a href="/models" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Models</a>
+                <a href="/products" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Products</a>
                 <a href="/about" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">About</a>
-                <a href="/events" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Events</a>
-                <a href="/careers" class="px-3 py-3 text-[16px] font-semibold text-content-secondary hover:text-content-primary hover:bg-white/5 rounded-xl transition-all">Careers</a>
                 <div class="pt-4 mt-2 border-t border-border-subtle">
                     <div class="flex items-center justify-between p-4 mb-4 bg-surface border border-border-subtle rounded-xl">
                         <span class="text-[11px] uppercase font-bold text-content-tertiary tracking-widest">Demo State</span>

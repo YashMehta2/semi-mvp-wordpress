@@ -19,13 +19,13 @@ $use_cases = [
 get_header();
 ?>
 <main class="min-h-screen bg-root">
-    <section class="relative border-b border-border-subtle bg-root pt-12 pb-14 sm:pt-16 sm:pb-18 md:pt-20 md:pb-20 overflow-hidden">
+    <section class="relative border-b border-border-subtle bg-root pt-8 pb-10 md:pt-10 md:pb-12 lg:pt-12 lg:pb-14 overflow-hidden">
         <div class="pointer-events-none absolute inset-0 opacity-[0.04] z-10" style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 26px 26px;"></div>
         <div class="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-accent-secondary/5 blur-[100px] z-10"></div>
         
         <!-- Absolute Background Image fading from right -->
         <div class="absolute inset-0 z-0 hidden lg:block">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/data_dashboard.png" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/data_dashboard.png" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70 grayscale contrast-125 brightness-90" />
             <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
         </div>
@@ -63,7 +63,7 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="py-12 sm:py-16 md:py-20">
+    <section class="py-8 md:py-10">
         <div class="container">
             <div class="flex flex-wrap items-center gap-2 mb-10 sm:mb-12">
                 <span class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary mr-2">Filter:</span>

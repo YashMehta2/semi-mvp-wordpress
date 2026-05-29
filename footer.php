@@ -41,8 +41,6 @@
             <ul class="space-y-2.5 sm:space-y-3">
               <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">About</span></li>
               <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Contact</span></li>
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Careers</span></li>
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Events</span></li>
             </ul>
           </div>
           <div class="space-y-3 sm:space-y-4">
@@ -142,7 +140,36 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 <script>
+/* ── Scroll-reveal: IntersectionObserver (mirrors Next.js ScrollReveal component) ── */
+(function() {
+    function initReveal() {
+        var els = document.querySelectorAll('.sa-reveal');
+        if (!els.length) return;
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('sa-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function(el) { io.observe(el); });
+        } else {
+            /* Fallback for old browsers */
+            els.forEach(function(el) { el.classList.add('sa-visible'); });
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initReveal);
+    } else {
+        initReveal();
+    }
+})();
+</script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
+
   const modal = document.getElementById('coming-soon-modal');
   if (!modal) return;
   const content = modal.querySelector('.modal-content');

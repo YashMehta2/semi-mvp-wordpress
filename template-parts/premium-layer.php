@@ -1,169 +1,165 @@
-<section class="relative overflow-hidden py-10 sm:py-14 bg-root border-y border-border-subtle">
-    <!-- Abstract infrastructure background -->
-    <div class="absolute inset-0 z-0 pointer-events-none">
-        <div class="absolute inset-0 bg-root/40 z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-root via-transparent to-root z-10"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/blueprint.png" alt="" class="w-full h-full object-cover opacity-60 mix-blend-plus-lighter" />
-    </div>
+<?php
+/**
+ * Template part — PremiumLayer: 3-column tier cards, tightened + hover lift animations
+ */
+$tiers = [
+    [
+        'id'          => 'free',
+        'label'       => 'Free Briefings',
+        'headline'    => 'Weekly Digest',
+        'description' => 'Get our weekly digest of the most important AI infrastructure and semiconductor developments — free to every subscriber.',
+        'includes'    => [
+            'Weekly AI & semiconductor digest',
+            'Summary of latest reports',
+            'Market signal highlights',
+            'Access to select open articles',
+        ],
+        'cta'         => 'Subscribe Free',
+        'cta_href'    => '#newsletter',
+        'accent'      => false,
+    ],
+    [
+        'id'          => 'premium',
+        'label'       => 'Professional Access',
+        'headline'    => 'Full Research & Models',
+        'description' => 'Unlock every deep-dive report, proprietary industry models, and structured data — the same intelligence used by leading hyperscalers and chip designers.',
+        'includes'    => [
+            '300+ full-length research reports',
+            'AI Compute & GPU Scaling models',
+            'Semiconductor capacity trackers',
+            'Hyperscaler CapEx data & charts',
+            'Priority access to new reports',
+        ],
+        'cta'         => 'Subscribe Pro',
+        'cta_href'    => '#',
+        'accent'      => true,
+    ],
+    [
+        'id'          => 'enterprise',
+        'label'       => 'Enterprise Licensing',
+        'headline'    => 'Institutional Partnership',
+        'description' => 'Custom research briefs, organization-wide access, and direct analyst consultation for companies making nine-figure infrastructure decisions.',
+        'includes'    => [
+            'Everything in Premium',
+            'Custom research requests',
+            'Team & org-wide access',
+            'Analyst Q&A sessions',
+            'API data access',
+        ],
+        'cta'         => null,
+        'cta_href'    => null,
+        'accent'      => false,
+    ],
+];
+?>
+
+<section id="premium" class="relative overflow-hidden py-8 md:py-10 bg-root border-y border-border-subtle">
+    <!-- Dot-grid texture -->
+    <div class="pointer-events-none absolute inset-0 opacity-[0.025]"
+         style="background-image: radial-gradient(circle, var(--color-content-secondary) 1px, transparent 1px); background-size: 24px 24px;"></div>
+
     <div class="container relative z-10">
-        <div class="text-center max-w-xl mx-auto mb-10 sm:mb-12 md:mb-14 sa-reveal">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-accent-primary mb-3">
-                Institutional Access
-            </p>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-content-primary mb-3">
+
+        <!-- Section header -->
+        <div class="text-center max-w-lg mx-auto mb-8 sa-reveal">
+            <p class="sa-eyebrow mb-2">Institutional Access</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-2">
                 Institutional Intelligence Access
             </h2>
-            <p class="text-sm text-content-secondary leading-relaxed">
+            <p class="text-[13px] text-content-secondary leading-relaxed">
                 From weekly research digests to organization-wide platform licensing — access the intelligence that drives capacity and CapEx planning.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-10 sm:mb-12">
-            <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-1 border-border-subtle bg-surface/50">
-                <div class="flex items-center justify-between mb-5 sm:mb-6">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-white/5 text-content-secondary">
-                        Free Briefings
+
+        <!-- Tier cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <?php $stagger = 1; foreach ( $tiers as $tier ) :
+                $card_class = $tier['accent']
+                    ? 'border-accent-primary/30 bg-surface shadow-xl'
+                    : 'border-border-subtle bg-surface/50';
+            ?>
+            <div class="relative flex flex-col sa-card p-5 sa-reveal sa-stagger-<?php echo $stagger++; ?> <?php echo $card_class; ?> transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl">
+                <?php if ( $tier['accent'] ) : ?>
+                <div class="absolute top-0 left-6 right-6 h-[2px] rounded-full"
+                     style="background: linear-gradient(to right, transparent, rgba(var(--color-accent-primary-rgb, 229 154 53) / 0.6), transparent);"></div>
+                <?php endif; ?>
+
+                <!-- Badge row -->
+                <div class="flex items-center justify-between mb-4">
+                    <?php $badge_bg = $tier['accent'] ? 'bg-accent-primary/15 text-accent-primary' : 'bg-white/5 text-content-secondary'; ?>
+                    <span class="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded <?php echo $badge_bg; ?>">
+                        <?php echo esc_html( $tier['label'] ); ?>
                     </span>
+                    <?php if ( $tier['accent'] ) : ?>
+                    <span class="text-[9px] font-bold uppercase tracking-widest" style="color:var(--color-accent-primary); opacity:.8;">Most popular</span>
+                    <?php endif; ?>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Weekly Digest</h3>
-                <p class="text-xs sm:text-[13px] text-content-secondary leading-relaxed mb-6 sm:mb-8 flex-1">
-                    Get our weekly digest of the most important AI infrastructure and semiconductor developments — free to every subscriber.
+
+                <h3 class="text-[15px] font-extrabold text-content-primary mb-2 leading-snug">
+                    <?php echo esc_html( $tier['headline'] ); ?>
+                </h3>
+                <p class="text-[12px] text-content-secondary leading-relaxed mb-5 flex-1">
+                    <?php echo esc_html( $tier['description'] ); ?>
                 </p>
-                <ul class="space-y-3 sm:space-y-3.5 mb-8 sm:mb-10">
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Weekly AI & semiconductor digest
+
+                <!-- Feature list -->
+                <ul class="space-y-2 mb-6">
+                    <?php foreach ( $tier['includes'] as $item ) :
+                        $check_color = $tier['accent'] ? 'color:var(--color-accent-primary)' : 'color:var(--color-content-tertiary)';
+                    ?>
+                    <li class="flex items-start gap-2.5 text-[12px] font-medium text-content-secondary">
+                        <svg class="h-3.5 w-3.5 flex-shrink-0 mt-0.5" viewBox="0 0 14 14" fill="none" style="<?php echo $check_color; ?>">
+                            <path d="M2.5 7l3 3L11.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <?php echo esc_html( $item ); ?>
                     </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Summary of latest reports
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Market signal highlights
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Access to select open articles
-                    </li>
+                    <?php endforeach; ?>
                 </ul>
-                <a href="#newsletter" class="mt-auto inline-flex items-center justify-center h-12 rounded-lg text-sm font-bold transition-all duration-200 active:scale-95 border border-border-strong text-content-secondary hover:border-accent-primary/30 hover:text-content-primary">
-                    Subscribe Free
-                </a>
-            </div>
-            <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-2 border-accent-primary/30 bg-surface shadow-2xl">
-                <div class="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-accent-primary/60 to-transparent rounded-full"></div>
-                <div class="flex items-center justify-between mb-5 sm:mb-6">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-accent-primary/15 text-accent-primary">
-                        Professional Access
-                    </span>
-                    <span class="text-[10px] font-bold text-accent-primary/80 uppercase tracking-widest">
-                        Most popular
-                    </span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Full Research &amp; Models</h3>
-                <p class="text-xs sm:text-[13px] text-content-secondary leading-relaxed mb-6 sm:mb-8 flex-1">
-                    Unlock every deep-dive report, proprietary industry models, and structured data — the same intelligence used by leading hyperscalers and chip designers.
-                </p>
-                <ul class="space-y-3 sm:space-y-3.5 mb-8 sm:mb-10">
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        300+ full-length research reports
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        AI Compute &amp; GPU Scaling models
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Semiconductor capacity trackers
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Hyperscaler CapEx data &amp; charts
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-accent-primary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Priority access to new reports
-                    </li>
-                </ul>
-                <a href="#" class="mt-auto inline-flex items-center justify-center h-12 rounded-lg text-sm font-bold transition-all duration-200 active:scale-95 bg-accent-primary text-root hover:bg-accent-primary-hover">
-                    Subscribe Pro
-                </a>
-            </div>
-            <div class="relative flex flex-col sa-card p-6 sm:p-7 sa-reveal sa-stagger-3 border-border-subtle bg-surface/50">
-                <div class="flex items-center justify-between mb-5 sm:mb-6">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md bg-white/5 text-content-secondary">
-                        Enterprise Licensing
-                    </span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold text-content-primary mb-3 leading-snug">Institutional Partnership</h3>
-                <p class="text-xs sm:text-[13px] text-content-secondary leading-relaxed mb-6 sm:mb-8 flex-1">
-                    Custom research briefs, organization-wide access, and direct analyst consultation for companies making nine-figure infrastructure decisions.
-                </p>
-                <ul class="space-y-3 sm:space-y-3.5 mb-8 sm:mb-10">
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Everything in Premium
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Custom research requests
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Team &amp; org-wide access
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        Analyst Q&amp;A sessions
-                    </li>
-                    <li class="flex items-start gap-3 text-[13px] font-medium text-content-secondary">
-                        <svg class="h-4 w-4 flex-shrink-0 mt-0.5 text-content-tertiary" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        API data access
-                    </li>
-                </ul>
+
+                <!-- CTA -->
+                <?php if ( $tier['id'] === 'enterprise' ) : ?>
                 <form class="mt-auto space-y-2 pt-4 border-t border-border-subtle" onsubmit="event.preventDefault();">
-                    <div class="space-y-1">
-                        <input
-                            type="email"
-                            placeholder="Work Email"
-                            required
-                            class="w-full h-9 px-3 rounded-md bg-root border border-border-strong text-xs font-medium text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
-                        />
-                    </div>
-                    <div class="space-y-1">
-                        <input
-                            type="text"
-                            placeholder="Organization"
-                            required
-                            class="w-full h-9 px-3 rounded-md bg-root border border-border-strong text-xs font-medium text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors"
-                        />
-                    </div>
-                    <button
-                        type="submit"
-                        class="w-full inline-flex items-center justify-center h-10 rounded-md bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200"
-                    >
+                    <input type="email" placeholder="Work Email" required
+                           class="w-full h-8 px-3 rounded bg-root border border-border-strong text-[12px] font-medium text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors">
+                    <input type="text" placeholder="Organization" required
+                           class="w-full h-8 px-3 rounded bg-root border border-border-strong text-[12px] font-medium text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors">
+                    <button type="submit"
+                            class="w-full inline-flex items-center justify-center h-9 rounded bg-accent-secondary text-root text-[12px] font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200">
                         Request Institutional Access
                     </button>
                 </form>
+                <?php else :
+                    $btn_class = $tier['accent']
+                        ? 'bg-accent-primary text-root hover:bg-accent-primary-hover'
+                        : 'border border-border-strong text-content-secondary hover:border-accent-primary/30 hover:text-content-primary';
+                ?>
+                <a href="<?php echo esc_url( $tier['cta_href'] ); ?>"
+                   class="mt-auto inline-flex items-center justify-center h-10 rounded-lg text-[13px] font-bold transition-all duration-200 active:scale-95 <?php echo $btn_class; ?>">
+                    <?php echo esc_html( $tier['cta'] ); ?>
+                </a>
+                <?php endif; ?>
             </div>
+            <?php endforeach; ?>
         </div>
-        <div class="flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-3 sa-reveal">
+
+        <!-- Trust strip -->
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sa-reveal">
             <?php
             $proofs = [
-                "AI infrastructure intelligence",
-                "Semiconductor supply chain tracking",
-                "Hyperscaler ecosystem research",
-                "Enterprise research workflows",
-                "Institutional-grade analysis"
+                'AI infrastructure intelligence',
+                'Semiconductor supply chain tracking',
+                'Hyperscaler ecosystem research',
+                'Enterprise research workflows',
+                'Institutional-grade analysis',
             ];
-            foreach ($proofs as $proof) {
-                echo '<div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-content-tertiary">';
-                echo '  <svg class="h-3 w-3 text-accent-primary/60" viewBox="0 0 12 12" fill="none"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>';
-                echo '  ' . esc_html($proof);
+            foreach ( $proofs as $proof ) {
+                echo '<div class="flex items-center gap-2 text-[11px] font-bold text-content-tertiary">';
+                echo '  <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" style="color:var(--color-accent-primary);opacity:.6;"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                echo '  ' . esc_html( $proof );
                 echo '</div>';
             }
             ?>
         </div>
+
     </div>
 </section>

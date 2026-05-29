@@ -14,7 +14,7 @@ if (isset($all_models[$slug])) {
 get_header();
 ?>
 <main class="min-h-screen bg-root pb-20">
-    <section class="relative border-b border-border-subtle pt-12 pb-14 sm:pt-16 sm:pb-20 overflow-hidden bg-root">
+    <section class="relative border-b border-border-subtle bg-root pt-8 pb-10 md:pt-10 md:pb-12 lg:pt-12 lg:pb-14 overflow-hidden">
         
         <!-- Absolute Background Image fading from right -->
         <div class="absolute inset-0 z-0 hidden lg:block">
@@ -32,7 +32,7 @@ get_header();
                 $visual = 'data_dashboard.png';
             }
             ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/<?php echo $visual; ?>" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/<?php echo $visual; ?>" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70 grayscale contrast-125 brightness-90" />
             <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
         </div>
@@ -99,7 +99,7 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="py-12 sm:py-16">
+    <section class="py-8 md:py-10">
         <div class="container">
             <?php if (!empty($model['metrics'])): ?>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border-subtle border border-border-subtle rounded-xl overflow-hidden mt-6 mb-10">

@@ -49,6 +49,35 @@ Description: Institutional AI research and models platform MVP
 
 /* -- Component Utilities -- */
 
+/* Editorial Typography */
+.sa-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #2ba6d4; /* var(--color-accent-secondary) */
+}
+
+.sa-heading-h1 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.sa-heading-h2 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.sa-mono-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b7280; /* var(--color-content-tertiary) */
+}
+
 .sa-card {
   background-color: #141417; /* var(--color-surface) */
   border: 1px solid rgba(255, 255, 255, 0.05); /* var(--color-border-subtle) */
