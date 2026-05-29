@@ -33,11 +33,11 @@ get_header();
         <div class="pointer-events-none absolute inset-0 opacity-[0.035] z-0"
              style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 22px 22px;"></div>
 
-        <!-- Model-specific hero background image -->
-        <div class="absolute inset-0 z-0 hidden lg:block">
+        <!-- Model-specific hero background image — right side spread, matching /models hero style -->
+        <div class="absolute inset-0 z-0">
             <img src="<?php echo esc_url($hero_image); ?>" alt=""
-                 class="absolute inset-y-0 right-0 w-[55%] h-full object-cover opacity-[0.18] grayscale contrast-125 brightness-75" />
-            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/85 to-transparent"></div>
+                 class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-60 grayscale contrast-125 brightness-90" />
+            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
         </div>
 
