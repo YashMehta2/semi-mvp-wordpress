@@ -30,7 +30,7 @@ get_header();
 <main class="min-h-screen bg-root pb-20">
     
     <!-- ── 1. Institutional Hero Section ── -->
-    <section class="relative border-b border-border-subtle bg-root pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24 overflow-hidden">
+    <section class="relative border-b border-border-subtle bg-root pt-8 pb-10 sm:pt-12 sm:pb-14 md:pt-14 md:pb-16 overflow-hidden">
         <!-- Dot-grid texture -->
         <div class="pointer-events-none absolute inset-0 opacity-[0.03] z-10" style="background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px); background-size: 26px 26px;"></div>
         <div class="pointer-events-none absolute top-0 right-0 h-96 w-96 rounded-full bg-accent-secondary/5 blur-[120px] z-10"></div>
@@ -42,7 +42,7 @@ get_header();
             <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
         </div>
 
-        <div class="container relative z-10 max-w-[1100px]">
+        <div class="container relative z-10">
             <div class="max-w-3xl space-y-6">
                 <div class="inline-flex w-fit items-center gap-2 rounded-md border border-accent-secondary/20 bg-accent-secondary/10 px-3 py-1.5">
                     <span class="h-1.5 w-1.5 rounded-full bg-accent-secondary animate-pulse"></span>
@@ -71,8 +71,8 @@ get_header();
     </section>
 
     <!-- ── 2. Subtle Role-Based Segmentation ── -->
-    <section class="py-12 border-b border-border-subtle bg-root">
-        <div class="container max-w-[1100px]">
+    <section class="py-8 border-b border-border-subtle bg-root">
+        <div class="container">
             <div class="max-w-xl mb-8">
                 <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-2">Workflow Alignment</h3>
                 <h2 class="text-xl sm:text-2xl font-extrabold text-content-primary">Select Your Organization Focus</h2>
@@ -148,8 +148,8 @@ get_header();
     </section>
 
     <!-- ── 3. Product / Model Grid with Enterprise Use-Cases ── -->
-    <section id="models-list" class="py-16 border-b border-border-subtle bg-surface/30">
-        <div class="container max-w-[1100px]">
+    <section id="models-list" class="py-10 border-b border-border-subtle bg-surface/30">
+        <div class="container">
           
           <div class="max-w-xl mb-12">
             <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-2">Core Platforms</h3>
@@ -206,8 +206,8 @@ get_header();
     </section>
 
     <!-- ── 4. Gated Data Previews (DataSandbox) ── -->
-    <section class="py-16 border-b border-border-subtle bg-root">
-        <div class="container max-w-[1100px]">
+    <section class="py-10 border-b border-border-subtle bg-root">
+        <div class="container">
           <div class="max-w-xl mb-8">
             <h3 class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary mb-2">Technical Preview</h3>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-content-primary">Spreadsheet Schema Previews</h2>
@@ -299,8 +299,8 @@ get_header();
     </section>
 
     <!-- ── 5. Embedded Institutional Inquiry Flow ── -->
-    <section id="inquiry" class="py-16 bg-surface/20">
-        <div class="container max-w-[1100px]">
+    <section id="inquiry" class="py-10 bg-surface/20">
+        <div class="container">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div class="lg:col-span-6 space-y-6">
