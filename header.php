@@ -94,8 +94,8 @@
             <div class="flex items-center gap-3">
                 <div class="hidden sm:flex items-center gap-1.5 p-1 bg-surface border border-border-subtle rounded-lg mr-2">
                     <span class="text-[10px] uppercase font-bold text-content-tertiary pl-2 pr-1 select-none tracking-widest">Demo</span>
-                    <button class="px-3 py-1 text-[11px] font-bold rounded-md transition-all bg-white/10 text-content-primary">Guest</button>
-                    <button class="px-3 py-1 text-[11px] font-bold rounded-md transition-all text-content-secondary hover:text-content-primary">Pro</button>
+                    <button id="auth-btn-guest" class="px-3 py-1 text-[11px] font-bold rounded-md transition-all bg-white/10 text-content-primary">Guest</button>
+                    <button id="auth-btn-pro" class="px-3 py-1 text-[11px] font-bold rounded-md transition-all text-content-secondary hover:text-content-primary">Pro</button>
                 </div>
                 <button class="text-content-secondary hover:text-content-primary p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -129,8 +129,8 @@
                     <div class="flex items-center justify-between p-4 mb-4 bg-surface border border-border-subtle rounded-xl">
                         <span class="text-[11px] uppercase font-bold text-content-tertiary tracking-widest">Demo State</span>
                         <div class="flex items-center gap-1.5">
-                            <button class="px-4 py-2 text-xs font-bold rounded-lg transition-all bg-white/10 text-content-primary">Guest</button>
-                            <button class="px-4 py-2 text-xs font-bold rounded-lg transition-all text-content-secondary hover:text-content-primary">Pro</button>
+                            <button id="auth-btn-guest-mobile" class="px-4 py-2 text-xs font-bold rounded-lg transition-all bg-white/10 text-content-primary">Guest</button>
+                            <button id="auth-btn-pro-mobile" class="px-4 py-2 text-xs font-bold rounded-lg transition-all text-content-secondary hover:text-content-primary">Pro</button>
                         </div>
                     </div>
                     <a href="/subscribe" class="flex items-center justify-center h-12 rounded-lg text-sm font-bold bg-accent-primary text-root hover:bg-accent-primary-hover transition-colors">

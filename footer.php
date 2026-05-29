@@ -178,5 +178,68 @@ document.addEventListener('DOMContentLoaded', () => {
   backdrop.addEventListener('click', closeModal);
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const guestBtns = [document.getElementById('auth-btn-guest'), document.getElementById('auth-btn-guest-mobile')];
+    const proBtns = [document.getElementById('auth-btn-pro'), document.getElementById('auth-btn-pro-mobile')];
+
+    function setAuthState(isPro) {
+        localStorage.setItem('semi_mock_auth_is_pro', isPro ? 'true' : 'false');
+        if (isPro) {
+            document.body.classList.add('is-pro-member');
+            guestBtns.forEach(btn => {
+                if (btn) {
+                    btn.classList.remove('bg-white/10', 'text-content-primary');
+                    btn.classList.add('text-content-secondary', 'hover:text-content-primary');
+                }
+            });
+            proBtns.forEach(btn => {
+                if (btn) {
+                    btn.classList.remove('text-content-secondary', 'hover:text-content-primary');
+                    btn.classList.add('bg-accent-primary', 'text-root');
+                }
+            });
+        } else {
+            document.body.classList.remove('is-pro-member');
+            guestBtns.forEach(btn => {
+                if (btn) {
+                    btn.classList.add('bg-white/10', 'text-content-primary');
+                    btn.classList.remove('text-content-secondary', 'hover:text-content-primary');
+                }
+            });
+            proBtns.forEach(btn => {
+                if (btn) {
+                    btn.classList.remove('bg-accent-primary', 'text-root');
+                    btn.classList.add('text-content-secondary', 'hover:text-content-primary');
+                }
+            });
+        }
+    }
+
+    // Initialize state
+    const savedIsPro = localStorage.getItem('semi_mock_auth_is_pro') === 'true';
+    setAuthState(savedIsPro);
+
+    // Event listeners
+    guestBtns.forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                setAuthState(false);
+            });
+        }
+    });
+    proBtns.forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                setAuthState(true);
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
