@@ -12,6 +12,15 @@ if (isset($all_models[$slug])) {
     $model = reset($all_models);
 }
 $total_features = !empty($model['features']) ? count($model['features']) : 0;
+
+$visual_images = [
+    'supply-chain'  => get_template_directory_uri() . '/assets/placeholders/supply-chain.png',
+    'cloud'         => get_template_directory_uri() . '/assets/placeholders/data_dashboard.png',
+    'architecture'  => get_template_directory_uri() . '/assets/placeholders/blueprint.png',
+    'semiconductor' => get_template_directory_uri() . '/assets/placeholders/wafer.png',
+];
+$hero_image = $visual_images[$model['visualType']] ?? (get_template_directory_uri() . '/assets/placeholders/data_dashboard.png');
+
 get_header();
 ?>
 <main class="min-h-screen bg-root pb-24">
@@ -23,6 +32,14 @@ get_header();
         <!-- Fine dot grid -->
         <div class="pointer-events-none absolute inset-0 opacity-[0.035] z-0"
              style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 22px 22px;"></div>
+
+        <!-- Model-specific hero background image -->
+        <div class="absolute inset-0 z-0 hidden lg:block">
+            <img src="<?php echo esc_url($hero_image); ?>" alt=""
+                 class="absolute inset-y-0 right-0 w-[55%] h-full object-cover opacity-[0.18] grayscale contrast-125 brightness-75" />
+            <div class="absolute inset-0 bg-gradient-to-r from-root via-root/85 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-root via-transparent to-transparent"></div>
+        </div>
 
         <div class="container relative z-10">
             <!-- Breadcrumbs -->
@@ -128,6 +145,13 @@ get_header();
                     <div class="relative overflow-hidden rounded-xl border border-border-strong bg-surface shadow-2xl">
                         <!-- Gradient amber top-edge accent -->
                         <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent-secondary to-transparent"></div>
+
+                        <!-- Model image banner -->
+                        <div class="relative h-36 overflow-hidden border-b border-border-strong">
+                            <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr($model['title']); ?>"
+                                 class="w-full h-full object-cover grayscale opacity-40" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface"></div>
+                        </div>
 
                         <div class="p-7 sm:p-9">
                             <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-accent-secondary mb-5">

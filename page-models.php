@@ -5,6 +5,14 @@
 require_once get_stylesheet_directory() . '/data.php';
 $all_models = get_semi_models();
 
+$visual_images = [
+    'supply-chain'  => get_template_directory_uri() . '/assets/placeholders/supply-chain.png',
+    'cloud'         => get_template_directory_uri() . '/assets/placeholders/data_dashboard.png',
+    'architecture'  => get_template_directory_uri() . '/assets/placeholders/blueprint.png',
+    'semiconductor' => get_template_directory_uri() . '/assets/placeholders/wafer.png',
+];
+$fallback_img = get_template_directory_uri() . '/assets/placeholders/data_dashboard.png';
+
 get_header();
 ?>
 <main class="min-h-screen bg-root">
@@ -14,7 +22,7 @@ get_header();
         <div class="pointer-events-none absolute inset-0 opacity-[0.04] z-10" style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 26px 26px;"></div>
         <div class="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-accent-secondary/5 blur-[100px] z-10"></div>
 
-        <!-- Absolute Background Image fading from right -->
+        <!-- Background Image fading from right -->
         <div class="absolute inset-0 z-0 hidden lg:block">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/placeholders/data_dashboard.png" alt="" class="absolute inset-y-0 right-0 w-[70%] h-full object-cover opacity-70 grayscale contrast-125 brightness-90" />
             <div class="absolute inset-0 bg-gradient-to-r from-root via-root/90 to-transparent"></div>
@@ -28,9 +36,7 @@ get_header();
                 <span class="text-content-secondary">Industry Models &amp; Research</span>
             </nav>
             <div class="max-w-3xl">
-                <p class="text-xs font-bold uppercase tracking-[0.15em] text-accent-secondary mb-3">
-                    Research Frameworks
-                </p>
+                <p class="text-xs font-bold uppercase tracking-[0.15em] text-accent-secondary mb-3">Research Frameworks</p>
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tighter text-content-primary leading-[1.05] mb-6">
                     Enterprise Infrastructure Models
                 </h1>
@@ -41,41 +47,42 @@ get_header();
         </div>
     </section>
 
-    <!-- Model cards grid -->
-    <section class="py-12 md:py-16">
+    <!-- Model list -->
+    <section class="py-10 md:py-12">
         <div class="container">
 
-            <!-- Model list — editorial numbered style -->
             <div class="flex flex-col divide-y divide-border-subtle border-t border-border-subtle border-b border-border-subtle mb-16">
-                <?php $idx = 1; foreach ($all_models as $slug => $model): ?>
-                <a href="/models/<?php echo esc_attr($slug); ?>" class="group block py-8 sm:py-10">
-                    <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start">
+                <?php $idx = 1; foreach ($all_models as $slug => $model):
+                    $img = $visual_images[$model['visualType']] ?? $fallback_img;
+                ?>
+                <a href="/models/<?php echo esc_attr($slug); ?>" class="group block py-5 sm:py-6">
+                    <div class="flex items-center gap-5 sm:gap-8">
 
                         <!-- Monospace index -->
-                        <span class="font-mono text-[11px] font-bold tracking-[0.2em] text-content-tertiary pt-1 select-none w-8 shrink-0">
+                        <span class="font-mono text-[10px] font-bold tracking-[0.2em] text-content-tertiary select-none w-6 shrink-0">
                             <?php echo str_pad($idx, 2, '0', STR_PAD_LEFT); ?>
                         </span>
 
+                        <!-- Thumbnail image -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-border-strong bg-surface">
+                            <img src="<?php echo esc_url($img); ?>" alt=""
+                                 class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-90 group-hover:grayscale-0 transition-all duration-500" />
+                        </div>
+
                         <!-- Main text block -->
                         <div class="flex-1 min-w-0">
-                            <!-- Amber accent rule that slides in on hover -->
-                            <div class="w-8 h-[2px] bg-accent-secondary mb-4 group-hover:w-16 transition-all duration-300 ease-out"></div>
-
-                            <h2 class="text-[20px] sm:text-[22px] md:text-[24px] font-extrabold tracking-tight text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-snug mb-3">
+                            <h2 class="text-[16px] sm:text-[18px] md:text-[20px] font-extrabold tracking-tight text-content-primary group-hover:text-accent-secondary transition-colors duration-200 leading-snug mb-1.5">
                                 <?php echo esc_html($model['title']); ?>
                             </h2>
-
-                            <p class="text-[14px] sm:text-[15px] text-content-secondary leading-relaxed font-medium max-w-2xl">
+                            <p class="text-[13px] sm:text-[14px] text-content-secondary leading-snug font-medium line-clamp-2 max-w-2xl">
                                 <?php echo esc_html($model['description']); ?>
                             </p>
                         </div>
 
-                        <!-- Arrow CTA -->
-                        <div class="shrink-0 pt-1">
-                            <span class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary group-hover:text-accent-secondary group-hover:translate-x-1 inline-block transition-all duration-200">
-                                &rarr;
-                            </span>
-                        </div>
+                        <!-- Arrow -->
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-content-tertiary group-hover:text-accent-secondary group-hover:translate-x-1 inline-block transition-all duration-200 shrink-0">
+                            &rarr;
+                        </span>
 
                     </div>
                 </a>
@@ -83,8 +90,8 @@ get_header();
             </div>
 
             <!-- Delivery Formats Section -->
-            <div class="mt-0 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-t border-border-subtle pt-16">
-                <!-- Left Column: Copywriting & Value Prop -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-t border-border-subtle pt-16">
+                <!-- Left Column -->
                 <div class="lg:col-span-5 space-y-6">
                     <div class="space-y-2">
                         <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-accent-secondary flex items-center gap-2">
@@ -99,8 +106,6 @@ get_header();
                     <p class="text-sm text-content-secondary leading-relaxed font-medium">
                         Our capacity and supply chain models are delivered as clean, formula-intact datasets designed to integrate directly into your proprietary valuation models, internal databases, and research pipelines.
                     </p>
-
-                    <!-- Feature List -->
                     <div class="space-y-4 pt-2">
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500">
@@ -111,7 +116,6 @@ get_header();
                                 <p class="text-xs text-content-secondary leading-normal">Fully unlocked mathematical models with historical data, forward projections, and user-adjustable cost variables.</p>
                             </div>
                         </div>
-
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-accent-secondary/10 border border-accent-secondary/20 flex items-center justify-center text-accent-secondary">
                                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
@@ -121,7 +125,6 @@ get_header();
                                 <p class="text-xs text-content-secondary leading-normal">Structured API data feeds for direct ingestion into proprietary database pipelines and custom BI dashboards.</p>
                             </div>
                         </div>
-
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
                                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
@@ -134,25 +137,17 @@ get_header();
                     </div>
                 </div>
 
-                <!-- Right Column: Institutional Request Card -->
+                <!-- Right Column -->
                 <div class="lg:col-span-7 sa-card p-8 border border-border-strong bg-surface/50 shadow-2xl flex flex-col justify-center space-y-6 relative overflow-hidden">
                     <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(circle, var(--color-content-secondary) 1px, transparent 1px); background-size: 16px 16px;"></div>
                     <div class="space-y-3">
-                        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary">
-                            Institutional Verification Required
-                        </p>
-                        <h3 class="text-xl font-extrabold text-content-primary tracking-tight leading-snug">
-                            Model Skeletons &amp; Schemas Available on Request
-                        </h3>
-                        <p class="text-sm text-content-secondary leading-relaxed font-medium">
-                            Full mathematical structures, formula logic sheets, and data schemas are provided exclusively to verified institutional licensing clients. Contact our analyst team to request a sample model package.
-                        </p>
+                        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-accent-secondary">Institutional Verification Required</p>
+                        <h3 class="text-xl font-extrabold text-content-primary tracking-tight leading-snug">Model Skeletons &amp; Schemas Available on Request</h3>
+                        <p class="text-sm text-content-secondary leading-relaxed font-medium">Full mathematical structures, formula logic sheets, and data schemas are provided exclusively to verified institutional licensing clients.</p>
                     </div>
                     <div class="pt-2">
-                        <button
-                            onclick="document.querySelector('form').scrollIntoView({ behavior: 'smooth' });"
-                            class="inline-flex items-center justify-center px-6 h-12 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover transition-all duration-200 cursor-pointer"
-                        >
+                        <button onclick="document.querySelector('form').scrollIntoView({ behavior: 'smooth' });"
+                                class="inline-flex items-center justify-center px-6 h-12 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover transition-all duration-200 cursor-pointer">
                             Request Sample Schema
                         </button>
                     </div>
@@ -170,23 +165,15 @@ get_header();
                     <div>
                         <p class="text-[11px] font-bold uppercase tracking-widest text-accent-secondary mb-3">Institutional Access</p>
                         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-content-primary mb-4 leading-snug">Request Enterprise Licensing</h2>
-                        <p class="text-[15px] text-content-secondary leading-relaxed font-medium">Enterprise licensing includes access to all active models, weekly supply chain data feeds, API integrations, and direct analyst consultation. Submit your inquiry to request a platform demonstration and pricing proposal.</p>
+                        <p class="text-[15px] text-content-secondary leading-relaxed font-medium">Enterprise licensing includes access to all active models, weekly supply chain data feeds, API integrations, and direct analyst consultation.</p>
                     </div>
                     <form class="space-y-3 bg-root/60 backdrop-blur-md p-6 rounded-xl border border-border-subtle" onsubmit="event.preventDefault();">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <input type="email" placeholder="Work Email" required class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors" />
-                            </div>
-                            <div>
-                                <input type="text" placeholder="Company" required class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors" />
-                            </div>
+                            <input type="email" placeholder="Work Email" required class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors" />
+                            <input type="text" placeholder="Company" required class="w-full h-10 px-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors" />
                         </div>
-                        <div>
-                            <textarea placeholder="Describe your research focus or data requirements..." rows="3" required class="w-full p-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="w-full inline-flex items-center justify-center h-10 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200">
-                            Request Proposal
-                        </button>
+                        <textarea placeholder="Describe your research focus or data requirements..." rows="3" required class="w-full p-3 rounded-lg bg-surface border border-border-strong text-xs font-semibold text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent-secondary/50 transition-colors resize-none"></textarea>
+                        <button type="submit" class="w-full inline-flex items-center justify-center h-10 rounded-lg bg-accent-secondary text-root text-xs font-bold hover:bg-accent-secondary-hover active:scale-95 transition-all duration-200">Request Proposal</button>
                     </form>
                 </div>
             </div>
