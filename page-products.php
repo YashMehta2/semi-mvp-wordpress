@@ -46,6 +46,10 @@ get_header();
                         Inquire for Enterprise Licensing
                         <svg class="h-4 w-4 ml-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
+                    <a href="/products/preview" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg border border-accent-secondary/30 text-[14px] font-bold text-accent-secondary hover:bg-accent-secondary/5 hover:border-accent-secondary/50 active:scale-95 transition-all duration-200">
+                        Explore Schema Dictionary
+                        <svg class="h-4 w-4 ml-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
                     <a href="#models-list" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border-strong text-[14px] font-bold text-content-secondary hover:border-accent-secondary/50 hover:text-content-primary transition-all duration-200">
                         Browse Datasets
                     </a>
