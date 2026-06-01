@@ -1,7 +1,6 @@
 <?php
 ?>
     </main>
-    </main>
     <footer class="border-t border-border-subtle bg-root pt-12 sm:pt-14 pb-8">
       <div class="container">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
@@ -24,14 +23,22 @@
           </div>
           <div class="space-y-3 sm:space-y-4">
             <h4 class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-content-primary">
-              Research
+              Research &amp; Archive
             </h4>
             <ul class="space-y-2.5 sm:space-y-3">
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">AI Infrastructure</span></li>
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">GPU Markets</span></li>
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Semiconductors</span></li>
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Cloud Computing</span></li>
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Data Centers</span></li>
+              <li><a href="/research" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">Research Briefings</a></li>
+              <li><a href="/models" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">Industry Models</a></li>
+              <li><a href="/products" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">Data Products Hub</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3 sm:space-y-4">
+            <h4 class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-content-primary">
+              Platform &amp; Tools
+            </h4>
+            <ul class="space-y-2.5 sm:space-y-3">
+              <li><a href="/compare" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">Model Comparison</a></li>
+              <li><a href="/products/preview" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">Schema Explorer</a></li>
+              <li><a href="/developers" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">Developer Portal</a></li>
             </ul>
           </div>
           <div class="space-y-3 sm:space-y-4">
@@ -39,8 +46,8 @@
               Company
             </h4>
             <ul class="space-y-2.5 sm:space-y-3">
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">About</span></li>
-              <li><span class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150 cursor-pointer">Contact</span></li>
+              <li><a href="/about" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">About Us</a></li>
+              <li><a href="/subscribe" class="text-xs sm:text-sm text-content-secondary hover:text-accent-secondary transition-colors duration-150">Subscription Plans</a></li>
             </ul>
           </div>
           <div class="space-y-3 sm:space-y-4">

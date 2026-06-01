@@ -41,6 +41,15 @@ function semi_mvp_custom_routing($template) {
     if ($path === 'products/preview') {
         return get_stylesheet_directory() . '/page-products-preview.php';
     }
+    if ($path === 'compare') {
+        return get_stylesheet_directory() . '/page-compare.php';
+    }
+    if ($path === 'subscribe') {
+        return get_stylesheet_directory() . '/page-subscribe.php';
+    }
+    if ($path === 'developers') {
+        return get_stylesheet_directory() . '/page-developers.php';
+    }
     if (strpos($path, 'models/') === 0) {
         set_query_var('model_slug', str_replace('models/', '', $path));
         return get_stylesheet_directory() . '/single-model.php';
@@ -51,7 +60,8 @@ add_filter('template_include', 'semi_mvp_custom_routing', 99);
 add_action('pre_get_posts', function($query) {
     if (!is_admin() && $query->is_main_query()) {
         $path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-        if ($path === 'models' || $path === 'research' || $path === 'products' || $path === 'products/preview' || strpos($path, 'models/') === 0) {
+        $suppress_404_paths = array('models', 'research', 'products', 'products/preview', 'compare', 'subscribe', 'developers');
+        if (in_array($path, $suppress_404_paths) || strpos($path, 'models/') === 0) {
             $query->set('is_404', false);
             status_header(200);
         }
@@ -59,7 +69,8 @@ add_action('pre_get_posts', function($query) {
 });
 add_action('template_redirect', function() {
     $path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-    if ($path === 'models' || $path === 'research' || $path === 'products' || $path === 'products/preview' || strpos($path, 'models/') === 0) {
+    $suppress_404_paths = array('models', 'research', 'products', 'products/preview', 'compare', 'subscribe', 'developers');
+    if (in_array($path, $suppress_404_paths) || strpos($path, 'models/') === 0) {
         global $wp_query;
         $wp_query->is_404 = false;
         status_header(200);
@@ -75,6 +86,12 @@ add_filter('document_title_parts', function($title) {
         $title['title'] = 'AI Infrastructure Data Products & Models';
     } elseif ($path === 'products/preview') {
         $title['title'] = 'Data Products Schema Explorer';
+    } elseif ($path === 'compare') {
+        $title['title'] = 'Model Comparison';
+    } elseif ($path === 'subscribe') {
+        $title['title'] = 'Subscribe to Research';
+    } elseif ($path === 'developers') {
+        $title['title'] = 'Developer Portal';
     } elseif (strpos($path, 'models/') === 0) {
         require_once get_stylesheet_directory() . '/data.php';
         $slug = str_replace('models/', '', $path);

@@ -154,9 +154,15 @@ $header_models = get_semi_models();
                             <a href="/models" class="block px-3 py-2 text-sm font-bold text-accent-secondary hover:bg-accent-secondary/10 rounded-lg transition-all">
                                 View all models &rarr;
                             </a>
+                            <a href="/compare" class="block px-3 py-2 text-sm font-bold text-accent-secondary hover:bg-accent-secondary/10 rounded-lg transition-all">
+                                Model Comparison &rarr;
+                            </a>
                             <div class="my-1 border-t border-border-subtle"></div>
                             <a href="/products" class="block px-3 py-2 text-sm font-bold text-accent-primary hover:bg-accent-primary/10 rounded-lg transition-all">
                                 Data Products Hub &rarr;
+                            </a>
+                            <a href="/developers" class="block px-3 py-2 text-sm font-bold text-accent-primary hover:bg-accent-primary/10 rounded-lg transition-all">
+                                Developer Portal &rarr;
                             </a>
                         </div>
                     </div>
