@@ -165,39 +165,66 @@ get_header();
                                 This model is available exclusively to enterprise clients. Our analyst team will be in touch to discuss your requirements.
                             </p>
 
-                            <div class="border-t border-border-subtle pt-7">
-                                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Form submitted');">
+                            <div class="border-t border-border-subtle pt-7" id="model-inquiry-container">
+                                <form id="b2b-model-form" class="space-y-4">
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <div class="space-y-1.5">
+                                        <div class="space-y-1.5 text-left">
                                             <label for="firstName" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">First Name</label>
                                             <input type="text" id="firstName" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                            <p id="error-firstName" class="text-[10px] text-red-400 font-bold mt-1 hidden"></p>
                                         </div>
-                                        <div class="space-y-1.5">
+                                        <div class="space-y-1.5 text-left">
                                             <label for="lastName" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Last Name</label>
                                             <input type="text" id="lastName" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                            <p id="error-lastName" class="text-[10px] text-red-400 font-bold mt-1 hidden"></p>
                                         </div>
                                     </div>
-                                    <div class="space-y-1.5">
+                                    <div class="space-y-1.5 text-left">
                                         <label class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Model</label>
                                         <div class="relative">
-                                            <select class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary appearance-none focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors">
+                                            <select id="selectedModel" class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary appearance-none focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors">
                                                 <?php foreach ($all_models as $key => $m): ?>
                                                 <option value="<?php echo esc_attr($key); ?>" <?php selected($slug, $key); ?>><?php echo esc_html($m['title']); ?></option>
                                                 <?php endforeach; ?>
                                             </select>
+                                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-content-tertiary">
+                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="space-y-1.5">
+                                    <div class="space-y-1.5 text-left">
                                         <label for="email" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Work Email</label>
                                         <input type="email" id="email" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                        <p id="error-email" class="text-[10px] text-red-400 font-bold mt-1 hidden"></p>
                                     </div>
-                                    <div class="space-y-1.5">
-                                        <label for="company" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Company</label>
-                                        <input type="text" id="company" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="space-y-1.5 text-left">
+                                            <label for="company" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Company</label>
+                                            <input type="text" id="company" class="w-full h-10 px-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors" />
+                                            <p id="error-company" class="text-[10px] text-red-400 font-bold mt-1 hidden"></p>
+                                        </div>
+                                        <div class="space-y-1.5 text-left">
+                                            <label for="companySize" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">Company Size</label>
+                                            <div class="relative">
+                                                <select id="companySize" class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary appearance-none focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors">
+                                                    <option value="">Select size...</option>
+                                                    <option value="1-10">1 - 10 employees</option>
+                                                    <option value="11-50">11 - 50 employees</option>
+                                                    <option value="51-200">51 - 200 employees</option>
+                                                    <option value="201-1000">201 - 1,000 employees</option>
+                                                    <option value="1000+">1,000+ employees</option>
+                                                </select>
+                                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-content-tertiary">
+                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                                </div>
+                                            </div>
+                                            <p id="error-companySize" class="text-[10px] text-red-400 font-bold mt-1 hidden"></p>
+                                        </div>
                                     </div>
-                                    <div class="space-y-1.5">
+                                    <div class="space-y-1.5 text-left">
                                         <label for="message" class="text-[11px] font-bold uppercase tracking-widest text-content-secondary">How will you use this model?</label>
-                                        <textarea id="message" rows="3" placeholder="Briefly describe your use case or data requirements..." class="w-full p-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors resize-none"></textarea>
+                                        <textarea id="message" rows="3" placeholder="Describe your use case or dataset requirements (min 20 chars)..." class="w-full p-3 rounded-lg bg-surface-hover border border-border-strong text-sm text-content-primary focus:outline-none focus:border-accent-secondary/50 focus:ring-1 focus:ring-accent-secondary/50 transition-colors resize-none"></textarea>
+                                        <p id="error-message" class="text-[10px] text-red-400 font-bold mt-1 hidden"></p>
                                     </div>
                                     <button type="submit" class="w-full h-12 mt-3 rounded-lg bg-accent-secondary text-root text-sm font-bold hover:bg-accent-secondary/90 transition-colors duration-200 active:scale-95">
                                         Submit Inquiry
@@ -215,4 +242,168 @@ get_header();
         </div>
     </section>
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("b2b-model-form");
+    if (!form) return;
+
+    const personalDomains = [
+        "gmail.com", "yahoo.com", "hotmail.com", "outlook.com", 
+        "aol.com", "icloud.com", "mail.com", "zoho.com", 
+        "yandex.com", "protonmail.com", "proton.me", "gmx.com"
+    ];
+
+    const modelNames = {
+        "accelerator-hbm-model": "Accelerator & HBM Model",
+        "ai-cloud-tco-model": "AI Cloud TCO Model",
+        "ai-networking-model": "AI Networking Model",
+        "datacenter-industry-model": "Datacenter Industry Model",
+        "wafer-fab-model": "Wafer Fab Equipment Model"
+    };
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Clear previous errors
+        document.querySelectorAll("[id^='error-']").forEach(el => {
+            el.classList.add("hidden");
+            el.textContent = "";
+        });
+        document.querySelectorAll("input, select, textarea").forEach(el => {
+            el.classList.remove("border-red-500/50");
+        });
+
+        let hasError = false;
+
+        const firstName = document.getElementById("firstName");
+        const lastName = document.getElementById("lastName");
+        const email = document.getElementById("email");
+        const company = document.getElementById("company");
+        const companySize = document.getElementById("companySize");
+        const message = document.getElementById("message");
+        const selectedModel = document.getElementById("selectedModel");
+
+        function showError(inputEl, errorElId, msg) {
+            const errorEl = document.getElementById(errorElId);
+            if (errorEl) {
+                errorEl.textContent = msg;
+                errorEl.classList.remove("hidden");
+            }
+            inputEl.classList.add("border-red-500/50");
+            hasError = true;
+        }
+
+        if (!firstName.value.trim()) {
+            showError(firstName, "error-firstName", "First name is required");
+        }
+        if (!lastName.value.trim()) {
+            showError(lastName, "error-lastName", "Last name is required");
+        }
+        if (!company.value.trim()) {
+            showError(company, "error-company", "Company name is required");
+        }
+        if (!companySize.value) {
+            showError(companySize, "error-companySize", "Company size is required");
+        }
+
+        const emailVal = email.value.trim();
+        if (!emailVal) {
+            showError(email, "error-email", "Work email is required");
+        } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailVal)) {
+                showError(email, "error-email", "Please enter a valid email address");
+            } else {
+                const domain = emailVal.split("@")[1]?.toLowerCase();
+                if (personalDomains.includes(domain)) {
+                    showError(email, "error-email", "Please enter a corporate email. We do not accept personal domains.");
+                }
+            }
+        }
+
+        const messageVal = message.value.trim();
+        if (!messageVal) {
+            showError(message, "error-message", "Use case description is required");
+        } else if (messageVal.length < 20) {
+            showError(message, "error-message", "Please provide more details (minimum 20 characters)");
+        }
+
+        if (hasError) return;
+
+        // Render success state
+        const container = document.getElementById("model-inquiry-container");
+        const selectedModelVal = selectedModel.value;
+        const modelName = modelNames[selectedModelVal] || "AI Cloud TCO Model";
+        const referenceId = "SA-RQ-" + Math.floor(100000 + Math.random() * 900000);
+
+        container.innerHTML = `
+            <div class="space-y-6 text-left animate-fade-in">
+                <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 shrink-0">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest text-emerald-400">Inquiry Received</h4>
+                        <p class="text-xs text-content-tertiary font-mono">Ref ID: ${referenceId}</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-b border-border-subtle py-4 space-y-3">
+                    <p class="text-[13px] text-content-secondary leading-relaxed">
+                        Thank you, <strong class="text-content-primary">${escapeHTML(firstName.value)} ${escapeHTML(lastName.value)}</strong>. Your request for access to the <strong class="text-content-primary">${modelName}</strong> has been registered.
+                    </p>
+                    <div class="bg-surface-hover/30 p-3.5 rounded-lg border border-border-subtle/50 text-[12px] space-y-1 text-content-secondary">
+                        <div><span class="text-content-tertiary font-mono">Company:</span> ${escapeHTML(company.value)} (${escapeHTML(companySize.value)})</div>
+                        <div><span class="text-content-tertiary font-mono">Work Email:</span> ${escapeHTML(emailVal)}</div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-content-tertiary">
+                        Next Steps Checklist
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-xs text-content-secondary">
+                            <span class="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold">✓</span>
+                            <div>
+                                <strong class="text-content-primary">Work Email Verified</strong>
+                                <p class="text-[10px] text-content-tertiary">Corporate domain lookup complete.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 text-xs text-content-secondary">
+                            <span class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-border-strong text-content-tertiary text-[10px] font-bold">2</span>
+                            <div>
+                                <strong class="text-content-primary">Institutional Profile Review</strong>
+                                <p class="text-[10px] text-content-tertiary">Our analyst team will verify your firm size and use case.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 text-xs text-content-secondary">
+                            <span class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-border-strong text-content-tertiary text-[10px] font-bold">3</span>
+                            <div>
+                                <strong class="text-content-primary">Consultation Call Setup</strong>
+                                <p class="text-[10px] text-content-tertiary">A scheduling link will be sent to your work email.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    });
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+            tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag)
+        );
+    }
+});
+</script>
 <?php get_footer(); ?>
